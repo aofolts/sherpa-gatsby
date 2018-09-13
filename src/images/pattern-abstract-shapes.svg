@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>abstract-shapes</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="abstract-shapes" stroke="#000000" stroke-width="4">
+            <circle id="Oval-4" cx="210.5" cy="195.5" r="26.5"></circle>
+            <circle id="Oval-4-Copy-2" cx="435.5" cy="92.5" r="26.5"></circle>
+            <circle id="Oval-4-Copy-3" cx="476.5" cy="589.5" r="26.5"></circle>
+            <circle id="Oval-4-Copy-4" cx="184.5" cy="476.5" r="26.5"></circle>
+            <circle id="Oval-4-Copy-5" cx="560" cy="413" r="48"></circle>
+            <circle id="Oval-4-Copy-6" cx="107" cy="608" r="48"></circle>
+            <rect id="Rectangle" transform="translate(620.000000, 584.000000) rotate(-28.000000) translate(-620.000000, -584.000000) " x="576" y="540" width="88" height="88"></rect>
+            <rect id="Rectangle-Copy-11" transform="translate(639.667419, 101.667419) rotate(5.000000) translate(-639.667419, -101.667419) " x="595.667419" y="57.6674194" width="88" height="88"></rect>
+            <rect id="Rectangle-Copy-9" transform="translate(408.500000, 479.500000) rotate(-37.000000) translate(-408.500000, -479.500000) " x="377" y="448" width="63" height="63"></rect>
+            <rect id="Rectangle-Copy" transform="translate(107.000000, 309.000000) rotate(26.000000) translate(-107.000000, -309.000000) " x="63" y="265" width="88" height="88"></rect>
+            <rect id="Rectangle-Copy-2" transform="translate(299.000000, 92.000000) rotate(-27.000000) translate(-299.000000, -92.000000) " x="269" y="62" width="60" height="60"></rect>
+            <polygon id="Rectangle-Copy-4" transform="translate(697.891016, 261.341978) rotate(-60.000000) translate(-697.891016, -261.341978) " points="718.691261 221.341978 736.391016 301.341978 659.391016 280.989957"></polygon>
+            <polygon id="Rectangle-Copy-5" transform="translate(286.500000, 608.000000) rotate(19.000000) translate(-286.500000, -608.000000) " points="307.300245 568 325 648 248 627.647979"></polygon>
+            <polygon id="Rectangle-Copy-6" transform="translate(286.500000, 387.500000) rotate(-71.000000) translate(-286.500000, -387.500000) " points="302.978116 356 317 419 256 402.972784"></polygon>
+            <polygon id="Rectangle-Copy-13" transform="translate(95.000000, 102.000000) rotate(-81.000000) translate(-95.000000, -102.000000) " points="116.610644 61 135 143 55 122.139179"></polygon>
+            <polygon id="Rectangle-Copy-12" transform="translate(530.571727, 250.164732) rotate(-102.000000) translate(-530.571727, -250.164732) " points="554.073302 205.664732 574.071727 294.664732 487.071727 272.023108"></polygon>
+            <polygon id="Rectangle-Copy-4" transform="translate(675.996094, 715.529758) rotate(-60.000000) translate(-675.996094, -715.529758) " points="696.915287 675.535538 714.71626 755.523978 637.275927 735.174898"></polygon>
+            <rect id="Rectangle-Copy-11" transform="translate(359.667419, 254.667419) rotate(5.000000) translate(-359.667419, -254.667419) " x="315.667419" y="210.667419" width="88" height="88"></rect>
+            <polygon id="Rectangle-Copy-6" transform="translate(97.667223, 726.045836) rotate(-71.000000) translate(-97.667223, -726.045836) " points="114.124669 694.581779 128.128963 757.509893 67.205483 741.500965"></polygon>
+            <circle id="Oval-4" cx="236.5" cy="716.5" r="26.5"></circle>
+            <polygon id="Rectangle-Copy-7" transform="translate(423.878448, 720.974600) rotate(-161.000000) translate(-423.878448, -720.974600) " points="452.910053 665.470719 477.6142 776.47848 370.142696 748.238077"></polygon>
+            <polygon id="Rectangle-Copy-10" transform="translate(711.138174, 463.359919) rotate(-36.000000) translate(-711.138174, -463.359919) " points="727.59562 431.895861 741.599914 494.823976 680.676434 478.815047"></polygon>
+            <rect id="Rectangle-Copy-2" transform="translate(60.107381, 459.107381) rotate(-27.000000) translate(-60.107381, -459.107381) " x="30.2877008" y="429.287701" width="59.6393599" height="59.6393599"></rect>
+        </g>
+    </g>
+</svg>

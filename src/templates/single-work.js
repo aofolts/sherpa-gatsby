@@ -24,7 +24,7 @@ const SingleWork = ({data}) => {
     <Layout>
       <Hero title={title} image={featuredImage}/>
       <Wrap width='blog'>
-        <div dangerouslySetInnerHTML={{__html: html}}/>
+        <div className='longformContent' dangerouslySetInnerHTML={{__html: html}}/>
       </Wrap>
     </Layout>
   )

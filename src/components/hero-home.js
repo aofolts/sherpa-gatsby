@@ -23,7 +23,8 @@ const Buttons = () => {
 
     const buttonClasses = [
       css.button,
-      css[`button${i + 1}`]
+      css[`button${i + 1}`],
+      i === 0 ? 'primaryButton' : 'secondaryLightButton'
     ].join(' ')
 
     return (

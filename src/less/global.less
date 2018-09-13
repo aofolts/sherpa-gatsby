@@ -8,6 +8,34 @@
 @bd: 2px; 
 
 ////////////////////////////////////////////////////////
+// BUTTONS
+////////////////////////////////////////////////////////
+
+.button {
+  .fs(@p2); .ls(.05em); .ttf(uppercase); .ib;
+  .pad(1em 1.5em); .br(1000px); .fw(@bold);
+
+  @media @phone {
+    .dsp(block); .ta(center);
+  }
+}
+
+.primaryLightButton {
+  &:extend(.button);
+  .bg(white); .c(@prime);
+}
+
+.primaryButton {
+  &:extend(.button);
+  .bg(@prime); .c(white);
+}
+
+.secondaryLightButton {
+  &:extend(.button);
+  .bdc(white); .c(white);
+}
+
+////////////////////////////////////////////////////////
 // COLORS
 ////////////////////////////////////////////////////////
 
@@ -85,6 +113,7 @@ h1 {
 h2 {
   .fs(@h2);
   .mb(1em);
+  .mt(1.5em);
 }
 
 @h3: 2.8rem;
@@ -95,13 +124,19 @@ h3 {
 }
 
 h4 {
-  .fs(@p); 
+  .fs(@p2); 
   .c(@prime);
+  .fw(@bold);
+  .upper;
+  .ls(.05em);
+  .mb(.75em);
 }
 
 ////////////////////////////////////////////////////////
 // PARAGRAPHS
 ////////////////////////////////////////////////////////
+
+@p2: 2rem;
 
 .p2 {
   .o(.9);

@@ -4,6 +4,8 @@ import Hero from '../components/hero-home'
 import Layout from '../components/layout'
 import Section from '../components/section'
 import Wrap from '../components/wrap'
+import WorkSection from '../components/section-home-work'
+
 import css from '../less/home.module.less'
 import designIcon from '../icons/icon-service-design.svg';
 import codingIcon from '../icons/icon-service-coding.svg';
@@ -72,6 +74,7 @@ const IndexPage = ({data}) => {
       <Hero/>
       <Intro/>
       <Services/>
+      <WorkSection/>
     </Layout>
   )
 }

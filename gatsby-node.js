@@ -28,10 +28,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: workTemplate,
-        context: {
-          heroImage: 
-        }
+        component: workTemplate
       });
     });
   });
