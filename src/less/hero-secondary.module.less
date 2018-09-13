@@ -1,0 +1,24 @@
+@import (reference) 'global.less';
+
+.hero {
+  .h(55rem); .mh(80vh);
+  .bg(@prime);
+}
+
+.contentContainer {
+  .wh; .flex; .aic; .jc(center);
+  .pad(var(--h) var(--v));
+}
+
+.content {
+  .w(100rem); .mw; .c(white); .ta(center);
+}
+
+.headline {
+  .fs(7rem); .mb(0);
+}
+
+.background {
+  .z(0); .pos(absolute ~'!important');
+  .flt(brightness(80%));
+}

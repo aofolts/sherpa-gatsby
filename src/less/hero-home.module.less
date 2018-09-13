@@ -1,0 +1,49 @@
+@import (reference) 'global.less';
+
+.hero {
+  .h(80rem); .mh(80vh);
+  .bg(@prime);
+}
+
+.contentContainer {
+  .wh; .flex; .aic; .jc(center);
+  .pad(var(--h) var(--v));
+}
+
+.content {
+  .w(100rem); .mw; .c(white);
+}
+
+.headline {
+  .fs(7rem);
+}
+
+.button {
+  .fs(@p2); .ls(.05em); .ttf(uppercase);
+  .pad(1em 1.5em); .br(1000px); .fw(@bold);
+
+  @media @phone {
+    .dsp(block); .ta(center);
+  }
+}
+
+.button1 {
+   .c(white); .bg(@prime);
+}
+
+.button2 {
+  .c(white); .bd(@bd solid white);
+
+  @media @minTablet {
+    .ml(@s);
+  }
+
+  @media @phone {
+    .mt(@s);
+  }
+}
+
+.background {
+  .z(0); .pos(absolute ~'!important');
+  .flt(brightness(80%));
+}
