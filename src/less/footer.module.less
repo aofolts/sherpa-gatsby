@@ -1,0 +1,36 @@
+@import (reference) 'reference.less';
+
+.contactSection {
+  .bg(@darkGrey); .c(white); .ta(center);
+}
+
+.contactForm {
+  .fs(@p);
+}
+
+.field {
+  &+.field {
+    .mt(@s);
+  }
+}
+
+.input,.textarea {
+  .bd(none); .bdb(@bd solid fade(white,10%)); .bg(none); 
+  .w; .fs(@p); .c(white); .fw(@fw); .lh(3em);
+
+  &:focus {
+    .ot(none);
+  }
+}
+
+.submit {
+  .mt(@m);
+}
+
+.bar {
+  .flex; .aic; .c(@fadedWhite); .bg(@darkerGrey); .pad(@s);
+}
+
+.barCopyright {
+  .fs(@p2);
+}

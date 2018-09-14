@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
 
-const SingleWork = ({data}) => {
+const SingleJournal = ({data}) => {
 
   const {
     markdownRemark: remark
@@ -30,10 +30,10 @@ const SingleWork = ({data}) => {
   )
 }
 
-export default SingleWork
+export default SingleJournal
 
 export const pageQuery = graphql`
-  query WorkByPath($path: String!) {
+  query journalByPath($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {
@@ -50,4 +50,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

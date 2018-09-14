@@ -1,9 +1,9 @@
 ---
 path: "/work/great-dames"
 title: "Great Dames"
-date: "2018-02-18"
+date: "2018-02-05"
 featuredImage: "./great-dames-hero.jpg"
-excerpt: "I collaborated with co-founder Sharon Kelly Hake to develop a website that addressed some key technical issues, clarified messaging, and highlighted many of the inspiring stories that Great Dames have to share."
+excerpt: "I collaborated with co-founder Sharon Kelly Hake to design and build a new website, which highlighted powerful Great Dames stories and resulted in 12x as many unique visitors per month."
 ---
 
 ## The Challenge

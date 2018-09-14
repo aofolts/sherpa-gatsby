@@ -41,6 +41,7 @@ export default () => (
               order:DESC
               fields: [frontmatter___date]
             }
+            limit: 1
           ) {
             edges {
               node {

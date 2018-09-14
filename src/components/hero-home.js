@@ -6,11 +6,11 @@ import Image from 'gatsby-image'
 const Buttons = () => {
   const data = [
     {
-      label: 'Tell Me More',
+      label: 'Get Free Advice',
       link: '/get-started'
     },
     {
-      label: "Let's Talk",
+      label: "Contact Me",
       link: '/#contact'
     }
   ]

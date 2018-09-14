@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import Section from '../components/section'
 import Wrap from '../components/wrap'
 import WorkSection from '../components/section-home-work'
+import JournalSection from '../components/section-home-journal'
 
 import css from '../less/home.module.less'
 import designIcon from '../icons/icon-service-design.svg';
@@ -75,6 +76,7 @@ const IndexPage = ({data}) => {
       <Intro/>
       <Services/>
       <WorkSection/>
+      <JournalSection/>
     </Layout>
   )
 }

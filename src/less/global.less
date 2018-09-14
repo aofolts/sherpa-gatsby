@@ -13,7 +13,13 @@
 
 .button {
   .fs(@p2); .ls(.05em); .ttf(uppercase); .ib;
-  .pad(1em 1.5em); .br(1000px); .fw(@bold);
+  .pad(1.1em 1.5em); .br(1000px); .fw(@bold);
+
+  &:hover {
+    &:after {
+      .cnt(' →');
+    }
+  }
 
   @media @phone {
     .dsp(block); .ta(center);
@@ -21,17 +27,17 @@
 }
 
 .primaryLightButton {
-  &:extend(.button);
+  &:extend(.button all);
   .bg(white); .c(@prime);
 }
 
 .primaryButton {
-  &:extend(.button);
+  &:extend(.button all);
   .bg(@prime); .c(white);
 }
 
 .secondaryLightButton {
-  &:extend(.button);
+  &:extend(.button all);
   .bdc(white); .c(white);
 }
 
@@ -40,6 +46,10 @@
 ////////////////////////////////////////////////////////
 
 @lightGrey: #fafafa;
+
+@fadedWhite: fade(white,90%);
+
+@darkerGrey: darken(@darkGrey,5%);
 
 ////////////////////////////////////////////////////////
 // PARAGRAPHS
@@ -62,6 +72,14 @@ p a, .p2 a {
 @accent: @blue;
 
 @darkGrey: mix(#444,@green,90%);
+
+////////////////////////////////////////////////////////
+// MEDIA
+////////////////////////////////////////////////////////
+
+.mediaBackground {
+  .pos(absolute ~'!important');
+}
 
 ////////////////////////////////////////////////////////
 // TYPE
@@ -112,7 +130,7 @@ h1 {
 
 h2 {
   .fs(@h2);
-  .mb(1em);
+  .mb(.75em);
   .mt(1.5em);
 }
 
@@ -146,4 +164,4 @@ h4 {
 // SIZES
 ////////////////////////////////////////////////////////
 
-@main: 120rem;
+@main: 130rem;
