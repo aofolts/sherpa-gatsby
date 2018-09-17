@@ -5,6 +5,7 @@ import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
 import Section from '../components/section'
 import css from '../less/packages.module.less'
+import {Helmet} from 'react-helmet'
 
 const Intro = ({packages,activePackage,setActivePackageById}) => {
   const navItems = packages.map(({
@@ -109,6 +110,10 @@ class Page extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Get Started | Sherpa | Web Designer &amp; Developer | New York</title>
+        </Helmet>
         <Hero title='Get Started' image={featuredImage}/>
         <Intro 
           packages={this.packages} 

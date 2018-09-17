@@ -6,6 +6,7 @@ import Section from '../components/section'
 import Wrap from '../components/wrap'
 import WorkSection from '../components/section-home-work'
 import JournalSection from '../components/section-home-journal'
+import {Helmet} from 'react-helmet'
 
 import css from '../less/home.module.less'
 import designIcon from '../icons/icon-service-design.svg';
@@ -72,6 +73,10 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Sherpa | Web Designer &amp; Developer | New York</title>
+      </Helmet>
       <Hero/>
       <Intro/>
       <Services/>

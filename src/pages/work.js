@@ -6,6 +6,7 @@ import Wrap from '../components/wrap'
 import Section from '../components/section'
 import css from '../less/page-work.module.less'
 import WorkCard from '../components/card-work'
+import {Helmet} from 'react-helmet'
 
 const Intro = () => {
   return (
@@ -57,6 +58,10 @@ const WorkTemplate = ({data}) => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Work | Sherpa | Web Designer &amp; Developer | New York</title>
+      </Helmet>
       <Hero title='Recent Projects' image={imageSharp}/>
       <Intro/>
       <Archive posts={posts}/>
