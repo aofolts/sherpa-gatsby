@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
 
-const SingleWork = ({data}) => {
+const Page = ({data}) => {
+
   const {
     markdownRemark: remark
   } = data
@@ -29,14 +30,12 @@ const SingleWork = ({data}) => {
   )
 }
 
-export default SingleWork
+export default Page
 
 export const pageQuery = graphql`
-  query WorkByPath($path: String!) {
+  query pageByPath($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
         featuredImage {
@@ -47,6 +46,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      html
     }
   }
-`
+`;

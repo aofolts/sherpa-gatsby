@@ -22,7 +22,7 @@ const SingleJournal = ({data}) => {
 
   return (
     <Layout>
-      <Hero title={title} image={featuredImage}/>
+      <Hero title={title} image={featuredImage.childImageSharp}/>
       <Wrap width='blog'>
         <div className='longformContent' dangerouslySetInnerHTML={{__html: html}}/>
       </Wrap>

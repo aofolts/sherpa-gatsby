@@ -1,0 +1,27 @@
+@import (reference) 'global.less';
+
+.mobileMenu {
+  .fixed; .h(80%); .w; .c(white); .pad(var(--v) var(--h));
+  .aic; .jc(center);.ta(center); .hide;
+}
+
+.openMobileMenu {
+  .flex;
+}
+
+.menu {
+  .w(@blog); .mw;
+}
+
+.menuItem {
+  .fs(@h2); .lh(2em); .o(0); .t(1em); .fw(@bold);
+}
+
+@keyframes loadMenuItem {
+  10%  {.o(0); .t(1em);}
+  100% {.o(1); .t(0);}
+}
+
+.loadedMenuItem {
+  .an(loadMenuItem .7s ease-in-out forwards);
+}

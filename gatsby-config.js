@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
+    'gatsby-transformer-json',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,15 +19,36 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `icons`,
+        path: `${__dirname}/src/icons`,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'work',
-        path: `${__dirname}/src/content/work`
+        path: `${__dirname}/src/data/work`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'journal',
-        path: `${__dirname}/src/content/journal`
+        path: `${__dirname}/src/data/journal`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/data/pages`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      name: 'packages',
+      options: {
+        path: `${__dirname}/src/data/packages`,
       }
     }
   ]

@@ -8,7 +8,7 @@ const ContactForm = () => {
   return (
     <form id='contactForm' className={css.contactForm} name='contact' data-netlify="true">
       <div className={css.field}>
-        <label for='contactFormNameField' hidden>Your Name</label>
+        <label htmlFor='contactFormNameField' hidden>Your Name</label>
         <input 
           id='contactFormNameField' 
           type='text'
@@ -18,7 +18,7 @@ const ContactForm = () => {
         />
       </div>
       <div className={css.field}>
-        <label for='contactFormNameField' hidden>Your Name</label>
+        <label htmlFor='contactFormNameField' hidden>Your Name</label>
         <input 
           id='contactFormNameField' 
           type='text'
@@ -28,7 +28,7 @@ const ContactForm = () => {
         />
       </div>
       <div className={css.field}>
-        <label for='contactFormNameField' hidden>Your Name</label>
+        <label htmlFor='contactFormNameField' hidden>Your Name</label>
         <textarea 
           id='contactFormNameField' 
           placeholder='Your message...'

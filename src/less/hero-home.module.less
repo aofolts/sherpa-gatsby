@@ -3,19 +3,19 @@
 .hero {
   .h(80rem); .mh(80vh);
   .bg(@prime);
+
+  @media @phone {
+    .mh(100vh);
+  }
 }
 
 .contentContainer {
   .wh; .flex; .aic; .jc(center);
-  .pad(var(--h) var(--v));
+  .pad(var(--v) var(--h));
 }
 
 .content {
   .w(100rem); .mw; .c(white);
-}
-
-.headline {
-  .fs(7rem);
 }
 
 .button1 {

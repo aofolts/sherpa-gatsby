@@ -12,7 +12,12 @@ const HomeJournalSection = ({posts}) => {
       id
     } = post
 
-    return <BlogCard key={id} {...frontmatter}/>
+    const data = {
+      ...frontmatter,
+      featuredImage: frontmatter.featuredImage.childImageSharp
+    }
+
+    return <BlogCard key={id} {...data}/>
   })
 
   return (
@@ -45,6 +50,7 @@ export default () => (
                 id
                 frontmatter {
                   title
+                  category
                   excerpt
                   path
                   featuredImage {

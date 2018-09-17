@@ -6,15 +6,19 @@ export default class Section extends React.Component {
   constructor(props) {
     super(props) 
 
-    this.state = {
-      id: `${props.name}Section`
-    }
+    this.id = `${props.name}Section`
   }
 
   render() {
+    const {
+      style,
+      className,
+      children
+    } = this.props
+
     return ( 
-      <section id={this.state.id} className={this.props.className}>
-        {this.props.children}
+      <section id={this.id} className={className} style={style}>
+        {children}
       </section>
     )
   }

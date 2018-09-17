@@ -23,7 +23,7 @@ const SecondaryHero = ({title,image}) => {
 
   return (
     <section className={css.hero}>
-      <Background {...image.childImageSharp}/>
+      <Background {...image}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
           <h1 className={css.headline}>{title}</h1>
@@ -34,7 +34,10 @@ const SecondaryHero = ({title,image}) => {
 }
 
 SecondaryHero.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    sizes: PropTypes.object.isRequired
+  })
 }
 
 export default SecondaryHero

@@ -3,7 +3,15 @@ import {Link} from 'gatsby'
 import css from '../less/card-blog.module.less'
 import Image from 'gatsby-image'
 
-const BlogCard = ({title,excerpt,path,featuredImage,category}) => {
+const BlogCard = ({
+  title,
+  excerpt,
+  path,
+  featuredImage,
+  category
+}) => {
+
+  console.log(featuredImage)
 
   return (
     <article className={css.card} >
@@ -17,10 +25,10 @@ const BlogCard = ({title,excerpt,path,featuredImage,category}) => {
           />
         </div>
         <div className={css.content}>
-          <h4 className={css.category}>#{category}</h4>
+          {/* <h4 className={css.category}>#{category}</h4> */}
           <h3 className={css.title}>{title}</h3>
           <p className={[css.excerpt,'p2'].join(' ')} dangerouslySetInnerHTML={{__html: excerpt}}/>
-          <p className={['textLink p2',css.readMore].join(' ')}>Read More</p>
+          <p className={['textLink p2',css.readMore].join(' ')}>View Project</p>
         </div>
       </Link>
     </article>
