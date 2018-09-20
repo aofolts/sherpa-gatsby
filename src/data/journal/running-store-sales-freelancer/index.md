@@ -25,7 +25,7 @@ In fact, within a few weeks of being hired I started to learn that the more ques
 
 For example: Asking, “How long have you been wearing those?” often reveals that a customer has simply been running too long in the same shoes, and they don’t need more cushion—just a fresh pair!
 
-### Lesson 2: Consider Everything, Trust Nothing
+## Lesson 2: Consider Everything, Trust Nothing
 
 People are notoriously unreliable witnesses, even (sometimes especially) when it comes to understanding or articulating their own needs.
 
@@ -55,14 +55,14 @@ Sales is almost a dirty word in the freelance community. Personally, I still don
 
 My process for selling shoes looks something like this—notice how a few simple questions can narrow 500 shoes down to 20, making the task more manageable (and increasing the probability of success):
 
-  1. Customer walks in and says they want new shoes: **500 Shoes**
-  2. I ask if they want the same thing or to start fresh: **Something similar**
-  3. I ask what they would change about the shoe: **Too wide**
-  4. We measure, and their current shoes ARE too wide: **20 Shoes**
-  5. I bring out three options. They like the second one: **5 Shoes**
-  6. I bring out two more like that. More testing: **3 Shoes**
-  7. They eliminate shoe 1, then test 2 and 3 some more: **2 Shoes**
-  8. Shoe 3 wins!
+1. Customer walks in and says they want new shoes: **500 Shoes**
+2. I ask if they want the same thing or to start fresh: **Something similar**
+3. I ask what they would change about the shoe: **Too wide**
+4. We measure, and their current shoes ARE too wide: **20 Shoes**
+5. I bring out three options. They like the second one: **5 Shoes**
+6. I bring out two more like that. More testing: **3 Shoes**
+7. They eliminate shoe 1, then test 2 and 3 some more: **2 Shoes**
+8. Shoe 3 wins!
 
 Your process should feel like an **“[if/else” tree](https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29)**. You start with a blank slate, not knowing what your prospective client wants or needs. Then, you ask a series of questions that narrow the possibilities down—a “[sales funnel](https://www.entrepreneur.com/article/296526).”
 
