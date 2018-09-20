@@ -3,6 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
+import longFormCss from '../less/longformContent.module.less'
 
 const SingleWork = ({data}) => {
   const {
@@ -23,7 +24,7 @@ const SingleWork = ({data}) => {
     <Layout>
       <Hero title={title} image={featuredImage.childImageSharp}/>
       <Wrap width='blog'>
-        <div className='longformContent' dangerouslySetInnerHTML={{__html: html}}/>
+        <div className={longFormCss.container} dangerouslySetInnerHTML={{__html: html}}/>
       </Wrap>
     </Layout>
   )
