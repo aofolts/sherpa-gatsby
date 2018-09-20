@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
-import richContent from '../less/richContent.module.less'
+import richContent from '../less/rich-content.module.less'
 
 const SingleWork = ({data}) => {
   const {
