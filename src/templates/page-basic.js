@@ -3,6 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
+import {Helmet} from 'react-helmet'
 
 const Page = ({data}) => {
 
@@ -17,11 +18,16 @@ const Page = ({data}) => {
 
   const {
     title,
-    featuredImage
+    featuredImage,
+    seo
   } = frontmatter
 
   return (
     <Layout>
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name='description' content={seo.description}/>
+      </Helmet>
       <Hero title={title} image={featuredImage.childImageSharp}/>
       <Wrap width='blog'>
         <div className='longformContent' dangerouslySetInnerHTML={{__html: html}}/>
@@ -44,6 +50,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpSizes
             }
           }
+        }
+        seo {
+          title
+          description
         }
       }
       html

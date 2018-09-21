@@ -5,6 +5,14 @@ date: "2018-06-06"
 category: "Web Development"
 excerpt: "I finished my first major website back in 2014. It took three months of nonstop work. These days I build higher-quality, more complex sites in around 40 hours."
 featuredImage: "./lazy-dog-carpet.jpg"
+tags: [
+  "web developer",
+  "web designer",
+  "web design",
+  "freelance",
+  "dry",
+  "coding"
+]
 ---
 
 ## The Origins of My Laziness

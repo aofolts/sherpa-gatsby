@@ -3,6 +3,10 @@ title: "About"
 path: "/about"
 featuredImage: "./mountains.jpg"
 templateType: "basic"
+seo: {
+  title: "About | Andrew Folts | Owner, Sherpa Design Co.",
+  description: "Andrew Folts is a Rochester, NY-based web designer and developer who helps small businesses make Hard-Working Websites™."
+}
 ---
 
 ## Hi, I’m Andrew. Nice to meet you.

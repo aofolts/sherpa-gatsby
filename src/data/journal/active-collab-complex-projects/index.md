@@ -5,6 +5,13 @@ date: "2018-05-17"
 category: "Project Management"
 excerpt: "It can be extremely difficult, time-consuming, and boring. But, quite frankly, I think the tools — not the process itself — are at fault."
 featuredImage: "./complex-highway.jpeg"
+tags: [
+  "project management",
+  "ActiveCollab",
+  "web design",
+  "freelance",
+  "web development"
+]
 ---
 
 ### Let’s be honest. Project management is the ugly duckling of freelance.

@@ -4,6 +4,18 @@ title: "goFirestarter"
 date: "2018-01-03"
 featuredImage: "./gofirestarter-hero.jpeg"
 excerpt: "Kathy Palokoff is a co-author of Firestarters and my favorite creative partner! We worked together to create a bold new website for her company."
+tags: [
+  'web design',
+  'website',
+  'small business',
+  'marketing',
+  'WordPress',
+  'goFirestarter',
+  'Kathy Palokoff',
+  'Rochester, New York',
+  'New York',
+  'Rochester'
+]
 ---
 
 Kathy Palokoff is the Chief Igniter of goFirestarter, a co-author of [_Firestarters_](https://www.amazon.com/Firestarters-Innovators-Instigators-Initiators-Inspire/dp/1633883477/), and my favorite creative partner!

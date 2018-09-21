@@ -60,7 +60,8 @@ const WorkTemplate = ({data}) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Journal | Sherpa | Web Designer &amp; Developer | New York</title>
+        <title>Journal: Weekly Tips For Small Businesses &amp; Freelancers</title>
+        <meta name='description' content="Tune in for weekly tips on everything web—from design and development to starting a freelance career, networking locally, and growing a small business online."/>
       </Helmet>
       <Hero title='Latest Articles' image={imageSharp}/>
       <Intro/>

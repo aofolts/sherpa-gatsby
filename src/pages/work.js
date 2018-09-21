@@ -61,6 +61,8 @@ const WorkTemplate = ({data}) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Work | Sherpa | Web Designer &amp; Developer | New York</title>
+        <meta name='description' content="Helping small businesses grow: I love building long-term relationships that help my clients grow. Here's what I've been working on recently."/>
+        <meta name='keywords' content='packages,web design,web development'/>
       </Helmet>
       <Hero title='Recent Projects' image={imageSharp}/>
       <Intro/>

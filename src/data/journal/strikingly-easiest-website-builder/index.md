@@ -5,6 +5,14 @@ date: "2018-05-28"
 category: "Web Design"
 excerpt: "Lots of companies promise to make it “quick” and “easy” to build a website, but few truly deliver. Strikingly is different."
 featuredImage: "./strikingly.jpeg"
+tags: [
+  "Strikingly",
+  "small business",
+  "website builder",
+  "web design",
+  "diy",
+  "web development"
+]
 ---
 
 Lots of companies promise to make it “quick” and “easy” to build a website, but few truly deliver. Strikingly is different.

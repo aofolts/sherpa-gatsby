@@ -5,6 +5,13 @@ date: "2018-09-06"
 category: "Web Design"
 excerpt: "Fireshot: Full-Page Screenshots Tell me if this sounds familiar: you find an awesome site on Awwwards that you want to..."
 featuredImage: "./chrome-gears.jpg"
+tags: [
+  "Google Chrome",
+  "Chrome extensions",
+  "web design",
+  "freelance",
+  "web development"
+]
 ---
 
 ## Fireshot: Full-Page Screenshots

@@ -4,6 +4,13 @@ title: "Boathouse Grille"
 date: "2017-09-07"
 featuredImage: "./boathouse-grille-hero.jpg"
 excerpt: "I helped owner Kathy Donovan create a Strikingly site to promote the Boathouse Grille's unique menu, awesome amenities, and unbeatable view."
+tags: [
+  'web design',
+  'website',
+  'small business',
+  'strikingly',
+  'restaurant'
+]
 ---
 
 Located along the Hudson River, the Boathouse Grille offers great food and drinks, as well as an unbeatable view, bocce ball courts, nature trails, and much more.

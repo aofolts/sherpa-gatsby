@@ -5,6 +5,14 @@ date: "2018-09-05"
 category: "Freelance"
 excerpt: "Three years into my freelance web design career I started working at a local running store to make some extra cash on the side."
 featuredImage: "./people-shoes-circle.jpg"
+tags: [
+  "freelance",
+  "freelancer",
+  "sales experience",
+  "part-time job",
+  "web design",
+  "web development"
+]
 ---
 
 Three years into my freelance web design career I started working at a local running store to make some extra cash on the side.

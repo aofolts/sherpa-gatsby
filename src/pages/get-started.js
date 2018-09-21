@@ -111,8 +111,8 @@ class Page extends Component {
     return (
       <Layout>
         <Helmet>
-          <meta charSet="utf-8" />
-          <title>Get Started | Sherpa | Web Designer &amp; Developer | New York</title>
+          <title>Get Stared: Website Packages For Small Businesses &amp; Nonprofits</title>
+          <meta name='description' content="Whether you're considering your first website or planning a complex project, I can help, with packages for most budgets."/>
         </Helmet>
         <Hero title='Get Started' image={featuredImage}/>
         <Intro 

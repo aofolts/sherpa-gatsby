@@ -4,6 +4,17 @@ title: "Learning Everywhere"
 date: "2017-06-05"
 featuredImage: "./learning-everywhere-hero.jpg"
 excerpt: "I helped CEO Sheila Stenhouse Lee create a website that showcases her team’s extensive experience and broad range of learning solutions."
+tags: [
+  'web design',
+  'website',
+  'small business',
+  'WordPress',
+  'Learning Everywhere',
+  'learning',
+  'Sheila Stenhouse Lee',
+  'Sheila Lee',
+  'government'
+]
 ---
 
 ## Background

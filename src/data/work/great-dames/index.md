@@ -4,6 +4,15 @@ title: "Great Dames"
 date: "2018-02-05"
 featuredImage: "./great-dames-hero.jpg"
 excerpt: "I collaborated with co-founder Sharon Kelly Hake to design and build a new website, which highlighted powerful Great Dames stories and resulted in 12x as many unique visitors per month."
+tags: [
+  'web design',
+  'website',
+  'small business',
+  'Squarespace',
+  'nonprofit',
+  'Great Dames',
+  'Sharon Hake'
+]
 ---
 
 ## The Challenge

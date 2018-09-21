@@ -20,6 +20,10 @@ const menuItems = [
   {
     title: 'Journal',
     path: '/journal'
+  },
+  {
+    title: 'Contact',
+    path: '#contactForm'
   }
 ]
 

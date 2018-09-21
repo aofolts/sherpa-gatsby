@@ -70,12 +70,13 @@ const Services = props => {
 }
 
 const IndexPage = ({data}) => {
+  const description = "Andrew Folts is a web designer and developer based in Rochester, New York who works one-on-one with small businesses and nonprofits to plan, build, and manage Hard-Working Websites™."
 
   return (
-    <Layout>
+    <Layout >
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Sherpa | Web Designer &amp; Developer | New York</title>
+        <meta name='description' content={description}/>
       </Helmet>
       <Hero/>
       <Intro/>

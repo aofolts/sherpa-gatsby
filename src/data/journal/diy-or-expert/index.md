@@ -5,6 +5,11 @@ date: "2018-06-04"
 category: "Web Design"
 excerpt: "Our early ancestors weren’t astronauts or physicists or doctors. They were generalists — completely overwhelmed by the numerous skills required to simply stay alive."
 featuredImage: "./stuck-in-washing-machine.jpeg"
+tags: [
+  "diy",
+  "web design",
+  "web development"
+]
 ---
 
 > Is DIY an effective strategy for your business? If you’re considering handling your next project yourself, it can be helpful to ask yourself these 5 questions before diving in.

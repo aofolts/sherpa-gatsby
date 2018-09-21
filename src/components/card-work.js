@@ -11,8 +11,6 @@ const BlogCard = ({
   category
 }) => {
 
-  console.log(featuredImage)
-
   return (
     <article className={css.card} >
       <Link to={path}>
