@@ -10,6 +10,7 @@
     "gatsby-plugin-less": "next",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.0-beta.7",
+    "gatsby-plugin-sitemap": "^2.0.1",
     "gatsby-remark-images": "^2.0.1-beta.9",
     "gatsby-source-filesystem": "^2.0.1-beta.9",
     "gatsby-transformer-json": "^1.0.20",
