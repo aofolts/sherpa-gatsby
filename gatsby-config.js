@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-less',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
