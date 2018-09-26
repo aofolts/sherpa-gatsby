@@ -6,6 +6,10 @@ import Wrap from '../components/wrap'
 import Section from '../components/section'
 import css from '../less/packages.module.less'
 import {Helmet} from 'react-helmet'
+import RichContent from '../components/rich-content'
+import packageCss from '../less/package-overview.module.less'
+
+css.package = packageCss
 
 const Intro = ({packages,activePackage,setActivePackageById}) => {
   const navItems = packages.map(({
@@ -61,9 +65,12 @@ const PackagesSection = ({packages,activePackage}) => {
 
     return (
       <Wrap key={id} width='small' className={wrapClasses}>
-        <img srcSet={icon} alt={`${title} Package Icon`} className={css.packageIcon}/>
-        <h2>{title}</h2>
-        <p><strong>Best for:</strong> {useCase}</p>
+        <div className={css.package.intro}>
+          <img srcSet={icon} alt={`${title} Package Icon`} className={css.packageIcon}/>
+          <h2>{title}</h2>
+          <p>Use Cases: {useCase}</p>
+        </div>
+        <RichContent html={html} wrapClassName={css.package.mainContent}/>
       </Wrap>
     )
   })

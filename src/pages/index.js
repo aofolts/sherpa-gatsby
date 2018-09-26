@@ -75,7 +75,7 @@ const IndexPage = ({data}) => {
   return (
     <Layout >
       <Helmet>
-        <title>Sherpa | Web Designer &amp; Developer | New York</title>
+        <title>Sherpa Design Co. | Small Business Web Designer &amp; Developer | New York</title>
         <meta name='description' content={description}/>
       </Helmet>
       <Hero/>
