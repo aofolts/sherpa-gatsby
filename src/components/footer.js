@@ -6,7 +6,7 @@ import Wrap from './wrap'
 const ContactForm = () => {
 
   return (
-    <form id='contactForm' className={css.contactForm} data-netlify='true' action='/submission' data-netlify-honeypot='honeypot'>
+    <form id='contactForm' name='contact' method='post' className={css.contactForm} data-netlify='true' action='/submission' data-netlify-honeypot='honeypot'>
       <div className={css.field}>
         <label htmlFor='contactFormNameField' hidden>Your Name</label>
         <input 
@@ -37,7 +37,7 @@ const ContactForm = () => {
         />
       </div>
       <input type="hidden" name="form-name" value="contact"/>
-      <input name="honeypot" style={{display:'none'}}/>
+      <input type='hidden' name="honeypot"/>
       <button type='submit' className={['primaryButton',css.submit].join(' ')}>Send it</button>
     </form>
   )
