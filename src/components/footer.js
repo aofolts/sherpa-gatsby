@@ -6,7 +6,7 @@ import Wrap from './wrap'
 const ContactForm = () => {
 
   return (
-    <form id='contactForm' className={css.contactForm} name='contact' data-netlify="true">
+    <form id='contactForm' className={css.contactForm} name='contact' netlify action='/submission'>
       <div className={css.field}>
         <label htmlFor='contactFormNameField' hidden>Your Name</label>
         <input 
