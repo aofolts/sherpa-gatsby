@@ -16,6 +16,14 @@ tags: [
   'New York',
   'Rochester'
 ]
+testimonial: {
+  author: {
+    name: "Kathy Palokoff",
+    title: "Chief Igniter & Founder",
+    photo: "./kathy-palokoff.jpg"
+  },
+  quote: "This is one very creative, smart and conscientious guy. I have worked with Andrew extensively on multiple projects and he always takes it to a much better level. Couldn't exist without him!"
+}
 ---
 
 Kathy Palokoff is the Chief Igniter of goFirestarter, a co-author of [_Firestarters_](https://www.amazon.com/Firestarters-Innovators-Instigators-Initiators-Inspire/dp/1633883477/), and my favorite creative partner!

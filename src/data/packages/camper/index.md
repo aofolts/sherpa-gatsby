@@ -3,7 +3,7 @@ title: "Camper"
 level: "Simple"
 price: 460
 icon: "./camper.png"
-useCase: "Nonprofits with a limited budget, solo freelancers, or entrepeneurs who just want to test the waters."
+useCase: "Nonprofits with a limited budget, solo freelancers, or entrepreneurs who just want to test the waters."
 ---
 
 ### Overview

@@ -13,6 +13,14 @@ tags: [
   'Great Dames',
   'Sharon Hake'
 ]
+testimonial: {
+  author: {
+    name: "Sharon Kelly Hake",
+    title: "President & Co-Founder",
+    photo: "./sharon-hake.jpg"
+  },
+  quote: "Andrew did an amazing job designing a new website for Great Dames. His design provided a fresh look, greater focus and improved functionality. We're getting great feedback from our current audience and attracting new members to the Great Dames community."
+}
 ---
 
 ## The Challenge

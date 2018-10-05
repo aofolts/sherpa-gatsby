@@ -11,6 +11,14 @@ tags: [
   'strikingly',
   'restaurant'
 ]
+testimonial: {
+  author: {
+    name: "Kathy Donovan",
+    title: "Co-Owner",
+    photo: "./kathy-donovan.jpg"
+  },
+  quote: "TK"
+}
 ---
 
 Located along the Hudson River, the Boathouse Grille offers great food and drinks, as well as an unbeatable view, bocce ball courts, nature trails, and much more.

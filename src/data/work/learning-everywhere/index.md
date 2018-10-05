@@ -15,6 +15,14 @@ tags: [
   'Sheila Lee',
   'government'
 ]
+testimonial: {
+  author: {
+    name: "Sheila Stenhouse Lee",
+    title: "President & CEO",
+    photo: "./sheila-stenhouse-lee.jpg"
+  },
+  quote: "Excellent service, fast responses, and quick turn around. Whenever our company has an idea, Andrew brings it to life."
+}
 ---
 
 ## Background

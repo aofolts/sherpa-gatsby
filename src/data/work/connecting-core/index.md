@@ -14,6 +14,14 @@ tags: [
   'new company',
   'Cheryl Williams'
 ]
+testimonial: {
+  author: {
+    name: "Cheryl Williams",
+    title: "Chief Strategic Partner",
+    photo: "./cheryl-williams.jpg"
+  },
+  quote: "TK"
+}
 ---
 
 Cheryl Williams is a Baltimore, Maryland-based life coach and mediator with 20+ years experience in Consumer Package Goods R&D. We worked together on a single-page website for her new company, Connecting to the Core.
