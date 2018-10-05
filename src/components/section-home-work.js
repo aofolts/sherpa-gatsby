@@ -1,25 +1,29 @@
 import React from 'react'
 import {Link,graphql,StaticQuery} from 'gatsby'
-import css from '../less/home.module.less'
 import Section from './section'
 import Wrap from './wrap'
 import pattern from '../images/pattern-abstract-shapes.svg'
+import {Testimonial} from '../templates/single-work'
+import css from '../less/home-section-work.module.less'
 
-const HomeWorkSection = ({title,excerpt,path}) => {
+const HomeWorkSection = ({title,excerpt,path,testimonial}) => {
   return (
-    <Section name='work' className={css.workSection}>
+    <Section name='work' className={css.section}>
       <div 
-        className={css.workSectionBackground}
+        className={css.background}
         style={{backgroundImage: `url(${pattern})`}}
       />
       <Wrap width='small'>
         <article>
           <Link to={path}>
-            <div className={css.workSectionContent}>
-              <h4 className={css.workSectionSubTitle}>Latest Work</h4>
+            <div className={css.content}>
+            <h4>Recent Work</h4>
+              <h2>Great Dames</h2>
+              <Testimonial {...testimonial}/>
+              {/* <h4 className={css.workSectionSubTitle}>Latest Work</h4>
               <h2 className={css.workSectionTitle}>{title}</h2>
-              <p className={css.workSectionExcerpt} dangerouslySetInnerHTML={{__html: excerpt}}/>
-              <div className='primaryLightButton'>
+              <p className={css.workSectionExcerpt} dangerouslySetInnerHTML={{__html: excerpt}}/> */}
+              <div className={['primaryLightButton',css.button].join(' ')}>
                 View Project
               </div>
             </div>
@@ -49,6 +53,7 @@ export default () => (
                   title
                   excerpt
                   path
+                  ...workTestimonial
                 }
               }
             }

@@ -1,0 +1,42 @@
+////////////////////////////////////////////////////////
+// WORK SECTION
+////////////////////////////////////////////////////////
+
+@import (reference) 'global.less';
+
+.section {
+  .bg(@prime); .center; .c(white);
+
+  h2 {
+    .mt(0);
+  }
+
+  h4 {
+    .c(white);
+  }
+}
+
+.content {
+  --shadowSize: 10rem;
+  .bg(@prime); .bxs(0,0,var(--shadowSize),var(--shadowSize),@prime);
+
+  @media @phone {
+    --shadowSize: @m;
+  }
+}
+
+.title {
+  .c(white);
+}
+
+.excerpt {
+  .c(white);  .o(.95);
+}
+
+.background {
+  .wh; .abs; .bgr(repeat); .bgs(800px); .o(.1);
+}
+
+.button {
+  .mt(@s);
+}

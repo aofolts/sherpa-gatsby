@@ -8,7 +8,7 @@ import {Helmet} from 'react-helmet'
 import css from '../less/single-work.module.less'
 import Section from '../components/section'
 
-const TestimonialSection = ({author,quote}) => {
+export const Testimonial = ({author,quote}) => {
   const {
     photo,
     name,
@@ -17,25 +17,32 @@ const TestimonialSection = ({author,quote}) => {
 
   const imgSrc = photo.childImageSharp.original.src
 
+  return (
+    <div className={css.testimonial}>
+      <div className={css.quote}>"{quote}"</div>
+      <div className={css.testimonialMeta}>
+        <div className={css.avatar}>
+          <img className='mediaBackground' src={imgSrc} alt={`${name} Avatar`}/>
+        </div>
+        <div className={css.testimonialInfo}>
+          <div className={css.testimonialAuthor}>{name}</div>
+          <div className={css.testimonialAuthorTitle}>{title}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const TestimonialSection = ({author,quote}) => {
    if (quote !== `TK`) {
     return (
       <Section name='testimonial'>
         <Wrap width='blog'>
-          <div className={css.testimonial}>
-            <div className={css.quote}>"{quote}"</div>
-            <div className={css.avatar}>
-              <img className='mediaBackground' src={imgSrc} alt={`${name} Avatar`}/>
-            </div>
-            <div className={css.testimonialMeta}>
-              <div className={css.testimonialAuthor}>{name}</div>
-              <div className={css.testimonialAuthorTitle}>{title}</div>
-            </div>
-        </div>
+          <Testimonial {...{author,quote}}/>
         </Wrap>
       </Section>
-     )
+    )
    }
-
    return null
 }
 
