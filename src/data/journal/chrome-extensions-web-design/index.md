@@ -3,6 +3,7 @@ title: "My Favorite Chrome Extensions for Web Design"
 path: "/journal/favorite-free-google-chrome-extensions-web-design"
 date: "2018-09-06"
 category: "Web Design"
+audience: "Clients"
 excerpt: "Fireshot: Full-Page Screenshots Tell me if this sounds familiar: you find an awesome site on Awwwards that you want to..."
 featuredImage: "./chrome-gears.jpg"
 tags: [

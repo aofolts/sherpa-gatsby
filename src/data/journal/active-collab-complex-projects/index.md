@@ -3,6 +3,7 @@ title: "How I Use ActiveCollab to Plan and Manage Complex Projects"
 path: "/journal/active-collab-plan-manage-complex-projects"
 date: "2018-05-17"
 category: "Project Management"
+audience: "Small Business"
 excerpt: "It can be extremely difficult, time-consuming, and boring. But, quite frankly, I think the tools — not the process itself — are at fault."
 featuredImage: "./complex-highway.jpeg"
 tags: [

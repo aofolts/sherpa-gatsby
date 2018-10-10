@@ -3,7 +3,8 @@ title: "The 5 Stages of Being a WordPress Developer (#4 is Moving On)"
 path: "/journal/stages-wordpress-developer"
 date: "2018-10-02"
 category: "Web Development"
-excerpt: "I “built” my first WordPress website in the summer of 2014—like a lot of newbie developers I didn’t have much skill with coding."
+audience: "Small Business"
+excerpt: 'I "built" my first WordPress website in the summer of 2014—like a lot of newbie developers I didn’t have much skill with coding.'
 featuredImage: "./big-foot-toy-woods.jpg"
 tags: [
   "WordPress",
@@ -128,4 +129,6 @@ At the end of the day, WordPress is stuck in the past, and while the sheer numbe
 
 So, with al that said…
 
-Farewell, WordPress; I’m off to greener pastures. <Happy coding!/>
+Farewell, WordPress; I’m off to greener pastures. 
+
+<Happy coding!/>
