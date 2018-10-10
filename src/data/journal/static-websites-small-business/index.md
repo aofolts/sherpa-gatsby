@@ -3,7 +3,7 @@ title: "Why Static Sites Are a Game-Changer for Small Businesses"
 path: "/journal/static-websites-small-business"
 date: "2018-10-10"
 category: "Web Development"
-excerpt: "Static sites build every possible page of your website ahead of time and serve them as a package that can be hosted for little to no cost, virtually anywhere."
+excerpt: "Static sites build every possible page of your website ahead of time and serve them as a package that can be hosted for little to no cost."
 featuredImage: "./telephone-booth-traffic.jpg"
 tags: [
   "static website",
@@ -50,7 +50,9 @@ __The Benefit:__ No headaches. Your website will work just as well tomorrow as i
 
 That's a tall order for many dynamic sites—they're often Frankenstein'ed together with a hideous array of software and hardware that drags down performance.
 
-Static websites, on the other hand, are highly-optimized, and generally load 10x faster than dynamic sites.
+Static websites, on the other hand, are highly-optimized, and generally load 10x faster than dynamic sites. Below is a speed test of this page! You can test your site at [Pingdom](https://tools.pingdom.com/).
+
+![Speed test of this page.](./sherpa-blog-speed-test.jpg)
 
 __The Benefit:__ Happy users! People are busy—when you respect a potential customer's time, they'll be more likely to connect with you, instead of leaving and Googling a competitor.
 
