@@ -7,13 +7,15 @@ import Section from '../components/section'
 import css from '../less/page-work.module.less'
 import WorkCard from '../components/card-work'
 import {Helmet} from 'react-helmet'
+import Button from '../components/button'
 
 const Intro = () => {
   return (
     <Section name='intro' style={{textAlign: 'center'}}>
       <Wrap width='small'>
         <h2>Helping Small Businesses Grow</h2>
-        <p>I love building long-term relationships that help my clients grow. Here's what I've been working on recently.</p>
+        <p>I love building long-term relationships and growing with my clients! Whether you're planning a complex website or just need a hand getting a simple landing page up, I'm here to help.</p>
+        <Button label='Get Started' link={{page: '/get-started'}}/>
       </Wrap>
     </Section>
   )

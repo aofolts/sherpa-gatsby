@@ -1,0 +1,31 @@
+@import (reference) 'global.less';
+
+.button {
+  .fs(@p2); .ttf(uppercase); .ib; .lh(1em);
+  .pad(1.1em 1.5em 1em); .br(1000px); .fw(@bold);
+
+  &:hover {
+    &:after {
+      .cnt(' →');
+    }
+  }
+
+  @media @phone {
+    .dsp(block); .ta(center);
+  }
+}
+
+.primaryLightButton {
+  &:extend(.button all);
+  .bg(white); .c(@prime);
+}
+
+.primaryButton {
+  &:extend(.button all);
+  .bg(@prime); .c(white);
+}
+
+.secondaryLightButton {
+  &:extend(.button all);
+  .bdc(white); .c(white);
+}
