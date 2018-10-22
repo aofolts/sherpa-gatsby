@@ -1,0 +1,49 @@
+@import (reference) 'reference.less';
+
+.card {
+  .bg(white); .br(@xxs); .of(hidden);
+
+  &:hover {
+    @cardHover();
+  }
+}
+
+.media {
+  .pb(56.25%);
+}
+
+.content {
+  .pad(@s);
+}
+
+.title {
+  .fs(@h5);
+}
+
+.readMore {
+  .fw(@bold);
+}
+
+.browserBar {
+  .pl(@xs); .h(@xs * 2.25); .bg(@mediumLightGrey); .flex; .aic;
+}
+
+.browserIcon {
+  .wh(@xs); .br(1000px); .of(hidden); .ib;
+
+  & + .browserIcon {
+    .ml(@xs /2);
+  }
+}
+
+.browserCloseIcon {
+  .bg(#ff6058);
+}
+
+.browserMinimizeIcon {
+  .bg(#ffbd2e);
+}
+
+.browserMaximizeIcon {
+  .bg(#29cc41);
+}

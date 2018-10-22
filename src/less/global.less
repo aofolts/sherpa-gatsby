@@ -45,7 +45,14 @@
 // COLORS
 ////////////////////////////////////////////////////////
 
-@lightGrey: #f7f7f7;
+@green: #35D49D;
+@blue: #465C96;
+
+@prime: @green;
+@accent: @blue;
+
+@darkGrey: mix(#444,@green,95%);
+@lightGrey: #f6f6f6;
 @mediumLightGrey: darken(@lightGrey,5%);
 @fadedWhite: fade(white,90%);
 
@@ -64,20 +71,6 @@ p a, .p2 a {
 p {
   b {.fw(@regular);}
 }
-
-////////////////////////////////////////////////////////
-// COLORS
-////////////////////////////////////////////////////////
-
-@green: #35D49D;
-@blue: #465C96;
-
-@prime: @green;
-@accent: @blue;
-
-@lightGrey: #fafafa;
-
-@darkGrey: mix(#444,@green,95%);
 
 ////////////////////////////////////////////////////////
 // MEDIA
@@ -109,6 +102,24 @@ p {
 ////////////////////////////////////////////////////////
 
 .thirdsGrid {
+  .dsp(grid); .gg(@m @m);
+
+  @media @minTablet {
+    .gtc(repeat(auto-fill,minmax(35rem,1fr)));
+  }
+
+  @media @phone {
+    .gtc(1fr);
+  }
+
+  @supports not (display: grid) {
+    @media @minTablet {
+      .flex;
+    }
+  }
+}
+
+.halvesGrid {
   .dsp(grid); .gg(@m @m);
 
   @media @minTablet {
@@ -167,6 +178,8 @@ h4 {
 .p2 {
   .o(.9);
 }
+
+@p3: @p2 * .9;
 
 ////////////////////////////////////////////////////////
 // QUOTES

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import css from '../less/card-blog.module.less'
+import css from '../less/card-work.module.less'
 import Image from 'gatsby-image'
 
 const BlogCard = ({
@@ -13,6 +13,11 @@ const BlogCard = ({
 
   return (
     <article className={css.card} >
+      <div className={css.browserBar}>
+        <div className={[css.browserIcon,css.browserCloseIcon].join(' ')}/>
+        <div className={[css.browserIcon,css.browserMinimizeIcon].join(' ')}/>
+        <div className={[css.browserIcon,css.browserMaximizeIcon].join(' ')}/>
+      </div>
       <Link to={path}>
         <div className={css.media}>
           <Image 

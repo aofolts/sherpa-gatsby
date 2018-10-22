@@ -44,7 +44,7 @@ const Intro = ({packages,activePackage,setActivePackageById}) => {
     <Section name='intro'>
       <Wrap width='small'>
         <h2>Websites For Any Business</h2>
-        <p>Whether you're considering your first website or planning a complex project, I can help, with packages for most budgets.</p>
+        <p>Whether you're considering your first website or planning a complex project, I can help, with packages designed to help you grow online.</p>
         <Nav/>
       </Wrap>
     </Section>

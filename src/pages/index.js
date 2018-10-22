@@ -7,11 +7,9 @@ import Wrap from '../components/wrap'
 import WorkSection from '../components/section-home-work'
 import JournalSection from '../components/section-home-journal'
 import {Helmet} from 'react-helmet'
+import DesignIcon from '../icons/design.svg'
 
 import css from '../less/home.module.less'
-import designIcon from '../icons/icon-service-design.svg';
-import codingIcon from '../icons/icon-service-coding.svg';
-import writingIcon from '../icons/icon-service-writing.svg';
 
 const Intro = props => {
   return (
@@ -29,24 +27,24 @@ const Services = props => {
     {
       title: 'Web Design',
       copy: "I’ll combine unique aspects of your business into a clear digital identity that helps you connect with and engage your audience.",
-      icon: designIcon  
+      icon: DesignIcon
     },
     {
       title: 'Copywriting',
       copy: "The web moves fast. We’ll work together to deliver messaging that captures attention and encourages people to take action.",
-      icon: writingIcon  
+      icon: 'writing'  
     },
     {
       title: 'Web Development',
       copy: "Webites I build are 100% customized to your requirements, so you’ll have all the features you need to be successful online.",
-      icon: codingIcon  
+      icon: 'coding'  
     }
   ]
 
   const items = itemsData.map(({title,copy,icon}) => {
     return (
       <article key={title} className={css.serviceCard}>
-        <img src={icon} alt={title} className={css.serviceIcon}/>
+        <img src={DesignIcon} alt={title} className={css.serviceIcon}/>
         <div className={css.serviceCardContent}>
           <h3 className={css.serviceCardTitle}>{title}</h3>
           <p className={'p2'}>{copy}</p>
