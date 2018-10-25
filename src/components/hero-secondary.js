@@ -12,8 +12,7 @@ const Background = props => {
   return (
     <Image
       {...props}
-      className={'mediaBackground'}
-      outerWrapperClassName={outterClasses}
+      className={outterClasses}
       alt='Mountains'
     />
   )

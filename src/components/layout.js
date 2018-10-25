@@ -5,13 +5,9 @@ import {Helmet} from 'react-helmet'
 import favicon from '../images/favicon.png'
 
 const CrazyEggTracking = () => {
-  if (process.NODE_ENV === 'production') {
-    return (
-      <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0080/6735.js" async="async"></script>
-    ) 
-  }
-
-  return null
+  return (
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0080/6735.js" async="async"></script>
+  ) 
 }
 
 const Layout = ({

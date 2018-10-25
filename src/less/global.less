@@ -147,8 +147,12 @@ p {
 h1 {
   .fw(@heavy);
   .lh(1.1em);
-}
 
+  @media @phone {
+    .fs(@h2 * 1.1);
+  }
+}
+ 
 @h2: 4rem;
 
 @h3: 2.8rem;
