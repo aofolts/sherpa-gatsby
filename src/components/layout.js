@@ -22,6 +22,7 @@ const Layout = ({
       <Helmet>
         <meta charSet="utf-8" />
         <link rel='shortcut icon' type='image/png' href={favicon}/>
+        <link rel="stylesheet" href="https://use.typekit.net/dxm1wgv.css"></link>
       </Helmet>
       <Header/>
       {children}

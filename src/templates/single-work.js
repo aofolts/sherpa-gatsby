@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
-import richContent from '../less/rich-content.module.less'
+import richText from '../less/rich-text.module.less'
 import {Helmet} from 'react-helmet'
 import css from '../less/single-work.module.less'
 import Section from '../components/section'
@@ -77,7 +77,7 @@ const SingleWork = ({data}) => {
       <TestimonialSection {...testimonialData}/>
       <Section name='content' className={css.contentSection}>
         <Wrap width='blog'>
-          <div className={richContent.container} dangerouslySetInnerHTML={{__html: html}}/>
+          <div className={richText.container} dangerouslySetInnerHTML={{__html: html}}/>
         </Wrap>
       </Section>
     </Layout>

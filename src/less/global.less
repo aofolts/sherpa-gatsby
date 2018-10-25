@@ -51,7 +51,8 @@
 @prime: @green;
 @accent: @blue;
 
-@darkGrey: mix(#444,@green,95%);
+@black: mix(#444,@green,95%);
+@darkGrey: @black;
 @lightGrey: #f6f6f6;
 @mediumLightGrey: darken(@lightGrey,5%);
 @fadedWhite: fade(white,90%);
@@ -84,10 +85,10 @@ p {
 // TYPE
 ////////////////////////////////////////////////////////
 
-@c: @darkGrey;
-@ff: 'Sofia Pro',sans-serif;
-@fw: 300;
-@lh: 1.4em;
+@color: @black;
+@fontFamily: 'sofia-pro',sans-serif;
+@fontWeight: 300;
+@lineHeight: 1.4em;
 
 @thin: 300;
 @light: 300;
@@ -186,7 +187,7 @@ h4 {
 ////////////////////////////////////////////////////////
 
 @pullQuote: {
-  .fs(@h3); .fw(@thin); .lh(@lh); .mb(@m);
+  .fs(@h3); .fw(@thin); .lh(@lineHeight); .mb(@m);
 };
 
 ////////////////////////////////////////////////////////

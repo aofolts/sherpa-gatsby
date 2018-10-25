@@ -1,5 +1,5 @@
 import React from 'react'
-import css from '../less/rich-content.module.less'
+import css from '../less/rich-text.module.less'
 import PropTypes from 'prop-types'
 
 const RichContent = ({html,wrapClassName}) => {

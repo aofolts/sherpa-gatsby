@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
 import Wrap from '../components/wrap'
-import richContent from '../less/rich-content.module.less'
+import richText from '../less/rich-text.module.less'
 import {Helmet} from 'react-helmet'
 
 const SingleJournal = ({data}) => {
@@ -35,7 +35,7 @@ const SingleJournal = ({data}) => {
       </Helmet>
       <Hero title={title} image={featuredImage.childImageSharp}/>
       <Wrap width='blog'>
-        <div className={richContent.container} dangerouslySetInnerHTML={{__html: html}}/>
+        <div className={richText.container} dangerouslySetInnerHTML={{__html: html}}/>
       </Wrap>
     </Layout>
   )

@@ -6,7 +6,7 @@ import Wrap from '../components/wrap'
 import Section from '../components/section'
 import css from '../less/packages.module.less'
 import {Helmet} from 'react-helmet'
-import RichContent from '../components/rich-content'
+import RichText from '../components/rich-text'
 import packageCss from '../less/package-overview.module.less'
 
 css.package = packageCss
@@ -70,7 +70,7 @@ const PackagesSection = ({packages,activePackage}) => {
           <h2>{title}</h2>
           <p>Use Cases: {useCase}</p>
         </div>
-        <RichContent html={html} wrapClassName={css.package.mainContent}/>
+        <RichText html={html} wrapClassName={css.package.mainContent}/>
       </Wrap>
     )
   })

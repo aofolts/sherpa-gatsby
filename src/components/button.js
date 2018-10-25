@@ -29,6 +29,13 @@ const Button = ({
       </Link>
     )
   }
+  else if (url) {
+    return (
+      <a className={buttonClass} href={url} target='__blank'>
+        {label}
+      </a>
+    )
+  }
 
   return (
     <div className={buttonClass}>{label}</div>
