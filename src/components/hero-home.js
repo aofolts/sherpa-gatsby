@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 const Buttons = () => {
   const data = [
     {
-      label: 'Get Started',
+      label: 'Start Yours',
       link: '/get-started'
     },
     {

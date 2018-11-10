@@ -1,31 +1,23 @@
 @import (reference) 'global.less';
 
-.mobileMenu {
-  .fixed; .h(80%); .w; .c(white); .pad(var(--v) var(--h));
-  .aic; .jc(center);.ta(center); .hide;
-}
+@media @maxLaptop {
 
-.openMobileMenu {
-  .flex;
-}
-
-.menu {
-  .w(@blog); .mw;
-}
-
-.menuItem {
-  .fs(@h2); .lh(2em); .o(0); .t(1em); .fw(@bold);
-
-  &:hover {
-    .txd(underline);
+  .mobileMenu {
+    .wh; .fixed; .t; .l; .bg(@prime); .z(999);
+    .dsp(flex); .aic; .jc(center);
+    clip-path: polygon(0 100%,100% 100%,100% 100%,0% 100%);
+    .trn(clip-path .5s ease-in-out);
   }
-}
 
-@keyframes loadMenuItem {
-  10%  {.o(0); .t(1em);}
-  100% {.o(1); .t(0);}
-}
+  @keyframes latterUp {
+    0%   {clip-path: polygon(0 100%,100% 100%,100% 100%,0% 100%);}
+    50%  {clip-path: polygon(0 0%,100% 100%,100% 100%,0% 100%);}
+    100% {clip-path: polygon(0 0,100% 0,100% 100%,0% 100%);}
+  }
 
-.loadedMenuItem {
-  .an(loadMenuItem .7s ease-in-out forwards);
+  .openMobileMenu {
+    .an(latterUp .5s ease-in-out);
+    clip-path: polygon(0 0,100% 0,100% 100%,0% 100%);
+  }
+
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import {Link,graphql} from 'gatsby'
 import Hero from '../components/hero-home'
 import Layout from '../components/layout'
 import Section from '../components/section'
@@ -7,7 +7,9 @@ import Wrap from '../components/wrap'
 import WorkSection from '../components/section-home-work'
 import JournalSection from '../components/section-home-journal'
 import {Helmet} from 'react-helmet'
-import DesignIcon from '../icons/design.svg'
+import DesignIcon from '../svg/icon-design'
+import WritingIcon from '../svg/icon-writing'
+import CodingIcon from '../svg/icon-coding'
 
 import css from '../less/home.module.less'
 
@@ -27,24 +29,24 @@ const Services = props => {
     {
       title: 'Web Design',
       copy: "I’ll combine unique aspects of your business into a clear digital identity that helps you connect with and engage your audience.",
-      icon: DesignIcon
+      Icon: DesignIcon
     },
     {
       title: 'Copywriting',
       copy: "The web moves fast. We’ll work together to deliver messaging that captures attention and encourages people to take action.",
-      icon: 'writing'  
+      Icon: WritingIcon
     },
     {
       title: 'Web Development',
       copy: "Webites I build are 100% customized to your requirements, so you’ll have all the features you need to be successful online.",
-      icon: 'coding'  
+      Icon: CodingIcon
     }
   ]
 
-  const items = itemsData.map(({title,copy,icon}) => {
+  const items = itemsData.map(({title,copy,Icon}) => {
     return (
       <article key={title} className={css.serviceCard}>
-        <img src={DesignIcon} alt={title} className={css.serviceIcon}/>
+        <Icon alt={title} className={css.serviceIcon}/>
         <div className={css.serviceCardContent}>
           <h3 className={css.serviceCardTitle}>{title}</h3>
           <p className={'p2'}>{copy}</p>

@@ -1,63 +1,79 @@
-import React,{Component} from 'react'
+import React,{Component,createContext} from 'react'
 import css from '../less/header.module.less'
 import Nav from './nav'
-import {HeaderContext} from './context-header'
-import MobileMenu from './menu-mobile'
+import { withLayoutContext } from './layout';
 
-const menuItems = [
-  {
-    title: 'Get Started',
-    path: '/get-started'
-  },
-  {
-    title: 'About',
-    path: '/about'
-  },
-  {
-    title: 'Work',
-    path: '/work'
-  },
-  {
-    title: 'Journal',
-    path: '/journal'
-  },
-  {
-    title: 'Contact',
-    path: '#contactForm'
-  }
-]
+export const HeaderContext = createContext(null)
+
+export function withHeaderContext(Component) {
+  return props => (
+    <HeaderContext.Consumer>
+      {context => <Component {...props} headerContext={context}/>}
+    </HeaderContext.Consumer>
+  )
+}
 
 class Header extends Component {
-  constructor(props) {
-    super(props)
+
+  state = {
+    isDocked: null,
+    isHidden: null,
+    scrollingNavIsHidden: null,
+    mobileMenuIsOpen: false
+  }
   
-    this.state = {
-      isOpen: false,
-      menuItems
+  setIsDocked = (wasDocked) => {
+    const isDocked = this.props.layoutContext.pageYOffset < 200 
+
+    if (isDocked !== wasDocked || wasDocked === null) {
+      this.setState({
+        isDocked
+      })
     }
   }
 
   toggleMobileMenu = () => {
+    console.log('toggle')
     this.setState({
-      isOpen: !this.state.isOpen
+      mobileMenuIsOpen: !this.state.mobileMenuIsOpen
     })
+  } 
+
+  componentDidMount() {
+    this.setIsDocked(null)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    this.setIsDocked(prevState.isDocked)
+  }
+  
   render() {
-    const contextObject = {
+    const {
+      state
+    } = this
+
+    const {
+      isDocked
+    } = this.state
+
+    const headerClasses = [
+      css.header,
+      isDocked ? css.dockedHeader : css.scrollingHeader
+    ].join(' ')
+
+    const context = {
       ...this.state,
       toggleMobileMenu: this.toggleMobileMenu
     }
 
     return (
-      <HeaderContext.Provider value={contextObject}>
-        <header className={css.header}>
+      <HeaderContext.Provider value={context}>
+        <header className={headerClasses}>
           <Nav/>
-          <MobileMenu/>
         </header>
       </HeaderContext.Provider>
     )
   }
 }
 
-export default Header
+export default withLayoutContext(Header)

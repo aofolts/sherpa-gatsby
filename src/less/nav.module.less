@@ -3,77 +3,45 @@
 @navHeight: var(--navHeight);
 
 .nav {
-  --navHeight: 9rem;
+  --navHeight: 10rem; .t;
   .h(var(--navHeight)); .pad(0 var(--h));
-  --color: white;
-  .flex; .aic; .jcsb;
+  .flex; .aic; .jcsb; .rel;
 }
 
-.siteName {
-  .c(var(--color)); .fs(3.5rem); .ls(-.05em); .fw(@bold);
+.brand {
+  .dsp(flex); .aic;
 }
 
-.toggle {
-  --height: calc(var(--navHeight) ~'*' .6); .cur(pointer);
-  --color: @prime;
-
-  .wh(var(--height)); .bg(white); .br;
-  .flex; .aic; .jc(center);
-
-  &:before {
-    .cnt; .wh; .abs; .t(@bd * 2); .bg(fade(black,10%)); .br; .z(-1);
-  }
-
-  &:after {
-    .cnt; .abs; .t(50%); .l(50%); .wh(0); .pe(none);
-    .bg(@prime); .br; .trf(translate(-50%,-50%));
-    .trn(all .5s ease-in-out); .z(-1);
-  }
+.brandName {
+  .c(var(--color)); .fs(3.5rem); .ls(-.05em); .fw(400);
+  .ml(@xs);
 }
 
-.activeToggle {
-  .bg(none); --color: white;
-
-  &:after {
-    .wh(400vh);
-  }
-
-  .middleToggleBar {
-    .hide;
-  }
-
-  .toggleBars {
-    .dsp(block); .of(visible);
-  }
-
-  .topToggleBar {
-    .abs; .t(50%);
-    .to(50% 50%); .trf(rotate(-45deg));
-  }
-
-  .bottomToggleBar {
-    .abs; .t(50%); .trf(rotate(45deg));
-    .to(50% 50%);
-  }
+.brandLogo {
+  .h(calc(var(--navHeight) ~'*' .55)); fill: white;
 }
 
-.toggleBars {
-  .flex; .aic; .jcsb; .flxd(column);
-  .w(40%); .h(25%);
+////////////////////////////////////////////////////////
+// DOCKED NAV
+////////////////////////////////////////////////////////
+
+.dockedNav {
+  .bg(transparent);
 }
 
-.toggleBar {
-  .w; .h(@bd); .bg(var(--color));
+////////////////////////////////////////////////////////
+// SCROLLING NAV
+////////////////////////////////////////////////////////
+
+.scrollingNav {
+  --navHeight: 8rem; .t(calc(var(--navHeight) ~'*' -1));
+  .bg(white); .bdb(.border.weight[thin] @mediumLightGrey);
 }
 
-.topToggleBar {
-  &:extend(.toggleBar);
+.transitionalNav {
+  .trn(top .2s ease-in-out);
 }
 
-.middleToggleBar {
-  &:extend(.toggleBar);
-}
-
-.bottomToggleBar {
-  &:extend(.toggleBar);
+.scrollingVisibleNav {
+  .t; .bxs(0,0,@s,0,rgba(0,0,0,.1));
 }

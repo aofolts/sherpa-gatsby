@@ -1,9 +1,22 @@
 @import (reference) 'reference.less';
 
 .header {
-  .pos(fixed); .w; .z(1000);
+  .abs; .w; .z(1000); .trn(background .2s linear);
+}
+
+.dockedHeader {
+  .abs;
 }
 
 .siteName {
   .fs(3.5rem); .c(white);
+}
+
+.dockedHeader {
+  --color: white;
+}
+
+.scrollingHeader {
+  .fixed;
+  --color: @darkGrey;
 }

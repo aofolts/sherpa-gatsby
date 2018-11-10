@@ -1,31 +1,75 @@
-import React,{Fragment} from 'react'
+import React,{Component} from 'react'
 import Header from './header'
 import Footer from './footer'
 import {Helmet} from 'react-helmet'
 import favicon from '../images/favicon.png'
 
-const CrazyEggTracking = () => {
-  return (
-    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0080/6735.js" async="async"></script>
-  ) 
+export const LayoutContext = React.createContext(null)
+
+export function withLayoutContext(Component) {
+  return props => {
+    return (
+      <LayoutContext.Consumer>
+        {context => <Component {...props} layoutContext={context}/>}
+      </LayoutContext.Consumer>
+    )
+  }
 }
 
-const Layout = ({
-  children
-}) => {
-  return (
-    <Fragment>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <link rel='shortcut icon' type='image/png' href={favicon}/>
-        <link rel="stylesheet" href="https://use.typekit.net/dxm1wgv.css"></link>
-      </Helmet>
-      <Header/>
-      {children}
-      <Footer/>
-      <CrazyEggTracking/>
-    </Fragment>
-  )
+class Layout extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      scrollDirection: null,
+      pageYOffset: null
+    }
+  }
+
+  updateScroll = () => {
+    let scrollDirection
+
+    if (window.pageYOffset > this.state.pageYOffset) {
+      scrollDirection = 'down'
+    } else {
+      scrollDirection = 'up'
+    }
+
+    this.setState({
+      pageYOffset: window.pageYOffset,
+      scrollDirection
+    })
+  }
+
+  componentDidMount() {
+    this.setState({
+      pageYOffset: window.pageYOffset
+    })
+
+    window.addEventListener('scroll',e => this.updateScroll())
+  }
+
+  render() {
+    const {
+      children
+    } = this.props
+
+    return (
+      <LayoutContext.Provider value={this.state}>
+        <div id='layout'>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <link rel='shortcut icon' type='image/png' href={favicon}/>
+            <link rel="stylesheet" href="https://use.typekit.net/dxm1wgv.css"></link>
+          </Helmet>
+          <Header/>
+          {children}
+          <Footer/>
+        </div>
+      </LayoutContext.Provider>
+    )
+  }
 }
 
 export default Layout

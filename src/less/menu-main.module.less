@@ -1,0 +1,39 @@
+@import (reference) 'global.less';
+
+@media @minDesktop {
+
+  .menuItem {
+    .ib; .c(var(--color)); .va(middle);
+
+    &:hover {
+      &:after {
+        .w;
+      }
+    }
+
+    & + .menuItem {
+      .ml(@m);
+    }
+  }
+
+  .menuItemTitle {
+    .lh(var(--navheight));
+  }
+
+}
+
+@media @maxLaptop {
+
+  .mainMenu {
+    .ta(center); .c(white);
+  }
+
+  .menuItem {
+    .fs(@h2); .fw(500);
+
+    & + .menuItem {
+      .mt(@m);
+    }
+  }
+
+}

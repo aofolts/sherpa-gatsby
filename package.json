@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Andrew Folts <andrew@sherpadesign.co>",
   "dependencies": {
-    "@svgr/cli": "^3.1.0",
     "gatsby": "next",
     "gatsby-image": "next",
     "gatsby-link": "^2.0.4",

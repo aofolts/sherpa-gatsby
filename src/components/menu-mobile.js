@@ -1,51 +1,26 @@
-import React from 'react'
+import React,{Component} from 'react'
 import css from '../less/menu-mobile.module.less'
 import {Link} from 'gatsby'
-import {withHeaderContext} from './context-header'
+import {withHeaderContext} from './header'
+import MainMenu from './menu-main'
 
-const Menu = ({menuItems,isOpen}) => {
-  const items = menuItems.map((item,i) => {
+class MobileMenu extends Component {
+  render() {
     const {
-      title,
-      path
-    } = item
+      mobileMenuIsOpen
+    } = this.props.headerContext
 
     const classes = [
-      css.menuItem,
-      isOpen ? css.loadedMenuItem : null
+      css.mobileMenu,
+      mobileMenuIsOpen ? css.openMobileMenu : null
     ].join(' ')
 
     return (
-      <li key={title} className={classes}>
-        <Link to={path}>
-          {title}
-        </Link>
-      </li>
+      <div id='mobileMenu' className={classes}>
+        <MainMenu/>
+      </div>
     )
-  })
-
-  return (
-    <ul className={css.menu}>
-      {items}
-    </ul>
-  )
-}
-
-const MobileMenu = ({headerContext}) => {
-  const {
-    isOpen
-  } = headerContext
-
-  const classes = [
-    css.mobileMenu,
-    isOpen ? css.openMobileMenu : null
-  ].join(' ')
-
-  return (
-    <ul className={classes}>
-      <Menu {...headerContext}/>
-    </ul>
-  )
+  }
 }
 
 export default withHeaderContext(MobileMenu)

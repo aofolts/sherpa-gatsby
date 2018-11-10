@@ -1,0 +1,60 @@
+@import (reference) 'global.less';
+
+@media @minDesktop {
+
+  .toggle {
+    .hide;
+  }
+
+}
+
+@media @maxLaptop {
+
+  .toggle {
+    .h(var(--navHeight)); .w(@ms); .dsp(flex); .aic; .cur(pointer);
+  }
+  
+  .activeToggle {
+    .fixed; .r(var(--h)); .t; .z(2001);
+  
+    .bars {
+      .h(@barHeight);
+    }
+  
+    .topBar {
+      .trf(rotate(45deg));
+    }
+  
+    .middleBar {
+      .o(0);
+    }
+  
+    .bottomBar {
+      .trf(rotate(-45deg));
+    }
+  }
+  
+  @barHeight: 3px;
+  
+  .bars {
+    .w(@ms); .h(@barHeight * 6); .trn(height .2s ease-in-out);
+  }
+  
+  .topBar {
+    .t;
+  }
+  
+  .middleBar {
+    .t(50%); .trf(translateY(-50%));
+  }
+  
+  .bottomBar {
+    .b;
+  }
+  
+  .topBar, .middleBar, .bottomBar {
+    .w; .h(@barHeight); .bg(var(--color));
+    .abs; .l; .trn(transform .2s ease-in-out,opacity .2s ease-in-out);
+  }  
+
+}
