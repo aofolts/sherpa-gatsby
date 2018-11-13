@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
-import Wrap from '../components/wrap'
+
 import richText from '../less/rich-text.module.less'
 import {Helmet} from 'react-helmet'
 import css from '../less/single-work.module.less'
@@ -37,9 +37,9 @@ const TestimonialSection = ({author,quote}) => {
    if (quote !== `TK`) {
     return (
       <Section name='testimonial'>
-        <Wrap width='blog'>
+        <div className='wrapSmall'>
           <Testimonial {...{author,quote}}/>
-        </Wrap>
+        </div>
       </Section>
     )
    }
@@ -76,9 +76,9 @@ const SingleWork = ({data}) => {
       <Hero title={title} image={featuredImage.childImageSharp}/>
       <TestimonialSection {...testimonialData}/>
       <Section name='content' className={css.contentSection}>
-        <Wrap width='blog'>
+        <div className='wrapSmall'>
           <div className={richText.container} dangerouslySetInnerHTML={{__html: html}}/>
-        </Wrap>
+        </div>
       </Section>
     </Layout>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql,StaticQuery} from 'gatsby'
 import css from '../less/home.module.less'
 import Section from './section'
-import Wrap from './wrap'
+
 import BlogCard from './card-blog'
 
 const HomeJournalSection = ({posts}) => {
@@ -22,12 +22,12 @@ const HomeJournalSection = ({posts}) => {
 
   return (
     <Section name='journal' className={css.journalSection}>
-      <Wrap>
+      <div className='wrapMain'>
         <h2 className={css.journalSectionHeadline}>Latest Articles</h2>
         <div className='thirdsGrid'>
           {cards}
         </div>
-      </Wrap>
+      </div>
     </Section>
   )
 }

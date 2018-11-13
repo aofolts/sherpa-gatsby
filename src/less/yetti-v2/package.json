@@ -1,0 +1,11 @@
+{
+  "name": "yetti-v2",
+  "version": "1.0.0",
+  "description": "A Less.js library that makes CSS less hairy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Folts",
+  "license": "ISC"
+}

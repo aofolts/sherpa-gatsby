@@ -14,7 +14,8 @@ const Nav = ({
   const {
     isDocked,
     mobileMenuIsOpen,
-    toggleMobileMenu
+    toggleMobileMenu,
+    dockedPosition
   } = headerContext
 
   const {
@@ -22,11 +23,14 @@ const Nav = ({
     scrollDirection
   } = layoutContext
 
+  console.log(dockedPosition)
+
   const navClasses = [
     css.nav,
     isDocked ? css.dockedNav : css.scrollingNav,
     pageYOffset >= 400 ? css.transitionalNav : null,
-    scrollDirection === 'up' && pageYOffset > 800 ? css.scrollingVisibleNav : null
+    scrollDirection === 'up' && pageYOffset > 800 ? css.scrollingVisibleNav : null,
+    isDocked && dockedPosition === 'relative' ? css.relativeDockedNav : null
   ].join(' ')
 
   return (

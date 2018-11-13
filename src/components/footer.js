@@ -1,7 +1,7 @@
 import React from 'react'
 import css from '../less/footer.module.less'
 import Section from './section'
-import Wrap from './wrap'
+
 
 const ContactForm = () => {
 
@@ -56,10 +56,10 @@ const Footer = props => {
   return (
     <footer id='footer' className={css.footer}>
       <Section name='contact' className={css.contactSection}>
-        <Wrap width='small'>
+        <div className='wrapSmall'>
           <h2>Got a project in mind?</h2>
           <ContactForm/>
-        </Wrap>
+        </div>
       </Section>
       <FooterBar/>
     </footer>

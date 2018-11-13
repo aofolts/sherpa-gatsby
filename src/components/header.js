@@ -49,12 +49,17 @@ class Header extends Component {
   
   render() {
     const {
-      state
+      state,
+      props
     } = this
 
     const {
       isDocked
     } = this.state
+
+    const {
+      dockedPosition
+    } = props
 
     const headerClasses = [
       css.header,
@@ -63,7 +68,18 @@ class Header extends Component {
 
     const context = {
       ...this.state,
-      toggleMobileMenu: this.toggleMobileMenu
+      toggleMobileMenu: this.toggleMobileMenu,
+      dockedPosition
+    }
+
+    console.log(this.props.dockedPosition)
+
+    const Shim = () => {
+      if (this.props.dockedPosition === 'relative') {
+        return <div className={css.headerShim}/>
+      }
+
+      return null
     }
 
     return (
@@ -71,6 +87,7 @@ class Header extends Component {
         <header className={headerClasses}>
           <Nav/>
         </header>
+        <Shim/>
       </HeaderContext.Provider>
     )
   }

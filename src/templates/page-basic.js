@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
-import Wrap from '../components/wrap'
+
 import {Helmet} from 'react-helmet'
 
 const Page = ({data}) => {
@@ -29,9 +29,9 @@ const Page = ({data}) => {
         <meta name='description' content={seo.description}/>
       </Helmet>
       <Hero title={title} image={featuredImage.childImageSharp}/>
-      <Wrap width='blog'>
+      <div className='wrapSmall'>
         <div className='longformContent' dangerouslySetInnerHTML={{__html: html}}/>
-      </Wrap>
+      </div>
     </Layout>
   )
 }

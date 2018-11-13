@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 const Buttons = () => {
   const data = [
     {
-      label: 'Start Yours',
+      label: 'Plan Yours',
       link: '/get-started'
     },
     {
@@ -65,7 +65,7 @@ const HomeHero = props => {
       <Background {...heroImage}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
-          <h1 className={css.headline}>Every Small Businesses Needs a Hard-Working Website™</h1>
+          <h1 className={css.headline}>Every Small Business Needs a Hard-Working Website™</h1>
           <Buttons/>
         </div>
       </div>

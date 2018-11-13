@@ -1,5 +1,5 @@
 @import (reference) 'reference.less';
-@import '../../node_modules/yetti/global.less';
+@import 'yetti-v2/global.less';
 
 ////////////////////////////////////////////////////////
 // APPEARENCE
@@ -12,6 +12,14 @@
     thin: 2px;
     medium: 4px;
   }
+}
+
+////////////////////////////////////////////////////////
+// BODY
+////////////////////////////////////////////////////////
+
+:root {
+  --headerDockedHeight: @l;
 }
 
 ////////////////////////////////////////////////////////
@@ -58,13 +66,88 @@
 @prime: @green;
 @accent: @blue;
 
-@black: mix(#444,@green,95%);
+@black: mix(#333,@green,95%);
 @darkGrey: @black;
 @lightGrey: #f6f6f6;
 @mediumLightGrey: darken(@lightGrey,5%);
 @fadedWhite: fade(white,90%);
 
 @darkerGrey: darken(@darkGrey,5%);
+
+////////////////////////////////////////////////////////
+// CONTAINERS
+////////////////////////////////////////////////////////
+
+.wrapMain {
+  .wrap(
+    @span: 10
+  );
+}
+
+.wrapSmall {
+  .wrap(
+    @span: 7
+  )
+}
+
+html {
+  --paddingVertical: 10rem;
+
+  @media @phone {
+    --paddingVertical: 5rem;
+  }
+}
+
+// // Move to yetti
+.wrap(
+  @span: 12,
+  @padding: horizontal,
+  @margin: vertical,
+  @align: center
+) {
+  @mainWidth: 130rem;
+  @columnWidth: 130rem / 12;
+
+  max-width: 100%;
+  width: @span * @columnWidth;
+
+  & when (@padding = default) {
+    .padding.default;
+  }
+
+  & when (@align = center) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & when (@align = left) {
+    margin-right: auto;
+    margin-left: @offset;
+  }
+
+  & when (@align = right) {
+    margin-left: auto;
+  }
+
+  & when (@margin = vertical) {
+    margin-top: var(--paddingVertical);
+    margin-bottom: var(--paddingVertical);
+  }
+}
+
+////////////////////////////////////////////////////////
+// GRID
+////////////////////////////////////////////////////////
+
+// Move to yetti
+.padding() {
+  horizontal: var(--horizontalPadding);
+  vertical:   var(--verticalPadding);
+
+  .default() {
+    padding: 0 var(--horizontalPadding);
+  }
+}
 
 ////////////////////////////////////////////////////////
 // HEADINGS

@@ -3,7 +3,8 @@
 @navHeight: var(--navHeight);
 
 .nav {
-  --navHeight: 10rem; .t;
+  --navHeight: 10rem;
+  .t;
   .h(var(--navHeight)); .pad(0 var(--h));
   .flex; .aic; .jcsb; .rel;
 }
@@ -29,12 +30,16 @@
   .bg(transparent);
 }
 
+.relativeDockedNav {
+  --color: @darkGrey;
+}
+
 ////////////////////////////////////////////////////////
 // SCROLLING NAV
 ////////////////////////////////////////////////////////
 
 .scrollingNav {
-  --navHeight: 8rem; .t(calc(var(--navHeight) ~'*' -1));
+  --navHeight: 9rem; .t(calc(var(--navHeight) ~'*' -1));
   .bg(white); .bdb(.border.weight[thin] @mediumLightGrey);
 }
 

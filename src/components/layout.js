@@ -52,8 +52,13 @@ class Layout extends Component {
 
   render() {
     const {
-      children
+      children,
+      hasHero
     } = this.props
+
+    const headerProps = {
+      dockedPosition: hasHero === false ? 'relative' : null
+    }
 
     return (
       <LayoutContext.Provider value={this.state}>
@@ -63,7 +68,7 @@ class Layout extends Component {
             <link rel='shortcut icon' type='image/png' href={favicon}/>
             <link rel="stylesheet" href="https://use.typekit.net/dxm1wgv.css"></link>
           </Helmet>
-          <Header/>
+          <Header {...headerProps}/>
           {children}
           <Footer/>
         </div>

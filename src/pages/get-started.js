@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero-secondary'
-import Wrap from '../components/wrap'
+
 import Section from '../components/section'
 import css from '../less/packages.module.less'
 import {Helmet} from 'react-helmet'
@@ -42,11 +42,11 @@ const Intro = ({packages,activePackage,setActivePackageById}) => {
 
   return (
     <Section name='intro'>
-      <Wrap width='small'>
+      <div className='wrapSmall'>
         <h2>Websites For Any Business</h2>
         <p>Whether you're considering your first website or planning a complex project, I can help, with packages designed to help you grow online.</p>
         <Nav/>
-      </Wrap>
+      </div>
     </Section>
   )
 }
@@ -64,14 +64,14 @@ const PackagesSection = ({packages,activePackage}) => {
     ].join(' ')
 
     return (
-      <Wrap key={id} width='small' className={wrapClasses}>
+      <div key={id} className={[wrapClasses,'wrapMain'].join(' ')}>
         <div className={css.package.intro}>
           <img srcSet={icon} alt={`${title} Package Icon`} className={css.packageIcon}/>
           <h2>{title}</h2>
           <p>Use Cases: {useCase}</p>
         </div>
         <RichText html={html} wrapClassName={css.package.mainContent}/>
-      </Wrap>
+      </div>
     )
   })
 

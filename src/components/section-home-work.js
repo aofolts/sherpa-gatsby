@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link,graphql,StaticQuery} from 'gatsby'
 import Section from './section'
-import Wrap from './wrap'
 import pattern from '../images/pattern-abstract-shapes.svg'
 import {Testimonial} from '../templates/single-work'
 import css from '../less/home-section-work.module.less'
@@ -13,7 +12,7 @@ const HomeWorkSection = ({title,excerpt,path,testimonial}) => {
         className={css.background}
         style={{backgroundImage: `url(${pattern})`}}
       />
-      <Wrap width='small'>
+      <div className='wrapSmall'>
         <article>
           <Link to={path}>
             <div className={css.content}>
@@ -29,7 +28,7 @@ const HomeWorkSection = ({title,excerpt,path,testimonial}) => {
             </div>
           </Link>
         </article>
-      </Wrap>
+      </div>
     </Section>
   )
 }

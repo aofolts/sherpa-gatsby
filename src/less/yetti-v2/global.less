@@ -1,0 +1,243 @@
+@import (reference) 'reference.less';
+@import 'reset.less';
+
+@import 'glossary.less';
+
+////////////////////////////////////////////////////////
+// APPEARANCE
+////////////////////////////////////////////////////////
+
+@stroke: 2px;
+
+/////////////////////////////////////////////////////////////////////
+// COLORS (clr)
+/////////////////////////////////////////////////////////////////////
+
+@prime:  blue; // Primary Coloy
+@accent: green; // Accent Color
+@black: #333;
+
+/////////////////////////////////////////////////////////////////////
+// SCREENS (scn)
+/////////////////////////////////////////////////////////////////////
+
+@phoneMax: 480px;
+@tabletMin: 481px;
+@tabletMax: 767px;
+@laptopMin: 768px;
+@laptopMax: 1280px;
+@desktopMin: 1281px;
+
+
+@phone:  ~'screen and (max-width: @{phoneMax})';
+@tablet:  ~'screen and (min-width: @{tabletMin}) and (max-width: @{tabletMax})';
+@laptop:  ~'screen and (min-width: @{laptopMin}) and (max-width: @{laptopMax})';
+@desktop: ~'screen and (min-width: @{desktopMin})';
+
+@minLaptop: ~'screen and (min-width:@{laptopMin})';
+@minTablet: ~'screen and (min-width:@{tabletMin})';
+@maxTablet: ~'screen and (max-width:@{tabletMax})';
+@maxLaptop: ~'screen and (max-width:@{laptopMax})';
+@minDesktop : ~'screen and (min-width:@{desktopMin})';
+
+////////////////////////////////////////////////////////
+// SIZES
+////////////////////////////////////////////////////////
+
+@xxs: 1rem;
+@xs: 1.5rem;
+@s: 2.5rem;
+@ms: 3rem;
+@m: 5rem;
+@ml: 7rem;
+@l: 9rem;
+@xl: 12rem;
+
+@blog: 700px;
+@main: 1400px;
+
+////////////////////////////////////////////////////////
+// CARDS
+////////////////////////////////////////////////////////
+
+@cardHover: {
+  .trf(scale(1.05));
+};
+
+////////////////////////////////////////////////////////
+// HEADINGS
+////////////////////////////////////////////////////////
+
+@headingColor: @black;
+
+@h1: 6.5rem;
+
+h1 {
+  .fs(@h1); .mb(.5em);
+
+  @media @phone {
+    .fs(@h2);
+  }
+}
+
+@h2: 4rem;
+
+h2 {
+  .fs(@h2); 
+  .mb(.5em);
+}
+
+@h3: 3rem;
+
+h3 {
+  .fs(@h3);
+  .mb(.5em);
+}
+
+@h5: @p;
+
+h5 {
+  .fs(@h5);
+  .mb(.5em);
+}
+
+////////////////////////////////////////////////////////
+// LINKS
+////////////////////////////////////////////////////////
+
+@textLink: {
+  .txd(underline);
+};
+
+.textLink {
+  @textLink();
+}
+
+////////////////////////////////////////////////////////
+// PARAGRAPHS (prg)
+////////////////////////////////////////////////////////
+
+@paragraphColor: @color;
+@c: @paragraphColor;
+
+@paragraphOpacity: 95%;
+
+@paragraphFontSize: 2.3rem;
+@p: @paragraphFontSize;
+
+////////////////////////////////////////////////////////
+// REM SIZES (rms)
+////////////////////////////////////////////////////////
+
+:root {
+  --v: 10rem;
+  --h: @m;
+}
+
+body {
+  .fs(@p); .fw(300);
+}
+
+@media @desktop {html {.fs(10px);}}
+@media @laptop  {html {.fs(9px);}}
+@media @tablet  {html {.fs(8px);}}
+
+@media @phone  {
+  html {.fs(8px);}
+
+  :root {
+    --v: 6rem;
+    --h: @s;
+  }
+}
+
+////////////////////////////////////////////////////////
+// RICH CONTENT CONTENT
+////////////////////////////////////////////////////////
+
+.richText() {
+  > :first-child {
+    .mt(0);
+  }
+
+  img {
+    .w; .mw(@main); .mar(0 auto @m);
+  }
+
+  // Block Quotes
+
+  blockquote {
+    .ml(@lineHeight / 2); .fs(@p * 1.25); .fst(italic); .o(.5);
+  }
+
+  // Lists
+
+  li {
+    .mb(@lineHeight * .5);
+  }
+
+  ul {
+
+    li {
+      .ml(@lineHeight);
+      .lst(disc);
+    }
+  }
+
+  ol {
+    li {
+      .ml(@lineHeight / 2);
+    }
+  }
+
+  h2,h3,h4,h5,h6 {
+    .mt(@lineHeight);
+  }
+};
+
+////////////////////////////////////////////////////////
+// MEDIA
+////////////////////////////////////////////////////////
+
+@mediaBackground: {
+  .wh; .obf; .abs; .t; .l;
+};
+
+.mediaBackground {
+  @mediaBackground();
+}
+
+////////////////////////////////////////////////////////
+// SIZES
+////////////////////////////////////////////////////////
+
+@ratio: 1.618;
+@goldenRatio: 1.618;
+
+////////////////////////////////////////////////////////
+// TYPE
+////////////////////////////////////////////////////////
+
+@lineHeight: 1.25em;
+@fontFamily: 'Arial',sans-serif;
+@fontWeight: 400;
+@color: @black;
+@marginBottom: 1.4em;
+
+@light: 300;
+@regular: 400;
+@medium: 500;
+@bold: 600;
+@heavy: 700;
+
+body {
+  .ff(@fontFamily);
+  .lh(@lineHeight);
+  .c(@color);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+strong,bold {
+  .fw(@bold);
+}

@@ -3,7 +3,7 @@ import {Link} from 'gatsby'
 import Hero from '../components/hero-home'
 import Layout from '../components/layout'
 import Section from '../components/section'
-import Wrap from '../components/wrap'
+
 import WorkSection from '../components/section-home-work'
 import JournalSection from '../components/section-home-journal'
 import {Helmet} from 'react-helmet'
@@ -16,10 +16,10 @@ import css from '../less/home.module.less'
 const Intro = props => {
   return (
     <Section name='intro' className={css.intro}>
-      <Wrap width='small'>
+      <div className='wrapSmall'>
         <h2>Hi there, I'm Andrew.</h2>
         <p>I’m a Rochester, New York-based freelance <Link to='/about'>web designer</Link> and developer who works one-on-one with business owners to plan, build, and manage high-performing websites.</p>
-      </Wrap>
+      </div>
     </Section>
   )
 }
@@ -60,11 +60,11 @@ const Services = props => {
 
   return (
     <Section name='services' className={css.servicesSection}>
-      <Wrap>
+      <div className='wrapMain'>
         <div className={gridClasses}>
           {items}
         </div>
-      </Wrap>
+      </div>
     </Section>
   )
 }

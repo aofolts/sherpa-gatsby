@@ -1,0 +1,105 @@
+@import (reference) 'vars.less';
+
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 10px;
+  .pad(0); .mar(0); .mt(0px ~'!important');
+}
+
+////////////////////////////////////////////////////////
+// LISTS
+////////////////////////////////////////////////////////
+
+li {
+  .lh(inherit);
+}
+
+////////////////////////////////////////////////////////
+// TYPE
+////////////////////////////////////////////////////////
+
+h1,h2,h3,h4,h5,h6,p,.p2 {
+  .lh(@lineHeight);
+}
+
+h1,h2,h3,h4,h5,p,hr,img {.rel; .mt(0);}
+
+p,.p2 {
+  .lh(@lineHeight); .fw(inherit);
+}
+
+header, body, hr {.pad(0); .mar(0);}
+
+div,nav,blockquote {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {text-decoration:none; .c(inherit);}
+
+button {.ap(none); .bd(none);}
+
+ul {.lst(none);}
+ul {appearance:none;}
+
+ div,article,ul,li,a,textarea,div,section,button,
+ footer,header,input,figure {
+   .rel; .pad(0); .mar(0); box-sizing: border-box; .ff(inherit);
+ }
+
+ section {.of(hidden);}
+
+ q {display:block;}
+
+ div,ul {&::-webkit-scrollbar {.w(0);}}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/////////////////////////////////////////////////////////////////////
+// MEDIA (mdi)
+/////////////////////////////////////////////////////////////////////
+
+iframe {
+  .bd(0);
+}
+
+/////////////////////////////////////////////////////////////////////
+// SELECT (slc)
+/////////////////////////////////////////////////////////////////////
+
+select {
+  .br(0px);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+/////////////////////////////////////////////////////////////////////
+// INPUT (npt)
+/////////////////////////////////////////////////////////////////////
+
+input,textarea {
+  .ff(inherit);
+  &::placeholder {.o(.75); .c(inherit);}
+  &:focus {
+    &::placeholder {.o(.4);}
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[contenteditable]:focus,summary:focus {
+  outline: 0px solid transparent;
+}
+
+/////////////////////////////////////////////////////////////////////
+// SUMMARY (smm)
+/////////////////////////////////////////////////////////////////////
+
+summary {.cur(pointer);}
