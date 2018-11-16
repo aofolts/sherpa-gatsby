@@ -1,31 +1,44 @@
 @import (reference) 'global.less';
 
 .button {
-  .fs(@p2); .ttf(uppercase); .ib; .lh(1em);
-  .pad(1.1em 1.5em 1em); .br(1000px); .fw(@bold);
+  font-size: .paragraph[font-size];
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: .paragraph[line-height];
+  padding: 1.1em 1.5em 1em;
+  border-radius: 1000px;
+  font-weight: .paragraph.bold[font-weight];
 
   &:hover {
     &:after {
-      .cnt(' →');
+      content: ' →';
     }
   }
 
-  @media @phone {
-    .dsp(block); .ta(center);
+  @media .query.phone.rule[default] {
+    display: block; 
+    text-align: center;
   }
 }
 
 .primaryLightButton {
   &:extend(.button all);
-  .bg(white); .c(@prime);
+
+  background: white;
+  color: white; 
+  color: .color[primary];
 }
 
 .primaryButton {
   &:extend(.button all);
-  .bg(@prime); .c(white);
+
+  background: .color[primary];
+  color: white;
 }
 
 .secondaryLightButton {
   &:extend(.button all);
-  .bdc(white); .c(white);
+
+  border-color: white;
+  color: white;
 }

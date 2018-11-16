@@ -1,26 +1,35 @@
 @import (reference) 'global.less';
 
 .page {
-  .fixed; .wh; .bg(@lightGrey); 
-  .flex; .aic; .jc(center); .pad(@s);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: .color[lightGrey];
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .padding[small];
 }
 
 .container {
-  .bg(white); .w(@blog); .mw;
+  color: white; 
+  width: .wrap.article[width];
+  max-width: 100%;
 }
 
 .media {
-  .pb(50%);
+  padding-bottom: 50%;
 }
 
 .gif {
-  .w;
+  width: 100%;
 }
 
 .content {
-  .pad(@m var(--h)); .ta(center);
+  padding: .padding[medium] var(--h);
+  text-align: center;
 }
 
 .headline {
-  .fs(@h2);
+  font-size: .heading.secondary[font-size];
 }

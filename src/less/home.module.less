@@ -1,11 +1,11 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 ////////////////////////////////////////////////////////
 // INTRO
 ////////////////////////////////////////////////////////
 
 .intro {
-  .ta(center);
+  text-align: center;
 }
 
 ////////////////////////////////////////////////////////
@@ -13,17 +13,19 @@
 ////////////////////////////////////////////////////////
 
 .servicesSection {
-  .bg(@lightGrey);
+  background: .color[lightGrey];
 }
 
 .service {
   &Card {
-    .block; .center;
+    display: block;
+    text-align: center;
   }
 }
 
 .serviceIcon {
-  .h(@l); .mb(@ms);
+  height: .padding[large];
+  margin-bottom: .padding[small];
 }
 
 ////////////////////////////////////////////////////////
@@ -31,9 +33,10 @@
 ////////////////////////////////////////////////////////
 
 .journalSection {
-  .bg(@lightGrey);
+  background: .color[lightGrey];
 }
 
 .journalSectionHeadline {
-  .mb(@ml); .center;
+  margin-bottom: .padding[mediumLarge];
+  text-align: center;
 }

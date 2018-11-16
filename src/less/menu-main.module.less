@@ -1,38 +1,42 @@
 @import (reference) 'global.less';
 
-@media @minDesktop {
+@media .query.desktop.rule[default] {
 
   .menuItem {
-    .ib; .c(var(--color)); .va(middle);
+    display: inline-block;
+    color: var(--color);
+    vertical-align: middle;
 
     &:hover {
       &:after {
-        .w;
+        width: 100%;
       }
     }
 
     & + .menuItem {
-      .ml(@m);
+      margin-left: .padding[medium];
     }
   }
 
   .menuItemTitle {
-    .lh(var(--navheight));
+    line-height: var(--navheight);
   }
 
 }
 
-@media @maxLaptop {
+@media .query.desktop.rule[below] {
 
   .mainMenu {
-    .ta(center); .c(white);
+    text-align: center;
+    color: white;
   }
 
   .menuItem {
-    .fs(@h2); .fw(500);
+    font-size: .heading.secondary[font-size];
+    font-weight: .heading.secondary[font-weight];
 
     & + .menuItem {
-      .mt(@m);
+      margin-top: .padding[medium];
     }
   }
 

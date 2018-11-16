@@ -1,7 +1,9 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 .card {
-  .bg(white); .br(@xxs); .of(hidden);
+  color: white;
+  border-radius: .padding[smallest];
+  overflow: hidden;
 
   &:hover {
     @cardHover();
@@ -9,41 +11,49 @@
 }
 
 .media {
-  .pb(56.25%);
+  padding-bottom: 56.25%;
 }
 
 .content {
-  .pad(@s);
+  padding: .padding[small];
 }
 
 .title {
-  .fs(@h5);
+  font-size: .card.headline[font-size];
 }
 
 .readMore {
-  .fw(@bold);
+  font-weight: .paragraph.bold[font-weight];
 }
 
 .browserBar {
-  .pl(@xs); .h(@xs * 2.25); .bg(@mediumLightGrey); .flex; .aic;
+  padding-left: .padding[extraSmall];
+  height: .padding[extraSmall] * 2.25;
+  background: .color[mediumlightGrey];
+  display: flex;
+  align-items: center;
 }
 
 .browserIcon {
-  .wh(@xs); .br(1000px); .of(hidden); .ib;
+  width: 100%;
+  height: 100%;
+  border-radius: 1000px;
+  overflow: hidden;
+  display: inline-block;
 
   & + .browserIcon {
-    .ml(@xs /2);
+    margin-left: .padding[extraSmall] / 2;
   }
 }
 
 .browserCloseIcon {
-  .bg(#ff6058);
+  background: #ff6058;
 }
 
 .browserMinimizeIcon {
-  .bg(#ffbd2e);
+  background: #ffbd2e;
 }
 
 .browserMaximizeIcon {
-  .bg(#29cc41);
+  background: #29cc41;
 }

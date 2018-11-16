@@ -1,60 +1,73 @@
 @import (reference) 'global.less';
 
-@media @minDesktop {
+@media .query.desktop.rule[default] {
 
   .toggle {
-    .hide;
+    display: none;
   }
 
 }
 
-@media @maxLaptop {
+@media .query.desktop.rule[below] {
 
   .toggle {
-    .h(var(--navHeight)); .w(@ms); .dsp(flex); .aic; .cur(pointer);
+    height: --navHeight;
+    width: .padding[smallest];
+    display: flex;
+    align-items: center;cursor: pointer;
   }
   
   .activeToggle {
-    .fixed; .r(var(--h)); .t; .z(2001);
+    position: fixed;
+    right: var(--paddingHorizontal);
+    top: 0;
+    z-index: 20001;
   
     .bars {
-      .h(@barHeight);
+      height: @barHeight;
     }
   
     .topBar {
-      .trf(rotate(45deg));
+      transform: rotate(45deg);
     }
   
     .middleBar {
-      .o(0);
+      opacity: 0;
     }
   
     .bottomBar {
-      .trf(rotate(-45deg));
+      transform: rotate(-45deg);
     }
   }
   
   @barHeight: 3px;
   
   .bars {
-    .w(@ms); .h(@barHeight * 6); .trn(height .2s ease-in-out);
+    width: .padding[smallest];
+    height: @barHeight * 6;
+    transition: height .2s ease-in-out;
   }
   
   .topBar {
-    .t;
+    top: 0;
   }
   
   .middleBar {
-    .t(50%); .trf(translateY(-50%));
+    text-align: 50%;
+    transform: translateY(-50%);
   }
   
   .bottomBar {
-    .b;
+    bottom: 0;
   }
   
   .topBar, .middleBar, .bottomBar {
-    .w; .h(@barHeight); .bg(var(--color));
-    .abs; .l; .trn(transform .2s ease-in-out,opacity .2s ease-in-out);
+    width: 100%;
+    height: @barHeight;
+    background: var(--color);
+    position: absolute;
+    left: 0;
+    transition: transform .2s ease-in-out,opacity .2s ease-in-out;
   }  
 
 }

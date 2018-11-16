@@ -1,13 +1,17 @@
 @import (reference) 'global.less';
 
 .intro {
-  .center;
+  text-align: center;
 }
 
 .mainContent {
 
   &:before {
-    .cnt; .w(@l); .h(@bd); .bg(@mediumLightGrey); .mar(@m auto);
-    .block;
+    content: '';
+    width: .padding[large];
+    height: .border.weight[default];
+    background: .color[mediumlightGrey];
+    margin: .padding[medium] auto;
+    display: block;
   }
 }

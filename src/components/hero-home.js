@@ -65,7 +65,7 @@ const HomeHero = props => {
       <Background {...heroImage}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
-          <h1 className={css.headline}>Every Small Business Needs a Hard-Working Website™</h1>
+          <h1 className={css.headline}>I Help Small Businesses Build Hard-Working Websites™</h1>
           <Buttons/>
         </div>
       </div>

@@ -1,40 +1,50 @@
 @import (reference) 'global.less';
 
 .hero {
-  .h(80rem); .mh(80vh);
-  .bg(@prime);
+  height: 80rem;
+  max-height: 100%;
+  background: .color[primary];
 
-  @media @phone {
-    .mh(100vh);
+  @media .query.phone.rule[default] {
+    max-height: 100vh;
   }
 }
 
 .contentContainer {
-  .wh; .flex; .aic; .jc(center);
-  .pad(var(--v) var(--h));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .padding.default;
 }
 
 .content {
-  .w(100rem); .mw; .c(white);
+  width: 100rem;
+  max-width: 100%;
+  color: white;
 }
 
 .button1 {
-   .c(white); .bg(@prime);
+  color: white;
+  background: .color[primary];
 }
 
 .button2 {
-  .c(white); .bd(@bd solid white);
+  color: white;
+  border: .border.weight[default] solid white;
 
-  @media @minTablet {
-    .ml(@s);
+  @media .query.phone.rule[above] {
+    margin-left: .padding[small];
   }
 
-  @media @phone {
-    .mt(@s);
+  @media .query.phone.rule[default] {
+    margin-top: .padding[small];
   }
 }
 
 .background {
-  .z(0); .pos(absolute ~'!important');
-  .flt(brightness(80%));
+  z-index: 0;
+  position: absolute ~'!important';
+  filter: brightness(80%);
 }

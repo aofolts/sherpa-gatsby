@@ -1,25 +1,34 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 @navHeight: var(--navHeight);
 
 .nav {
   --navHeight: 10rem;
-  .t;
-  .h(var(--navHeight)); .pad(0 var(--h));
-  .flex; .aic; .jcsb; .rel;
+  top: 0;
+  height: var(--navHeight);
+  padding: 0 var(--h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
 .brand {
-  .dsp(flex); .aic;
+  display: flex;
+  align-items: center;
 }
 
 .brandName {
-  .c(var(--color)); .fs(3.5rem); .ls(-.05em); .fw(400);
-  .ml(@xs);
+  color: var(--color);
+  font-size: 3.5rem;
+  letter-spacing: -.05em;
+  font-weight: 500;
+  margin-left: .padding[extraSmall];
 }
 
 .brandLogo {
-  .h(calc(var(--navHeight) ~'*' .55)); fill: white;
+  height: calc(var(--navHeight) ~'*' .55);
+  fill: white;
 }
 
 ////////////////////////////////////////////////////////
@@ -27,11 +36,11 @@
 ////////////////////////////////////////////////////////
 
 .dockedNav {
-  .bg(transparent);
+  background: transparent;
 }
 
 .relativeDockedNav {
-  --color: @darkGrey;
+  --color: .color[black];
 }
 
 ////////////////////////////////////////////////////////
@@ -39,14 +48,17 @@
 ////////////////////////////////////////////////////////
 
 .scrollingNav {
-  --navHeight: 9rem; .t(calc(var(--navHeight) ~'*' -1));
-  .bg(white); .bdb(.border.weight[thin] @mediumLightGrey);
+  --navHeight: 9rem; 
+  top: calc(var(--navHeight) ~'*' -1);
+  color: white; 
+  border-bottom: .border.weight[thin] @mediumlightGrey;
 }
 
 .transitionalNav {
-  .trn(top .2s ease-in-out);
+  transition: top .2s ease-in-out;
 }
 
 .scrollingVisibleNav {
-  .t; .bxs(0,0,@s,0,rgba(0,0,0,.1));
+  top: 0;
+  box-shadow: 0,0,.padding[small],0,rgba(0,0,0,.1);
 }

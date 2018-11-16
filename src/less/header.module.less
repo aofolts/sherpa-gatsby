@@ -1,23 +1,27 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 .header {
-  .abs; .w; .z(1000); .trn(background .2s linear);
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  transition: background .2s linear;
 }
 
 .headerShim {
-  .h(var(--headerDockedHeight));
+  height: var(--headerDockedHeight);
 }
 
 .dockedHeader {
-  .abs;
+  position: absolute;
 }
 
 .dockedRelativeHeader {
-  .rel;
+  position: relative;
 }
 
 .siteName {
-  .fs(3.5rem); .c(white);
+  font-size: 3.5rem;
+  color: white;
 }
 
 .dockedHeader {
@@ -25,6 +29,6 @@
 }
 
 .scrollingHeader {
-  .fixed;
-  --color: @darkGrey;
+  position: fixed;
+  --color: .color[black];
 }

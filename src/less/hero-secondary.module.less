@@ -1,24 +1,33 @@
 @import (reference) 'global.less';
 
 .hero {
-  .h(55rem); .mh(80vh);
-  .bg(@prime);
+  height: 55rem;
+  max-height: 100%;
+  background: .color[primary];
 }
 
 .contentContainer {
-  .wh; .flex; .aic; .jc(center);
-  .pad(var(--h) var(--v));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .padding.default;
 }
 
 .content {
-  .w(100rem); .mw; .c(white); .ta(center);
+  width: 100rem;
+  max-width: 100%;
+  color: white;
+  text-align: center;
 }
 
 .headline {
- .mb(0);
+  margin-bottom: 0;
 }
 
 .background {
-  .z(0); .pos(absolute ~'!important');
-  .flt(brightness(66%));
+  z-index: 0;
+  position: absolute ~'!important';
+  filter: brightness(66%);
 }

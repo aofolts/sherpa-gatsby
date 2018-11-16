@@ -1,36 +1,47 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 .contactSection {
-  .bg(@darkGrey); .c(white); .ta(center);
+  background: .color[black];
+  color: white;
+  text-align: center;
 }
 
 .contactForm {
-  .fs(@p);
+  font-size: .paragraph[font-size];
 }
 
 .field {
   &+.field {
-    .mt(@s);
+    margin-top: .padding[small];
   }
 }
 
 .input,.textarea {
-  .bd(none); .bdb(@bd solid fade(white,10%)); .bg(none); 
-  .w; .fs(@p); .c(white); .fw(@fontWeight); .lh(3em);
+  border: none;
+  border-bottom: .border.weight[default] solid fade(white,10%);
+  background: none;
+  width: 100%;
+  font-size: .paragraph[font-size];
+  color: white;
+  font-weight: .paragraph[font-weight];
+  line-height: 3em;
 
   &:focus {
-    .ot(none);
+    outline: none;
   }
 }
 
 .submit {
-  .mt(@m);
+  margin-top: .padding[medium];
 }
 
 .bar {
-  .flex; .aic; .c(@fadedWhite); .bg(@darkerGrey); .pad(@s);
+  display: flex;
+  align-items: center;
+  color: .color[fadedWhite];
+  padding: .padding[small];
 }
 
 .barCopyright {
-  .fs(@p2);
+  font-size: .paragraph.secondary[font-size];
 }

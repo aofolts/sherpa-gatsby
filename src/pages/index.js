@@ -3,7 +3,6 @@ import {Link} from 'gatsby'
 import Hero from '../components/hero-home'
 import Layout from '../components/layout'
 import Section from '../components/section'
-
 import WorkSection from '../components/section-home-work'
 import JournalSection from '../components/section-home-journal'
 import {Helmet} from 'react-helmet'
@@ -18,7 +17,7 @@ const Intro = props => {
     <Section name='intro' className={css.intro}>
       <div className='wrapSmall'>
         <h2>Hi there, I'm Andrew.</h2>
-        <p>I’m a Rochester, New York-based freelance <Link to='/about'>web designer</Link> and developer who works one-on-one with business owners to plan, build, and manage high-performing websites.</p>
+        <p>I’m a Rochester, New York-based <Link to='/about'>web designer</Link>, developer, and strategist who works one-on-one with business owners to plan, build, and manage high-performing websites.</p>
       </div>
     </Section>
   )

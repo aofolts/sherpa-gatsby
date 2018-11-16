@@ -1,7 +1,7 @@
-@import (reference) 'reference.less';
+@import (reference) 'global.less';
 
 .card {
-  .bg(white);
+  color: white;
 
   &:hover {
     @cardHover();
@@ -9,17 +9,17 @@
 }
 
 .media {
-  .pb(56.25%);
+  padding-bottom: 56.25%;
 }
 
 .content {
-  .pad(@s);
+  padding: .padding[small];
 }
 
 .title {
-  .fs(@h5);
+  font-size: .card.headline[font-size];
 }
 
 .readMore {
-  .fw(@bold);
+  font-weight: .paragraph.bold[font-weight];
 }

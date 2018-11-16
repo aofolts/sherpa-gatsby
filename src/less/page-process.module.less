@@ -1,19 +1,48 @@
 @import (reference) 'global.less';
 
+.mainWrap {
+  width: .wrap.main[width];
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .introContent {
-  .mw(100rem);
+  max-width: 100rem;
 }
 
 .introCopy {
-  .mw(@blog);
+  max-width: .wrap.article[width];
 }
 
 ////////////////////////////////////////////////////////
 // STAGES
 ////////////////////////////////////////////////////////
 
+.stages {
+  .wrap(
+    @span: 10,
+    @padding: none,
+    @margin: none
+  )
+}
 
+.stageMedia {
+  margin-bottom: .padding[small];
+  padding-bottom: 50%;
+}
 
 .stage {
   list-style-type: none;
+  .wrap(
+    @span: 10
+  );
+}
+
+.stageContent {
+  .wrap(
+    @span: 5,
+    @padding: none,
+    @margin: none,
+    @align: none
+  )
 }

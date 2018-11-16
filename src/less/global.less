@@ -1,5 +1,5 @@
-@import (reference) 'reference.less';
-@import 'yetti-v2/global.less';
+@import (reference) 'global.less';
+@import 'yetti/global.less';
 
 ////////////////////////////////////////////////////////
 // APPEARENCE
@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////
 
 :root {
-  --headerDockedHeight: @l;
+  --headerDockedHeight: l;
 }
 
 ////////////////////////////////////////////////////////
@@ -27,52 +27,76 @@
 ////////////////////////////////////////////////////////
 
 .button {
-  .fs(@p2); .ls(.05em); .ttf(uppercase); .ib; .lh(1em);
-  .pad(1.1em 1.5em); .br(1000px); .fw(@bold);
+  font-size: .paragraph.secondary[font-size];
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 1.1em 1.5em;
+  font-weight: .paragraph.bold[font-weight];
 
   &:hover {
     &:after {
-      .cnt(' →');
+      content: ' →';
     }
   }
 
-  @media @phone {
-    .dsp(block); .ta(center);
+  @media .query.phone.rule[default] {
+    display: block; 
+    text-align: center;
   }
 }
 
 .primaryLightButton {
   &:extend(.button all);
-  .bg(white); .c(@prime);
+
+  color: .color[primary];
 }
 
 .primaryButton {
   &:extend(.button all);
-  .bg(@prime); .c(white);
+  background: .color[primary]; 
+  color: white;
 }
 
 .secondaryLightButton {
   &:extend(.button all);
-  .bdc(white); .c(white);
+  border-color: white;
+  color: white;
+}
+
+////////////////////////////////////////////////////////
+// CARDS
+////////////////////////////////////////////////////////
+
+.card() {
+  .headline() {
+    font-size: .paragraph[font-size];
+    font-weight: .paragraph.bold[font-weight];
+  }
+}
+
+@cardHover: {
+  transform: scale(1.01);
 }
 
 ////////////////////////////////////////////////////////
 // COLORS
 ////////////////////////////////////////////////////////
 
-@green: #35D49D;
-@blue: #465C96;
-
-@prime: @green;
-@accent: @blue;
-
-@black: mix(#333,@green,95%);
-@darkGrey: @black;
 @lightGrey: #f6f6f6;
-@mediumLightGrey: darken(@lightGrey,5%);
-@fadedWhite: fade(white,90%);
+@mediumlightGrey: darken(@lightGrey,5%);
 
-@darkerGrey: darken(@darkGrey,5%);
+.color() {
+  primary: #35D49D;
+  accent: #465C96;
+
+  green: #35D49D;
+  blue: #465C96;
+
+  black: #333;
+  lightGrey: #f6f6f6;
+  mediumlightGrey: @mediumlightGrey;
+  fadedWhite: fade(white,90%);
+}
 
 ////////////////////////////////////////////////////////
 // CONTAINERS
@@ -93,7 +117,7 @@
 html {
   --paddingVertical: 10rem;
 
-  @media @phone {
+  @media .query.phone.rule[default] {
     --paddingVertical: 5rem;
   }
 }
@@ -106,10 +130,10 @@ html {
   @align: center
 ) {
   @mainWidth: 130rem;
-  @columnWidth: 130rem / 12;
+  @columnWidth: floor(130rem / 12);
 
   max-width: 100%;
-  width: @span * @columnWidth;
+  width: floor(@span * @columnWidth);
 
   & when (@padding = default) {
     .padding.default;
@@ -139,6 +163,8 @@ html {
 // GRID
 ////////////////////////////////////////////////////////
 
+
+
 // Move to yetti
 .padding() {
   horizontal: var(--horizontalPadding);
@@ -159,78 +185,67 @@ html {
 // PARAGRAPHS
 ////////////////////////////////////////////////////////
 
-@p: 2.4rem;
-@p2: 2.2rem;
+.paragraph() {
+  font-size: 2.4rem;
+  font-weight: 300;
+  font-family: 'sofia-pro',sans-serif;
+  line-height: 1.4em;
 
-p a, .p2 a {
-  .txd(underline);
+  .bold() {
+    font-weight: 400;
+  }
+
+  .secondary() {
+    font-size: 2.2rem;
+  }
 }
-
-p {
-  b {.fw(@regular);}
-}
-
-////////////////////////////////////////////////////////
-// MEDIA
-////////////////////////////////////////////////////////
-
-.mediaBackground {
-  .pos(absolute ~'!important');
-}
-
-////////////////////////////////////////////////////////
-// TYPE
-////////////////////////////////////////////////////////
-
-@color: @black;
-@fontFamily: 'sofia-pro',sans-serif;
-@fontWeight: 300;
-@lineHeight: 1.4em;
-
-@thin: 300;
-@light: 300;
-@regular: 400;
-@bold: 500;
-@heavy: 600;
-
-
 
 ////////////////////////////////////////////////////////
 // GRIDS
 ////////////////////////////////////////////////////////
 
-.thirdsGrid {
-  .dsp(grid); .gg(@m @m);
+.grid() {
+  @maxWidth: 130rem;
+}
 
-  @media @minTablet {
-    .gtc(repeat(auto-fill,minmax(35rem,1fr)));
+.thirdsGrid {
+  display: flex;
+  grid-gap: .padding[medium];
+
+  @media .query.phone.rule[above] {
+    grid-template-columns: repeat(30rem,minmax(35rem,1fr));
   }
 
-  @media @phone {
-    .gtc(1fr);
+  @media .query.phone.rule[default] {
+    grid-template-columns: 1fr;
   }
 
   @supports not (display: grid) {
-    @media @minTablet {
-      .flex;
+    @media .query.phone.rule[above] {
+      display: flex;
+    }
+
+    @media .query.phone.rule[default] {
+      display: block;
     }
   }
 }
 
 .halvesGrid {
-  .dsp(grid); .gg(@m @m);
+  display: grid;
+  grid-gap: .padding[medium];
 
-  @media @minTablet {
-    .gtc(repeat(auto-fill,minmax(35rem,1fr)));
+  @media .query.phone.rule[above] {
+    grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
   }
 
-  @media @phone {
-    .gtc(1fr);
+  @media .query.phone.rule[default] {
+    grid-template-columns: 1fr;
   }
 
   @supports not (display: grid) {
-    @media @minTablet {
-      .flex;
+    @media .query.phone.rule[above] {
+      display: flex;
     }
   }
 }
@@ -239,68 +254,43 @@ p {
 // HEADLINES
 ////////////////////////////////////////////////////////
 
-@h1: @h2 * @ratio;
+.heading {
+  .primary() {
+    font-weight: 700;
+    line-height: 1.1em;
 
-h1 {
-  .fw(@heavy);
-  .lh(1.1em);
+    @media .query.phone.rule[default] {
+      font-size: .heading.secondary[font-size] * 1.1;
+    }
+  }
 
-  @media @phone {
-    .fs(@h2 * 1.1);
+  .secondary() {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2em;
+
+    .subHeading() {
+      color: .color[primary];
+      font-size: .paragraph.secondary[font-size];
+      font-weight: .heading[font-size];
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .75em;
+    }
+  }
+
+  .tertiary() {
+    font-size: 2.8rem;
   }
 }
- 
-@h2: 4rem;
-
-@h3: 2.8rem;
-
-h3 {
-  .fs(@h3);
-  .fw(@bold);
-  .lh(1.2em);
-}
-
-h4 {
-  .fs(@p2); 
-  .c(@prime);
-  .fw(@bold);
-  .upper;
-  .ls(.05em);
-  .mb(.75em);
-}
-
-@h5: 3rem;
-
-////////////////////////////////////////////////////////
-// PARAGRAPHS
-////////////////////////////////////////////////////////
-
-@p2: 2rem;
-
-.p2 {
-  .o(.9);
-}
-
-@p3: @p2 * .9;
 
 ////////////////////////////////////////////////////////
 // QUOTES
 ////////////////////////////////////////////////////////
 
 @pullQuote: {
-  .fs(@h3); .fw(@thin); .lh(@lineHeight); .mb(@m);
+  font-size: .heading.tertiary;
+  font-weight: .paragraph[font-weight];
+  line-height: .paragraph[line-height];
+  margin-bottom: .padding[medium];
 };
-
-////////////////////////////////////////////////////////
-// SECTIONS
-////////////////////////////////////////////////////////
-
-#introSection {
-  .center;
-}
-
-////////////////////////////////////////////////////////
-// SIZES
-////////////////////////////////////////////////////////
-
-@main: 130rem;

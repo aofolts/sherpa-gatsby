@@ -2,6 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import css from '../less/page-process.module.less'
+import Image from 'gatsby-image'
 
 const IntroSection = () => {
   return (
@@ -20,13 +21,23 @@ const StagesSection = ({
   steps
 }) => {
   const modules = steps.map(({
-    title,
-    html
+    html,
+    frontmatter
   }) => {
+    const {
+      title,
+      featuredImage
+    } = frontmatter
+
     return (
       <li key={title} className={css.stage}>
-        <h2 className={css.stageTitle}>{title}</h2>
-        <div className={css.stageDescription} dangerouslySetInnerHTML={{__html: html}}/>
+        <div className={css.stageContent}>
+          <div className={css.stageMedia}>
+            <Image className={[css.stageImage,'mediaBackground'].join(' ')} {...featuredImage.childImageSharp}/>
+          </div>
+          <h2 className={css.stageTitle}>{title}</h2>
+          <div className={css.stageDescription} dangerouslySetInnerHTML={{__html: html}}/>
+        </div>
       </li>
     )
   })
@@ -51,8 +62,10 @@ const ProcessPage = ({
 
   return (
     <Layout hasHero={false}>
-      <IntroSection/>
-      <StagesSection steps={steps.edges.map(step => step.node)}/>
+      <div className={css.mainWrap}>
+        <IntroSection/>
+        <StagesSection steps={steps.edges.map(step => step.node)}/>
+      </div>
     </Layout>
   )
 }
@@ -70,6 +83,18 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                fluid {
+                  base64
+                  src
+                  aspectRatio
+                  srcSet
+                  srcSetWebp
+                  sizes
+                }
+              }
+            }
           }
           html
         }

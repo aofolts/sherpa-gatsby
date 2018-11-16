@@ -1,30 +1,40 @@
 @import (reference) 'global.less';
 
 .testimonial {
-  .center;
+  text-align: center;
 }
 
 .quote {
-  .fs(@h3); .fw(@thin); .lh(@lineHeight); .mb(@m); 
+  font-size: .heading.tertiary[font-size];
+  font-weight: .paragraph[font-weight];
+  line-height: .paragraph[line-height];
+  margin-bottom: .padding[medium];
 }
 
 .testimonialAuthor {
-  .fw(@bold);
+  font-weight: .heading.secondary[font-weight];
 }
 
 .avatar {
-  .wh(@l); .ib; .br(1000px); .of(hidden); .mb(@xs);
-  .bd(@bd solid white);
+  width: .padding[large];
+  height: .padding[large];
+  display: inline-block;
+  border-radius: 1000px;
+  overflow: hidden;
+  margin-bottom: .padding[extraSmall];
+  border: .border.weight[default] solid white;
 }
 
 .contentSection {
-  .bg(@lightGrey);
+  background: .color[lightGrey];
 }
 
 .testimonialMeta {
-  .dsp(inline-flex); .aic;
+  display: inline-flex;
+  align-items: center;
 }
 
 .testimonialInfo {
-  .ml(@s); .ta(left);
+  margin-left: .padding[small];
+  text-align: left;
 }

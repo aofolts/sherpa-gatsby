@@ -1,26 +1,30 @@
 @import (reference) 'global.less';
 
 .nav {
-  .mt(@m);
+  margin-top: .padding[medium];
 }
 
 .navItem {
-  .ib; .bdb(@bd solid @mediumLightGrey); .fs(@p2);
-  .pad(1em); .cur(pointer);
+  display: inline-block;
+  border-bottom: .border.weight[default] solid .color[mediumlightGrey];
+  font-size: .paragraph.secondary[font-size];
+  padding: 1em;
+  cursor: pointer;
 }
 
 .activeNavItem {
-  .bdc(@prime); .fw(@bold);
+  border-color: .color[primary];
+  font-weight: .paragraph.bold[font-weight];
 }
 
 .packagesSection {
-  .bg(@lightGrey);
+  background: .color[lightGrey];
 }
 
 .inactivePackage {
-  .hide;
+  display: none;
 }
 
 .packageIcon {
-  .h(10rem);
+  height: .padding[large];
 }
