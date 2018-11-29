@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
-import Link from './link'
-import css from '../less/menu-main.module.less'
+import Link from '../link'
+import css from 'less/menu-main.module.less'
 
 const menuItems = [
   {
-    title: 'About',
-    link: '/about'
-  },
-  {
     title: 'Work',
     link: '/work'
+  },
+  {
+    title: 'My Story',
+    link: '/about'
   },
   {
     title: 'Journal',

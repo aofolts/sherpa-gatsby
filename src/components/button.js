@@ -1,10 +1,10 @@
 import React from 'react'
-import css from '../less/buttons.module.less'
+import css from 'less/buttons.module.less'
 import PropTypes from 'prop-types'
 import {Link} from 'gatsby'
 
 const buttonTypeClasses = {
-  primary: css.primaryButton,
+  primary: css.buttonPrimary,
   primaryLight: css.primaryLightButton
 }
 

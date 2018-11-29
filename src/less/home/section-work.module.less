@@ -2,7 +2,7 @@
 // WORK SECTION
 ////////////////////////////////////////////////////////
 
-@import (reference) 'global.less';
+@import (reference) '../global.less';
 
 .section {
   background: .color[primary];
@@ -23,7 +23,7 @@
   background: .color[primary];
   box-shadow: 0 0 var(--shadowSize) var(--shadowSize).color[primary];
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     --shadowSize: .padding[medium];
   }
 }

@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: `https://www.sherpadesign.co`
   },
   plugins: [
+    'gatsby-plugin-svg-sprite',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-less',
     'gatsby-plugin-sharp',

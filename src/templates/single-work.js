@@ -1,12 +1,12 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import Hero from '../components/hero-secondary'
+import Layout from 'components/layout'
+import Hero from 'components/hero-secondary'
 
-import richText from '../less/rich-text.module.less'
+import richText from 'less/rich-text.module.less'
 import {Helmet} from 'react-helmet'
-import css from '../less/single-work.module.less'
-import Section from '../components/section'
+import css from 'less/single-work.module.less'
+import Section from 'components/section'
 
 export const Testimonial = ({author,quote}) => {
   const {

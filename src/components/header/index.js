@@ -1,7 +1,7 @@
 import React,{Component,createContext} from 'react'
-import css from '../less/header.module.less'
+import css from 'less/header.module.less'
 import Nav from './nav'
-import { withLayoutContext } from './layout';
+import { withLayoutContext } from '../layout';
 
 export const HeaderContext = createContext(null)
 
@@ -33,7 +33,6 @@ class Header extends Component {
   }
 
   toggleMobileMenu = () => {
-    console.log('toggle')
     this.setState({
       mobileMenuIsOpen: !this.state.mobileMenuIsOpen
     })
@@ -71,8 +70,6 @@ class Header extends Component {
       toggleMobileMenu: this.toggleMobileMenu,
       dockedPosition
     }
-
-    console.log(this.props.dockedPosition)
 
     const Shim = () => {
       if (this.props.dockedPosition === 'relative') {

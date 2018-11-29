@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import css from '../less/card-work.module.less'
+import css from 'less/card-work.module.less'
 import Image from 'gatsby-image'
 
 const BlogCard = ({

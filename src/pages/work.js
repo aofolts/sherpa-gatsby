@@ -1,13 +1,13 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import Hero from '../components/hero-secondary'
+import Layout from 'components/layout'
+import Hero from 'components/hero-secondary'
 
-import Section from '../components/section'
-import css from '../less/page-work.module.less'
-import WorkCard from '../components/card-work'
+import Section from 'components/section'
+import css from 'less/page-work.module.less'
+import WorkCard from 'components/card-work'
 import {Helmet} from 'react-helmet'
-import Button from '../components/button'
+import Button from 'components/button'
 
 const Intro = () => {
   return (

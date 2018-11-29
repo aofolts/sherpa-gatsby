@@ -1,9 +1,9 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import Hero from '../components/hero-secondary'
+import Layout from 'components/layout'
+import Hero from 'components/hero-secondary'
 
-import richText from '../less/rich-text.module.less'
+import richText from 'less/rich-text.module.less'
 import {Helmet} from 'react-helmet'
 
 const SingleJournal = ({data}) => {

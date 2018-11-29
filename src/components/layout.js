@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import Header from './header'
 import Footer from './footer'
 import {Helmet} from 'react-helmet'
-import favicon from '../images/favicon.png'
+import favicon from 'images/favicon.png'
 
 export const LayoutContext = React.createContext(null)
 

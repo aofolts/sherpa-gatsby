@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import css from '../less/nav.module.less'
-import {withHeaderContext} from './header'
-import Logo from '../svg/logo'
+import css from 'less/nav.module.less'
+import {withHeaderContext} from '.'
+import Logo from 'svg/logo.svg'
 import MobileMenu from './menu-mobile'
-import { withLayoutContext } from './layout';
-import Toggle from '../components/nav-main-toggle'
+import { withLayoutContext } from '../layout';
+import Toggle from './nav-main-toggle'
 
 const Nav = ({
   headerContext,
@@ -23,8 +23,6 @@ const Nav = ({
     scrollDirection
   } = layoutContext
 
-  console.log(dockedPosition)
-
   const navClasses = [
     css.nav,
     isDocked ? css.dockedNav : css.scrollingNav,
@@ -36,7 +34,7 @@ const Nav = ({
   return (
     <nav className={navClasses}>
       <Link className={css.brand} to='/'>
-        <Logo className={css.brandLogo} alt='sherpa logo'/>
+        {/* <Logo className={css.brandLogo} alt='sherpa logo'/> */}
         <div className={css.brandName}>
           sherpa.
         </div>

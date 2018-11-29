@@ -1,9 +1,7 @@
 import React from 'react'
 import {graphql,StaticQuery} from 'gatsby'
-import css from '../less/home.module.less'
-import Section from './section'
-
-import BlogCard from './card-blog'
+import css from 'less/home/home.module.less'
+import BlogCard from '../card-blog'
 
 const HomeJournalSection = ({posts}) => {
   const cards = posts.map(post => {
@@ -16,19 +14,19 @@ const HomeJournalSection = ({posts}) => {
       ...frontmatter,
       featuredImage: frontmatter.featuredImage.childImageSharp
     }
-
+ 
     return <BlogCard key={id} {...data}/>
   })
 
   return (
-    <Section name='journal' className={css.journalSection}>
+    <section id='journal' className={css.journalSection}>
       <div className='wrapMain'>
         <h2 className={css.journalSectionHeadline}>Latest Articles</h2>
         <div className='thirdsGrid'>
           {cards}
         </div>
       </div>
-    </Section>
+    </section>
   )
 }
 

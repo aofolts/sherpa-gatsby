@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import css from '../less/page-process.module.less'
+import Layout from 'components/layout'
+import css from 'less/page-process.module.less'
 import Image from 'gatsby-image'
 
 const IntroSection = () => {

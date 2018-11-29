@@ -1,5 +1,5 @@
 @import (reference) 'global.less';
-@import 'yetti/global.less';
+@import '../../node_modules/yetti/global.less';
 
 ////////////////////////////////////////////////////////
 // APPEARENCE
@@ -20,47 +20,6 @@
 
 :root {
   --headerDockedHeight: l;
-}
-
-////////////////////////////////////////////////////////
-// BUTTONS
-////////////////////////////////////////////////////////
-
-.button {
-  font-size: .paragraph.secondary[font-size];
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: 1.1em 1.5em;
-  font-weight: .paragraph.bold[font-weight];
-
-  &:hover {
-    &:after {
-      content: ' →';
-    }
-  }
-
-  @media .query.phone.rule[default] {
-    display: block; 
-    text-align: center;
-  }
-}
-
-.primaryLightButton {
-  &:extend(.button all);
-
-  color: .color[primary];
-}
-
-.primaryButton {
-  &:extend(.button all);
-  background: .color[primary]; 
-  color: white;
-}
-
-.secondaryLightButton {
-  &:extend(.button all);
-  border-color: white;
-  color: white;
 }
 
 ////////////////////////////////////////////////////////
@@ -96,6 +55,21 @@
   lightGrey: #f6f6f6;
   mediumlightGrey: @mediumlightGrey;
   fadedWhite: fade(white,90%);
+
+  .primary() {
+    darker: #228760;
+    dark: #28A072;
+    darken: #2FBA85;
+    default: #34d49d;
+    light: #80EDBF;
+  }
+
+  .grey() {
+    darkest: #333333;
+    darker: #494949;
+    lighter: #E8E8E8;
+    lightest: #f7f7f7;
+  }
 }
 
 ////////////////////////////////////////////////////////
@@ -117,7 +91,7 @@
 html {
   --paddingVertical: 10rem;
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     --paddingVertical: 5rem;
   }
 }
@@ -160,26 +134,98 @@ html {
 }
 
 ////////////////////////////////////////////////////////
+// DIVIDERS
+////////////////////////////////////////////////////////
+
+.rule(
+  @orientation: horizontal,
+  @margin: .padding[large] auto,
+  @length: .padding[large]
+) {
+  content: '';
+  height: .border.weight[default];
+  background: .color.grey[lighter];
+  margin: @margin;
+  display: block;
+  width: @length;
+}
+
+////////////////////////////////////////////////////////
+// FONT FAMILIES
+////////////////////////////////////////////////////////
+
+@import (css) url("//hello.myfonts.net/count/37f9b2");
+
+  
+@font-face {font-family: 'True North';src: url('../fonts/37F9B2_0_0.eot');src: url('../fonts/37F9B2_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts//37F9B2_0_0.woff2') format('woff2'),url('../fonts//37F9B2_0_0.woff') format('woff'),url('../fonts//37F9B2_0_0.ttf') format('truetype');}
+
+////////////////////////////////////////////////////////
 // GRID
 ////////////////////////////////////////////////////////
 
-
-
-// Move to yetti
-.padding() {
-  horizontal: var(--horizontalPadding);
-  vertical:   var(--verticalPadding);
-
-  .default() {
-    padding: 0 var(--horizontalPadding);
-  }
-}
 
 ////////////////////////////////////////////////////////
 // HEADINGS
 ////////////////////////////////////////////////////////
 
+.heading {
+  .primary() {
+    font-family: 'True North',sans-serif;
+    font-size: 6.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-bottom: .padding[medium];
 
+    @media .query.phone[default] {
+      font-size: .heading.secondary[font-size] * 1.1;
+    }
+  }
+
+  .secondary() {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.2em;
+
+    u {
+      text-decoration: none;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 100%;
+        top: calc(100% ~'-' .42em);
+        left: 0;
+        height: .27em;
+        background: .color.primary[light];
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    .subHeading() {
+      color: .color[primary];
+      font-size: .paragraph.secondary[font-size];
+      font-weight: .heading[font-size];
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .75em;
+    }
+  }
+
+  .tertiary() {
+    font-size: 2.8rem;
+  }
+
+  .mini() {
+    font-size: .paragraph.secondary[font-size];
+    font-weight: .paragraph.bold[font-weight];
+    margin-bottom: .25em;
+  }
+}
+
+h5 {
+  .heading.mini;
+}
 
 ////////////////////////////////////////////////////////
 // PARAGRAPHS
@@ -197,6 +243,13 @@ html {
 
   .secondary() {
     font-size: 2.2rem;
+    margin-bottom: .paragraph[margin-bottom];
+    color: .color.grey[darker];
+  }
+
+  .tertiary() {
+    font-size: 2rem;
+    margin-bottom: .paragraph[margin-bottom];
   }
 }
 
@@ -212,20 +265,20 @@ html {
   display: flex;
   grid-gap: .padding[medium];
 
-  @media .query.phone.rule[above] {
+  @media .query.phone[above] {
     grid-template-columns: repeat(30rem,minmax(35rem,1fr));
   }
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     grid-template-columns: 1fr;
   }
 
   @supports not (display: grid) {
-    @media .query.phone.rule[above] {
+    @media .query.phone[above] {
       display: flex;
     }
 
-    @media .query.phone.rule[default] {
+    @media .query.phone[default] {
       display: block;
     }
   }
@@ -235,53 +288,27 @@ html {
   display: grid;
   grid-gap: .padding[medium];
 
-  @media .query.phone.rule[above] {
+  @media .query.phone[above] {
     grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
   }
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     grid-template-columns: 1fr;
   }
 
   @supports not (display: grid) {
-    @media .query.phone.rule[above] {
+    @media .query.phone[above] {
       display: flex;
     }
   }
 }
 
 ////////////////////////////////////////////////////////
-// HEADLINES
+// MEDIA
 ////////////////////////////////////////////////////////
 
-.heading {
-  .primary() {
-    font-weight: 700;
-    line-height: 1.1em;
-
-    @media .query.phone.rule[default] {
-      font-size: .heading.secondary[font-size] * 1.1;
-    }
-  }
-
-  .secondary() {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.2em;
-
-    .subHeading() {
-      color: .color[primary];
-      font-size: .paragraph.secondary[font-size];
-      font-weight: .heading[font-size];
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      margin-bottom: .75em;
-    }
-  }
-
-  .tertiary() {
-    font-size: 2.8rem;
-  }
+.mediaBackground {
+  position: absolute !important;
 }
 
 ////////////////////////////////////////////////////////

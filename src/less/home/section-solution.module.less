@@ -1,0 +1,119 @@
+@import (reference) '../global.less';
+
+////////////////////////////////////////////////////////
+// PROBLEM SECTION 
+////////////////////////////////////////////////////////
+
+.section {
+  overflow: visible;
+
+  @media .query.laptop[below] {
+    margin-top: .padding[medium];
+  }
+
+  &:before {
+    .rule(
+      @length: .padding[large],
+      @margin: 0 auto
+    );
+  }
+}
+
+.wrap {
+  .padding.default;
+  margin: 0 auto; 
+  max-width: 100%;
+  width: 120rem;
+
+  @media .query.tablet[above] {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.aboutTip {
+  position: absolute;
+  bottom: calc(100% ~'+' .padding[extraSmall]);
+  text-align: center;
+  font-family: .heading.primary[font-family];
+  font-weight: .heading.primary[font-weight];
+  font-size: .paragraph.tertiary[font-size];
+  line-height: 1.25em;
+  left: 0;
+  color: .color[primary];
+  transform: rotate(-22.5deg);
+}
+
+.aboutTipArrow {
+  height: 7.5rem;
+  width: 20rem;
+}
+
+////////////////////////////////////////////////////////
+// STATS
+////////////////////////////////////////////////////////
+
+.stats {
+  @media .query.tablet[above] {
+    margin-left: .padding[mediumLarge];
+  }
+
+  @media .query.laptop[below] {
+    margin-top: .padding[medium];
+  }
+}
+
+.statItem {
+  @media .query.tablet[above] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & + .statItem {
+      margin-top: .padding[small];
+    }
+  }
+
+  @media .query.laptop[below] {
+    & + .statItem {
+      margin-top: .padding[mediumSmall];
+    }
+  }
+}
+
+.stat {
+  font-size: .padding[mediumSmall];
+  font-weight: .heading.primary[font-weight];
+  color: .color[primary];
+  white-space: nowrap;
+
+  @media .query.tablet[above] {
+    margin-right: .padding[small];
+  }
+
+  @media .query.laptop[below] {
+    margin-bottom: .padding[small];
+  }
+}
+
+.statItemText {
+  @media .query.tablet[above] {
+    padding-left: .padding[small];
+    width: 32rem;
+
+    &:after {
+      content: '';
+      height: 100%;
+      width: .border.weight[default];
+      background: .color.grey[lighter];
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.statItemParagraph {
+  .paragraph.secondary;
+  margin-bottom: 0;
+}

@@ -1,11 +1,15 @@
-@import (reference) 'global.less';
+@import (reference) '../global.less';
+@import (reference) '../buttons.module.less';
 
 .hero {
   height: 80rem;
   max-height: 100%;
   background: .color[primary];
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     max-height: 100vh;
   }
 }
@@ -26,19 +30,17 @@
 }
 
 .button1 {
-  color: white;
-  background: .color[primary];
+  .button.primary;
 }
 
 .button2 {
-  color: white;
-  border: .border.weight[default] solid white;
+  .button.secondary.light;
 
-  @media .query.phone.rule[above] {
+  @media .query.phone[above] {
     margin-left: .padding[small];
   }
 
-  @media .query.phone.rule[default] {
+  @media .query.phone[default] {
     margin-top: .padding[small];
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import css from '../less/hero-secondary.module.less'
+import css from 'less/hero-secondary.module.less'
 import Image from 'gatsby-image'
 
 const Background = props => {

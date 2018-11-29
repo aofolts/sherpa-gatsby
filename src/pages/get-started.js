@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
-import Hero from '../components/hero-secondary'
+import Layout from 'components/layout'
+import Hero from 'components/hero-secondary'
 
-import Section from '../components/section'
-import css from '../less/packages.module.less'
+import Section from 'components/section'
+import css from 'less/packages.module.less'
 import {Helmet} from 'react-helmet'
-import RichText from '../components/rich-text'
-import packageCss from '../less/package-overview.module.less'
+import RichText from 'components/rich-text'
+import packageCss from 'less/package-overview.module.less'
 
 css.package = packageCss
 

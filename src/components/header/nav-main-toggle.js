@@ -1,6 +1,6 @@
 import React from 'react'
-import {withHeaderContext} from './header'
-import css from '../less/nav-main-toggle.module.less'
+import {withHeaderContext} from '.'
+import css from 'less/nav-main-toggle.module.less'
 
 const Toggle = ({
   headerContext

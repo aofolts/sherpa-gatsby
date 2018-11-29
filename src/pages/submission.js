@@ -1,6 +1,6 @@
 import React from 'react'
-import css from '../less/notfound.module.less'
-import gif from '../images/success.gif'
+import css from 'less/notfound.module.less'
+import gif from 'images/success.gif'
 import {Link} from 'gatsby'
 
 const Success = () => (

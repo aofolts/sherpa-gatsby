@@ -1,5 +1,5 @@
 import React from 'react'
-import css from '../less/footer.module.less'
+import css from 'less/footer.module.less'
 import Section from './section'
 
 

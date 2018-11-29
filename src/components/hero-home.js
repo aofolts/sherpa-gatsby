@@ -1,5 +1,5 @@
 import React from 'react'
-import css from '../less/hero-home.module.less'
+import css from 'less/home/hero.module.less'
 import {Link,graphql,StaticQuery} from 'gatsby'
 import Image from 'gatsby-image'
 
@@ -65,7 +65,7 @@ const HomeHero = props => {
       <Background {...heroImage}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
-          <h1 className={css.headline}>I Help Small Businesses Build Hard-Working Websites™</h1>
+          <h1 className={css.headline}>Growing Businesses Need Hard-Working Websites™</h1>
           <Buttons/>
         </div>
       </div>

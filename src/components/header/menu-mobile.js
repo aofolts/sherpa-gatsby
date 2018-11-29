@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
-import css from '../less/menu-mobile.module.less'
-import {Link} from 'gatsby'
-import {withHeaderContext} from './header'
+import css from 'less/menu-mobile.module.less'
+import {withHeaderContext} from '.'
 import MainMenu from './menu-main'
 
 class MobileMenu extends Component {
