@@ -17,7 +17,7 @@ const Stats = () => {
       },
       {
         headline: 'Time Saved',
-        paragraph: 'Reduced time admins spent on content management by 82%.',
+        paragraph: 'Reduced time admins spent managing content by 82%.',
         stat: '-82%'
       }
     ]
@@ -67,7 +67,8 @@ const About = () => {
         Need a website?<br/>I can help.
       </Tip>
       <h2>I’m Andrew, a <u>digital strategist</u>, designer, and coder who goes from concept to launch.</h2>   
-      <p>Nothing’s worse than a half-finished project. (Yikes!) That’s why I handle all parts of the process—so my clients can count on a consistent end product.</p>
+      <p>Nothing’s worse than a half-finished project. (Yikes!) But not to worry. I handle all the technical legwork—so my clients can count on a consistent end-product.</p>
+      <p>Here are a few examples...</p>
     </div>
   )
 }

@@ -1,0 +1,31 @@
+@import (reference) 'global.less';
+
+.card {
+  text-align: center;
+}
+
+.icon {
+  height: .padding[large];
+  width: .padding[large];
+  margin-bottom: .padding[small];
+}
+
+.cta {
+  color: .color[primary];
+  font-size: .paragraph.secondary[font-size];
+  font-weight: .paragraph.bold[font-weight];
+
+  &:after {
+    content: ' →';
+  }
+
+  &:hover {
+    &:after {
+      margin-left: .25em;
+    }
+  }
+}
+
+.description {
+  font-size: .paragraph.secondary[font-size];
+}

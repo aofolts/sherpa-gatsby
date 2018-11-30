@@ -1,0 +1,33 @@
+@import (reference) '../global.less'; 
+
+.section {
+  background: .color.grey[lightest];
+}
+
+.wrap {
+  .padding.default;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 130rem;
+}
+
+.intro {
+  max-width: 100%;
+  width: 70rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: calc(var(--paddingVertical) ~'*' 2);
+}
+
+.curvyPath {
+  width: 160rem;
+  height: 70rem;
+  position: absolute;
+  top: calc(100% ~'+' .padding[medium] ~'+' var(--paddingVertical));
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.services {
+  .grid.thirds;
+}

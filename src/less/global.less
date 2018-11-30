@@ -67,6 +67,7 @@
   .grey() {
     darkest: #333333;
     darker: #494949;
+    light: #D8D8D8;
     lighter: #E8E8E8;
     lightest: #f7f7f7;
   }
@@ -163,6 +164,24 @@ html {
 // GRID
 ////////////////////////////////////////////////////////
 
+.grid() {
+  grid-gap: .padding[medium];
+
+  .thirds() {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
+    .grid;
+    .grid.fallback;
+  }
+
+  .fallback() {
+    @supports not (display: grid) {
+      @media .query.tablet[above] {
+        display: flex;
+      }
+    }
+  }
+}
 
 ////////////////////////////////////////////////////////
 // HEADINGS
@@ -202,6 +221,10 @@ html {
       }
     }
 
+    i,em {
+      font-weight: .paragraph.bold[font-weight];
+    }
+
     .subHeading() {
       color: .color[primary];
       font-size: .paragraph.secondary[font-size];
@@ -214,6 +237,7 @@ html {
 
   .tertiary() {
     font-size: 2.8rem;
+    font-weight: 600;
   }
 
   .mini() {

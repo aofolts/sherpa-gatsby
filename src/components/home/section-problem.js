@@ -7,8 +7,8 @@ const Intro = props => {
       <div className='wrapSmall'>
         <h2>Not all sites are created equal.</h2>
         <p>More than fancy effects, your business needs a strategic digital 
-experience that drives interaction, generates high-quality leads, 
-and ultimately wins you lots of loyal customers.</p>
+experience that promotes interaction, generates high-quality leads, 
+and ultimately wins you lots of loyal customers!</p>
       </div>
     </section>
   )
