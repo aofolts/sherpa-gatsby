@@ -1,4 +1,5 @@
 import React from 'react'
+import {graphql} from 'gatsby'
 import Hero from 'components/hero-home'
 import Layout from 'components/layout'
 import WorkSection from 'components/home/section-work'

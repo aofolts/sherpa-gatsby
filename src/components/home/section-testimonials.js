@@ -33,25 +33,51 @@ const Cards = ({
   )
 }
 
-const Nav = ({
+const AuthorPhotos = ({
   data,
-  setActiveTestimonialById,
-  activeTestimonialId
+  activeTestimonialId,
+  setActiveTestimonialById
 }) => {
-  const items = data.testimonials.map(({
+  const photos = data.testimonials.map(({
     id,
     author
   }) => {
     const itemClasses = [
-      css.menuItem,
-      activeTestimonialId === id ? css.activeMenuItem : css.inactiveMenuItem
+      css.authorAvatar,
+      activeTestimonialId === id ? css.activeAuthorAvatar : css.inactiveAuthorAvatar
+    ].join(' ')
+
+    const handleClick = () => setActiveTestimonialById(id)
+
+    return (
+      <li key={id} className={itemClasses} onClick={handleClick}>
+        <BackgroundImage {...author.photo} className={css.authorPhoto}/>
+      </li>
+    )
+  })
+
+  return (
+    <ul className={css.authorAvatars}>
+      {photos}
+    </ul>
+  )
+}
+
+const AuthorDetails = ({
+  data,
+  activeTestimonialId
+}) => {
+  const details = data.testimonials.map(({
+    id,
+    author
+  }) => {
+    const itemClasses = [
+      css.authorDetails,
+      activeTestimonialId === id ? css.activeAuthorDetails : css.inactiveAuthorDetails
     ].join(' ')
 
     return (
       <li key={id} className={itemClasses}>
-        <div className={css.authorMedia}>
-          <BackgroundImage {...author.photo} className={css.authorPhoto}/>
-        </div>
         <div className={css.authorName}>
           {author.fullName}
         </div>
@@ -63,10 +89,28 @@ const Nav = ({
   })
 
   return (
+    <ul className={css.authorsDetails}>
+      {details}
+    </ul>
+  )
+}
+
+
+const Nav = ({
+  data,
+  setActiveTestimonialById,
+  activeTestimonialId
+}) => {
+  const authorProps = {
+    data,
+    setActiveTestimonialById,
+    activeTestimonialId
+  }
+
+  return (
     <nav className={css.nav}>
-      <ul className={css.menu}>
-        {items}
-      </ul>
+      <AuthorPhotos {...authorProps}/>
+      <AuthorDetails {...authorProps}/>
     </nav>
   )
 }

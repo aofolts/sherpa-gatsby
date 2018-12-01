@@ -19,13 +19,32 @@
   font-size: .paragraph.secondary[font-size];
 }
 
-.authorMedia {
+.authorAvatars {
+  margin-bottom: .padding[extraSmall];
+}
+
+.authorAvatar {
+  border: 5px solid .color.grey[lighter];
   width: .padding[large];
   height: .padding[large];
   overflow: hidden;
   border-radius: 1000px;
   display: inline-block;
-  margin-bottom: .padding[extraSmall];
+  cursor: pointer;
+  
+  & + .authorAvatar {
+    margin-left: .padding[extraSmall];
+  }
+}
+
+.activeAuthorAvatar {
+  border-color: .color[primary];
+}
+
+.inactiveAuthorAvatar {
+  &:hover {
+    border-color: .color.grey[light];
+  }
 }
 
 .authorName {
@@ -45,7 +64,7 @@
   text-align: center;
 }
 
-.inactiveMenuItem {
+.inactiveAuthorDetails {
   display: none;
 }
 
