@@ -66,7 +66,7 @@ class Header extends Component {
     ].join(' ')
 
     const context = {
-      ...this.state,
+      ...state,
       toggleMobileMenu: this.toggleMobileMenu,
       dockedPosition
     }

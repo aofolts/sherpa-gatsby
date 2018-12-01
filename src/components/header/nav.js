@@ -34,7 +34,9 @@ const Nav = ({
   return (
     <nav className={navClasses}>
       <Link className={css.brand} to='/'>
-        {/* <Logo className={css.brandLogo} alt='sherpa logo'/> */}
+        <svg className={css.brandLogo} alt='sherpa logo'>
+          <use xlinkHref={'#' + Logo.id}></use>
+        </svg>
         <div className={css.brandName}>
           sherpa.
         </div>

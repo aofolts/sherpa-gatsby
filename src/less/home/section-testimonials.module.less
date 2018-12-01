@@ -1,2 +1,60 @@
 @import (reference) '../global.less';
 
+.section {
+  background: .color.grey[lighter];
+}
+
+.wrap {
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90rem;
+} 
+
+.card {
+  text-align: center;
+}
+
+.menuItem {
+  font-size: .paragraph.secondary[font-size];
+}
+
+.authorMedia {
+  width: .padding[large];
+  height: .padding[large];
+  overflow: hidden;
+  border-radius: 1000px;
+  display: inline-block;
+  margin-bottom: .padding[extraSmall];
+}
+
+.authorName {
+  font-weight: .paragraph.bold[font-weight];
+}
+
+.inactiveCard {
+  display: none;
+}
+
+.quoteBody {
+  font-style: italic;
+}
+
+.nav {
+  margin-top: .padding[mediumLarge];
+  text-align: center;
+}
+
+.inactiveMenuItem {
+  display: none;
+}
+
+.topoPattern {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 1920px;
+  height: 800px;
+  opacity: .5;
+}

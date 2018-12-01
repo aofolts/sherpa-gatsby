@@ -44,7 +44,7 @@ const Services = () => {
 
   const cards = data.services.map(entry => {
     return (
-      <ServiceCard entry={entry}/>
+      <ServiceCard key={entry.title} entry={entry}/>
     )
   })
 
