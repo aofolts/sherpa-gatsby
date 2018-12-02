@@ -34,7 +34,7 @@ const Services = () => {
       },
       {
         title: 'Custom Website',
-        description: 'Stop renting. Let’s build a unique digital home for your business that truly engages customers.',
+        description: 'Stop renting. Let’s build a unique digital home for your business that actually engages customers.',
         icon: 'website',
         cta: 'Build a home',
         link: '/custom-websites'

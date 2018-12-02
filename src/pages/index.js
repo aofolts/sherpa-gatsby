@@ -2,16 +2,20 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Hero from 'components/hero-home'
 import Layout from 'components/layout'
-import WorkSection from 'components/home/section-work'
-import JournalSection from 'components/home/section-journal'
 import {Helmet} from 'react-helmet'
 import ProblemSection from 'components/home/section-problem'
 import SolutionSection from 'components/home/section-solution'
 import ServicesSection from 'components/home/section-services'
 import TestimonialsSection from 'components/home/section-testimonials'
+import SectionAbout from 'components/home/section-about'
+import {pick} from 'lodash'
 
-const HomePage = ({data: rawData}) => {
+const HomePage = ({data}) => {
   const description = "Andrew Folts is a digital strategist who works one-on-one with small businesses to plan, build, and manage Hard-Working Websites™."
+
+  const {
+    layout
+  } = data
 
   return (
     <Layout>
@@ -23,9 +27,8 @@ const HomePage = ({data: rawData}) => {
       <ProblemSection/>
       <SolutionSection/>
       <ServicesSection/>
-      <TestimonialsSection data={{testimonials: rawData.layout.testimonials}}/>
-      <WorkSection/>
-      <JournalSection/>
+      <TestimonialsSection data={pick(layout,['testimonials'])}/>
+      <SectionAbout data={pick(layout,['aboutImage'])}/>
     </Layout>
   )
 }
@@ -38,6 +41,7 @@ export const query = graphql`
       testimonials {
         ...testimonial
       }
+      ...homeSectionAbout
     }
   }
 `

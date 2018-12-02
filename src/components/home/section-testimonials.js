@@ -125,7 +125,7 @@ class TestimonialSection extends Component {
     } = props
 
     this.state = {
-      activeTestimonialId: data.testimonials[0].id
+      activeTestimonialId: data.testimonials[1].id
     }
   }
 

@@ -46,6 +46,15 @@ export const smallFluidImageFragment = graphql`
   }
 `
 
+export const imageMediumFluidFragment = graphql`
+  fragment imageMediumFluid on ContentfulAsset {
+    ...assetMeta
+    fluid(maxWidth: 750) {
+      ...GatsbyContentfulFluid
+    }
+  }
+`
+
 export const heroImageFragment = graphql`
   fragment heroImage on ContentfulAsset {
     ...assetMeta

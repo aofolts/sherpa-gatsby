@@ -2,6 +2,17 @@
 
 .section {
   background: .color.grey[lighter];
+  z-index: 2;
+}
+
+.topoPattern {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 1920px;
+  height: 800px;
+  opacity: .5;
 }
 
 .wrap {
@@ -21,6 +32,10 @@
 
 .authorAvatars {
   margin-bottom: .padding[extraSmall];
+  height: .padding[large];
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .authorAvatar {
@@ -38,10 +53,14 @@
 }
 
 .activeAuthorAvatar {
-  border-color: .color[primary];
+  width: .padding[large];
+  height: .padding[large];
 }
 
 .inactiveAuthorAvatar {
+  width: .padding[mediumLarge];
+  height: .padding[mediumLarge];
+
   &:hover {
     border-color: .color.grey[light];
   }
@@ -68,12 +87,3 @@
   display: none;
 }
 
-.topoPattern {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 1920px;
-  height: 800px;
-  opacity: .5;
-}

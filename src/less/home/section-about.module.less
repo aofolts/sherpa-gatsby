@@ -1,0 +1,57 @@
+@import (reference) '../global.less';
+
+.section {
+  background: .color.grey[lightest];
+}
+
+.wrap {
+  .padding.default;
+  margin: 0 auto;
+  width: 115rem;
+  max-width: 100%;
+
+  @media .query.tablet[above] {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.media {
+  @media .query.tablet[above] {
+    width: 40rem;
+    padding-bottom: 133%;
+  }
+
+  @media .query.tablet[andBelow] {
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: .padding[medium];
+  }
+}
+
+.imageFrame {
+  width: 120%;
+  height: 120%;
+  opacity: .8;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+
+  polygon {
+    stroke: .color[primary];
+    stroke-width: 3px;
+    fill: none;
+  }
+
+  @media .query.tablet[andBelow] {
+    display: none;
+  }
+}
+
+.text {
+  @media .query.tablet[above] {
+    margin-left: .padding[mediumLarge];
+  }
+}
