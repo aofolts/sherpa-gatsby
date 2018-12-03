@@ -9,7 +9,7 @@ const Icon = ({
 }) => {
   return (
     <svg className={`${className}`}>
-      <use xlinkHref={`#icon-${name}`}></use>
+      <use href={`#icon-${name}`}></use>
     </svg>
   )
 }

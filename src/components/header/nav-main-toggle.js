@@ -18,9 +18,9 @@ const Toggle = ({
   return (
     <div className={toggleClasses} onClick={toggleMobileMenu}>
       <div className={css.bars}>
-        <div className={css.topBar}/>
-        <div className={css.middleBar}/>
-        <div className={css.bottomBar}/>
+        <div className={css.barTop}/>
+        <div className={css.barMiddle}/>
+        <div className={css.barBottom}/>
       </div>
     </div>
   )

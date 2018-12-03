@@ -1,6 +1,6 @@
 import React from 'react'
 import css from 'less/home/section-solution.module.less'
-import Icon from 'components/icon'
+import Note from 'components/note'
 
 const Stats = () => {
   const data = {
@@ -17,7 +17,7 @@ const Stats = () => {
       },
       {
         headline: 'Time Saved',
-        paragraph: 'Reduced time admins spent managing content by 82%.',
+        paragraph: 'Cut the time an admin spent managing content by 82%.',
         stat: '-82%'
       }
     ]
@@ -46,26 +46,12 @@ const Stats = () => {
   )
 }
 
-const Tip = ({
-  children,
-  className
-}) => {
-  return (
-    <div className={className}>
-      <div>
-        {children}
-      </div>
-      <Icon name='tip-arrow' className={css.aboutTipArrow}/>
-    </div>
-  )
-}
-
 const About = () => {
   return (
     <div className={css.about}>
-      <Tip className={css.aboutTip}>
+      <Note className={css.aboutTip}>
         Need a website?<br/>I can help.
-      </Tip>
+      </Note>
       <h2>I’m Andrew, a <u>digital strategist</u>, designer, and coder who goes from concept to launch.</h2>   
       <p>Nothing’s worse than a half-finished project. (Yikes!) But not to worry. I handle all the technical legwork—so my clients can count on a consistent end-product.</p>
       <p>Here are a few examples...</p>

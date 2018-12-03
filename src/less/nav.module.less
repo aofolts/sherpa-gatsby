@@ -13,24 +13,6 @@
   position: relative;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-}
-
-.brandName {
-  color: var(--color);
-  font-size: 3.5rem;
-  letter-spacing: -.05em;
-  font-weight: 500;
-  margin-left: .padding[extraSmall];
-}
-
-.brandLogo {
-  height: calc(var(--navHeight) ~'*' .55);
-  fill: white;
-}
-
 ////////////////////////////////////////////////////////
 // DOCKED NAV
 ////////////////////////////////////////////////////////
@@ -51,7 +33,8 @@
   --navHeight: 9rem; 
   top: calc(var(--navHeight) ~'*' -1);
   color: white; 
-  border-bottom: .border.weight[thin] @mediumlightGrey;
+  background: white;
+  border-bottom: .border.weight[thin] solid @mediumlightGrey;
 }
 
 .transitionalNav {

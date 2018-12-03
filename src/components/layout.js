@@ -10,7 +10,7 @@ export function withLayoutContext(Component) {
   return props => {
     return (
       <LayoutContext.Consumer>
-        {context => <Component {...props} layoutContext={context}/>}
+        {context => <Component {...props} layoutContext={context}/>} 
       </LayoutContext.Consumer>
     )
   }

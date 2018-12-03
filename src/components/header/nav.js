@@ -1,11 +1,10 @@
 import React from 'react'
-import {Link} from 'gatsby'
 import css from 'less/nav.module.less'
 import {withHeaderContext} from '.'
-import Logo from 'svg/logo.svg'
 import MobileMenu from './menu-mobile'
 import { withLayoutContext } from '../layout';
 import Toggle from './nav-main-toggle'
+import Brand from './brand'
 
 const Nav = ({
   headerContext,
@@ -33,14 +32,7 @@ const Nav = ({
 
   return (
     <nav className={navClasses}>
-      <Link className={css.brand} to='/'>
-        <svg className={css.brandLogo} alt='sherpa logo'>
-          <use xlinkHref={'#' + Logo.id}></use>
-        </svg>
-        <div className={css.brandName}>
-          sherpa.
-        </div>
-      </Link>
+      <Brand/>
       <MobileMenu/>
       <Toggle {...{toggleMobileMenu,mobileMenuIsOpen}}/>
     </nav>

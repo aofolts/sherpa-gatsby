@@ -7,7 +7,7 @@ const Intro = () => {
   return (
     <div className={css.intro}>
       <h2 className={css.headline}>Could you be doing <i>better</i> online?</h2>
-      <p className={css.paragraph}>If you’re ready to make a change, but you’re not sure where to start (and DIY won't cut it), I’m here to help. We’ll work one-on-one to define the problem and develop an ideal solution.</p>
+      <p className={css.paragraph}>If you’re ready to make a big change (and you know DIY won't cut it), I’m here to help. We’ll work one-on-one to define the problem and develop an ideal solution.</p>
       <svg className={css.curvyPath}>
         <use xlinkHref={`#${curvyLine.id}`}/>
       </svg>

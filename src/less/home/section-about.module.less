@@ -2,6 +2,8 @@
 
 .section {
   background: .color.grey[lightest];
+  overflow: visible;
+  padding-bottom: .padding[medium];
 }
 
 .wrap {
@@ -29,7 +31,34 @@
   }
 }
 
+.note {
+  z-index: 5;
+  margin-bottom: -1 * .padding[small];
+  max-width: 100%;
+  width: 40rem;
+
+  // TODO: Find a solution for desktop
+  @media .query.tablet[above] {
+    left: -1 * .padding[medium];
+    bottom: 100%;
+    transform: rotate(-12.5deg);
+    display: none;
+  }
+
+  @media .query.tablet[andBelow] {
+    position: relative;
+    transform: rotate(-5deg);
+  }
+}
+
+.arrow {
+  @media .query.tablet[below] {
+    margin-left: .padding[mediumSmall];
+  }
+}
+
 .imageFrame {
+  display: none;
   width: 120%;
   height: 120%;
   opacity: .8;

@@ -11,10 +11,11 @@
 @media .query.desktop[below] {
 
   .toggle {
-    height: --navHeight;
-    width: .padding[smallest];
+    height: var(--navHeight);
+    width: @barHeight * 9;
     display: flex;
-    align-items: center;cursor: pointer;
+    align-items: center;
+    cursor: pointer;
   }
   
   .activeToggle {
@@ -27,15 +28,15 @@
       height: @barHeight;
     }
   
-    .topBar {
+    .barTop {
       transform: rotate(45deg);
     }
   
-    .middleBar {
+    .barMiddle {
       opacity: 0;
     }
   
-    .bottomBar {
+    .barBottom {
       transform: rotate(-45deg);
     }
   }
@@ -43,25 +44,25 @@
   @barHeight: 3px;
   
   .bars {
-    width: .padding[smallest];
+    width: 100%;
     height: @barHeight * 6;
     transition: height .2s ease-in-out;
   }
   
-  .topBar {
+  .barTop {
     top: 0;
   }
   
-  .middleBar {
-    text-align: 50%;
+  .barMiddle {
+    top: 50%;
     transform: translateY(-50%);
   }
   
-  .bottomBar {
+  .barBottom {
     bottom: 0;
   }
   
-  .topBar, .middleBar, .bottomBar {
+  .barTop, .barMiddle, .barBottom {
     width: 100%;
     height: @barHeight;
     background: var(--color);

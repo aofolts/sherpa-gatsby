@@ -1,0 +1,119 @@
+@import (reference) '../global.less';
+@import (reference) '../buttons.module.less';
+@import '../forms/index.module.less';
+
+.section {
+  background: .color.primary[dark];
+  overflow: visible;
+  padding-bottom: var(--paddingVertical);
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: calc(var(--paddingVertical) ~'*' 2);
+    background: .color.grey[lightest];
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.wrap {
+  max-width: 100%;
+  width: 100rem;
+  margin: 0 auto;
+  padding: 0 var(--paddingHorizontal);
+}
+
+.postcard {
+  background: white;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100rem;
+  
+  @media .query.tablet[above] {
+    height: 55rem;
+  }
+}
+
+.headline {
+  margin-bottom: .padding[medium];
+}
+
+.form {
+  @media .query.tablet[above] {
+    display: flex;
+    height: 100%;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% ~'-' .border.weight[default] * 2);
+    height: calc(100% ~'-' .border.weight[default] * 2);
+    border: .border.weight[default] solid .color.grey[lighter];
+    padding-left: none;
+    z-index: 0;
+  }
+}
+
+.contentLeft {
+  padding: var(--paddingHorizontal);
+  
+  @media .query.tablet[above] {
+    height: 100%;
+    width: 40rem;
+    flex-shrink: 0;
+
+    &:after {
+      content: '';
+      right: -1 * .border.weight[default];
+      bottom: 0;
+      width: .border.weight[default];
+      height: calc(100% ~'-' var(--paddingHorizontal));
+      background: .color.grey[lighter];
+      position: absolute;
+    }
+  }
+}
+
+.message {
+  padding: var(--paddingHorizontal);
+
+  @media .query.tablet[andBelow] {
+    padding-top: 0;
+  }
+}
+
+.contentRight {
+  @media .query.tablet[above] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    flex-grow: 1;
+  }
+}
+
+.submit {
+  width: 100%;
+  background: .color[primary];
+  color: white;
+  cursor: pointer;
+  .button.text;
+
+  @media .query.tablet[above] {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover {
+    &:after {
+      content: ' →';
+    }
+  }
+}

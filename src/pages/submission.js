@@ -12,7 +12,7 @@ const Success = () => (
       <div className={css.content}>
         <h1 className={css.headline}>Message sent!</h1>
         <p>Ready to dive back in?</p>
-        <Link to='/' className='primaryButton'>
+        <Link to='/' className={css.button}>
           Return Home
         </Link>
       </div>
