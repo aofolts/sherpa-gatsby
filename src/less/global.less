@@ -2,14 +2,12 @@
 @import '../../node_modules/yetti/global.less';
 
 ////////////////////////////////////////////////////////
-// APPEARENCE
+// BORDER
 ////////////////////////////////////////////////////////
-
-@bd: 2px; 
 
 .border() {
   .weight() {
-    thin: 2px;
+    default: 2px;
     medium: 4px;
   }
 }
@@ -41,20 +39,12 @@
 // COLORS
 ////////////////////////////////////////////////////////
 
-@lightGrey: #f6f6f6;
-@mediumlightGrey: darken(@lightGrey,5%);
-
 .color() {
   primary: #35D49D;
   accent: #465C96;
-
   green: #35D49D;
   blue: #465C96;
-
   black: #333;
-  lightGrey: #f6f6f6;
-  mediumlightGrey: @mediumlightGrey;
-  fadedWhite: fade(white,90%);
 
   .primary() {
     darker: #228760;
@@ -79,60 +69,11 @@
 // CONTAINERS
 ////////////////////////////////////////////////////////
 
-.wrapMain {
-  .wrap(
-    @span: 10
-  );
-}
-
-.wrapSmall {
-  .wrap(
-    @span: 7
-  )
-}
-
 html {
   --paddingVertical: 10rem;
 
   @media .query.phone[default] {
     --paddingVertical: 5rem;
-  }
-}
-
-// // Move to yetti
-.wrap(
-  @span: 12,
-  @padding: horizontal,
-  @margin: vertical,
-  @align: center
-) {
-  @mainWidth: 130rem;
-  @columnWidth: floor(130rem / 12);
-
-  max-width: 100%;
-  width: floor(@span * @columnWidth);
-
-  & when (@padding = default) {
-    .padding.default;
-  }
-
-  & when (@align = center) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  & when (@align = left) {
-    margin-right: auto;
-    margin-left: @offset;
-  }
-
-  & when (@align = right) {
-    margin-left: auto;
-  }
-
-  & when (@margin = vertical) {
-    margin-top: var(--paddingVertical);
-    margin-bottom: var(--paddingVertical);
   }
 }
 
@@ -154,6 +95,14 @@ html {
 }
 
 ////////////////////////////////////////////////////////
+// EASING
+////////////////////////////////////////////////////////
+
+.ease() {
+  cubic: cubic-bezier(0,.5,.5,1);
+}
+
+////////////////////////////////////////////////////////
 // FONT FAMILIES
 ////////////////////////////////////////////////////////
 
@@ -167,6 +116,7 @@ html {
 ////////////////////////////////////////////////////////
 
 .grid() {
+  columnWidth: .padding[large];
   grid-gap: .padding[medium];
 
   .thirds() {
@@ -181,6 +131,48 @@ html {
       @media .query.tablet[above] {
         display: flex;
       }
+    }
+  }
+}
+
+.thirdsGrid {
+  display: flex;
+  grid-gap: .padding[medium];
+
+  @media .query.phone[above] {
+    grid-template-columns: repeat(30rem,minmax(35rem,1fr));
+  }
+
+  @media .query.phone[default] {
+    grid-template-columns: 1fr;
+  }
+
+  @supports not (display: grid) {
+    @media .query.phone[above] {
+      display: flex;
+    }
+
+    @media .query.phone[default] {
+      display: block;
+    }
+  }
+}
+
+.halvesGrid {
+  display: grid;
+  grid-gap: .padding[medium];
+
+  @media .query.phone[above] {
+    grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
+  }
+
+  @media .query.phone[default] {
+    grid-template-columns: 1fr;
+  }
+
+  @supports not (display: grid) {
+    @media .query.phone[above] {
+      display: flex;
     }
   }
 }
@@ -251,8 +243,78 @@ html {
   }
 }
 
+h1 {
+  .heading.primary;
+}
+
+h2 {
+  .heading.secondary;
+}
+
+h3 {
+  .heading.tertiary;
+}
+
 h5 {
   .heading.mini;
+}
+
+////////////////////////////////////////////////////////
+// LISTS
+////////////////////////////////////////////////////////
+
+.list() {
+  font-size: .paragraph.secondary[font-size];
+  margin-bottom: .paragraph[line-height];
+
+  .item() {
+    margin-left: 2em;
+  }
+
+  li {
+    .list.item;
+  }
+
+  .ordered() {
+    .list;
+    list-style-type: ;
+  }
+
+  .unordered() {
+    .list;
+    list-style-type: disc;  
+  }
+}
+
+////////////////////////////////////////////////////////
+// PADDING
+////////////////////////////////////////////////////////
+
+.padding() {
+  smallest: 1rem;
+  extraSmall: 1.5rem;
+  small: 2.5rem;
+  medium: 5rem;
+  mediumSmall: 3rem;
+  mediumLarge: 7rem;
+  large: 10rem;
+  extraLarge: 12rem;
+  horizontal: $medium;
+  vertical: $large;
+
+  .default() {
+    padding: var(--paddingVertical) var(--paddingHorizontal);
+  }
+}
+
+body {
+  --paddingHorizontal: .padding[horizontal];
+  --paddingVertical: .padding[vertical];
+
+  @media .query.phone[default] {
+    --paddingHorizontal: .padding[small];
+    --paddingVertical: .padding[mediumLarge];
+  }
 }
 
 ////////////////////////////////////////////////////////
@@ -295,53 +357,133 @@ p a {
   .paragraph.link;
 }
 
-////////////////////////////////////////////////////////
-// GRIDS
-////////////////////////////////////////////////////////
-
-.grid() {
-  @maxWidth: 130rem;
+p {
+  .paragraph;
 }
 
-.thirdsGrid {
-  display: flex;
-  grid-gap: .padding[medium];
+.p2 {
+  .paragraph.secondary;
+}
 
-  @media .query.phone[above] {
-    grid-template-columns: repeat(30rem,minmax(35rem,1fr));
-  }
-
-  @media .query.phone[default] {
-    grid-template-columns: 1fr;
-  }
-
-  @supports not (display: grid) {
-    @media .query.phone[above] {
-      display: flex;
-    }
-
-    @media .query.phone[default] {
-      display: block;
-    }
+p,.p2 {
+  b,strong {
+    .paragraph.bold;
   }
 }
 
-.halvesGrid {
-  display: grid;
-  grid-gap: .padding[medium];
+p,.p2 {
+  i,em {
+    .paragraph.italic;
+  }
+}
 
-  @media .query.phone[above] {
-    grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
+body {
+  color: .paragraph[color];
+  font-family: .paragraph[font-family];
+  font-weight: .paragraph[font-weight];
+  line-height: .paragraph[line-height];
+  font-size: .paragraph[font-size];
+}
+
+////////////////////////////////////////////////////////
+// MEDIA
+////////////////////////////////////////////////////////
+
+@mediaBackground: {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+};
+
+.mediaBackground {
+  @mediaBackground();
+}
+
+////////////////////////////////////////////////////////
+// MEDIA QUERIES
+////////////////////////////////////////////////////////
+
+.query() {
+  .phone() {
+    maxWidth: 480px;
+    default: ~'screen and (max-width: @{maxWidth})';
+    above: ~'screen and (min-width: @{aboveWidth})';
+    @maxWidth: $maxWidth;
+    @aboveWidth: $maxWidth + 1; 
+  }
+
+  .tablet() {
+    minWidth: 481px;
+    maxWidth: 767px;
+    
+    default: ~'screen and (min-width: @{minWidth}) and (max-width: @{maxWidth})';
+    above: ~'screen and (min-width: @{aboveWidth})';
+    below: ~'screen and (max-width: @{belowWidth})';
+    andBelow: ~'screen and (max-width: @{maxWidth})';
+    andAbove: ~'screen and (min-width: @{minWidth})';
+
+    @minWidth: $minWidth;
+    @maxWidth: $maxWidth;
+    @aboveWidth: $maxWidth + 1; 
+    @belowWidth: $minWidth - 1; 
+  }
+
+  .laptop() {
+    minWidth: 768px;
+    maxWidth: 1280px;
+    
+    default: ~'screen and (min-width: @{minWidth}) and (max-width: @{maxWidth})';
+    above: ~'screen and (min-width: @{aboveWidth})';
+    below: ~'screen and (max-width: @{belowWidth})';
+
+    @minWidth: $minWidth;
+    @maxWidth: $maxWidth;
+    @aboveWidth: $maxWidth + 1; 
+    @belowWidth: $minWidth - 1; 
+  }
+
+  .desktop() {
+    minWidth: 1281px;
+    
+    default: ~'screen and (min-width: @{minWidth})';
+    below: ~'screen and (max-width: @{belowWidth})';
+
+    @belowMaxWidth: @minWidth - 1px;
+    @minWidth: $minWidth;
+    @belowWidth: $minWidth - 1; 
+  }
+}
+
+////////////////////////////////////////////////////////
+// MISCELLANEOUS
+////////////////////////////////////////////////////////
+
+@goldenRatio: 1.618;
+
+////////////////////////////////////////////////////////
+// REM SIZES
+////////////////////////////////////////////////////////
+
+:root {
+  font-size: 10px;
+
+  @media .query.desktop[default] {
+    font-size: 10px;
+  }
+
+  @media .query.laptop[default] {
+    font-size: 9px;
+  }
+
+  @media .query.tablet[default] {
+    font-size: 8px;
   }
 
   @media .query.phone[default] {
-    grid-template-columns: 1fr;
-  }
-
-  @supports not (display: grid) {
-    @media .query.phone[above] {
-      display: flex;
-    }
+    font-size: 8px;
   }
 }
 
@@ -363,3 +505,30 @@ p a {
   line-height: .paragraph[line-height];
   margin-bottom: .padding[medium];
 };
+
+////////////////////////////////////////////////////////
+// RICH TEXT
+////////////////////////////////////////////////////////
+
+.richText() {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  .heading() {
+    margin-top: .paragraph[margin-bottom];
+    margin-bottom: .5em;
+  }
+
+  ol {
+    .list.unordered;
+  }
+
+  ul {
+    .list.unordered;
+  }
+
+  h2,h3,h4 {
+    .richText.heading;
+  }
+}

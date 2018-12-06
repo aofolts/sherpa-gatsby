@@ -19,7 +19,7 @@
     "gatsby-transformer-json": "^1.0.20",
     "gatsby-transformer-remark": "^2.1.12",
     "gatsby-transformer-sharp": "^2.1.8",
-    "less": "^3.8.1",
+    "less": "^3.9.0",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.6.1",

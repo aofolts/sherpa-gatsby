@@ -1,0 +1,60 @@
+@import (reference) './index.module.less';
+
+.phase {
+  @media .query.tablet[above] {
+    display: flex;
+  }
+
+  & + .phase {
+    margin-top: .padding[medium];
+  }
+}
+
+.featuredMedia {
+  width: .padding[large] * 8;
+  max-width: 100%;
+  padding-bottom: 50%;
+  margin: .padding[medium] 0;
+}
+
+.content {
+  @media .query.tablet[above] {
+    margin-left: .padding[medium];
+  }
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timelinePath {
+  @media .query.tablet[above] {
+    margin-top: .padding[small];
+    flex-grow: 1;
+
+    path {
+      stroke: .color.grey[light];
+      height: 100%;
+    }
+  }
+}
+
+.phaseNumber {
+  font-size: .heading.primary[font-size];
+  width: .padding[large];
+  height: .padding[large];
+  flex-shrink: 0;
+  border-radius: 1000px;
+  border: .border.weight[default] solid .color.grey[default];
+  color: .color.primary[default];
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phaseNumberText {
+  line-height: 100%;
+  margin-top: -.1em;
+}

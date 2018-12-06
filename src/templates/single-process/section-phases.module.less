@@ -1,0 +1,29 @@
+@import (reference) './index.module.less';
+
+.section {
+  background: .color.grey[lightest];
+}
+
+.wrap {
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+}
+
+.content {
+  width: .padding[large] * 10;
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: left;
+
+  ul {
+    .list.unordered;
+  }
+
+  ol {
+    .list.ordered;
+  }
+
+  h2,p,ul,ol {
+    width: .padding[large] * 7;
+    max-width: 100%;
+  }
+}

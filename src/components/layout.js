@@ -3,6 +3,8 @@ import Header from './header'
 import Footer from './footer'
 import {Helmet} from 'react-helmet'
 import favicon from 'images/favicon.png'
+import PropTypes from 'prop-types'
+import {getPageUrl} from './link'
 
 export const LayoutContext = React.createContext(null)
 
@@ -53,7 +55,8 @@ class Layout extends Component {
   render() {
     const {
       children,
-      hasHero
+      hasHero,
+      meta
     } = this.props
 
     const headerProps = {
@@ -64,6 +67,14 @@ class Layout extends Component {
       <LayoutContext.Provider value={this.state}>
         <div id='layout'>
           <Helmet>
+            <title>{meta.title}</title>
+            <meta charSet="UTF-8" />
+            <meta name='description' content={meta.description}/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta property="og:title" content={meta.title}></meta>
+            <meta property="og:description" content={meta.description}/>
+            <meta property="og:image" content={meta.image}/>
+            <meta property="og:url" content={meta.url}/>
             <meta charSet="utf-8" />
             <link rel='shortcut icon' type='image/png' href={favicon}/>
             <link rel="stylesheet" href="https://use.typekit.net/dxm1wgv.css"></link>
@@ -78,3 +89,44 @@ class Layout extends Component {
 }
 
 export default Layout
+
+Layout.propTypes = {
+  meta: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    image: PropTypes.shape({
+      url: PropTypes.string
+    })
+  })
+}
+
+export function withLayout(Component) {
+  return props => {
+    const {
+      data 
+    } = props
+ 
+    const {
+      page
+    } = data
+
+    const meta = {
+      ...page.seo,
+      url: getPageUrl(page),
+      image: page.featuredImage.fluid.src
+    }
+ 
+    // Patch for Contentful + GraphQL single reference field 
+    // with multiple types issue: #10090
+    if (page && page.layout) {
+      data.page.layout = page.layout[0] || page.layout
+    }
+ 
+    return (
+      <Layout meta={meta}>
+        <Component {...props}/>
+      </Layout>
+    )
+  }
+}

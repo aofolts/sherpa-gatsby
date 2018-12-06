@@ -18,11 +18,11 @@ const Background = props => {
   )
 }
 
-const SecondaryHero = ({title,image}) => {
+const SecondaryHero = ({title,background}) => {
 
   return (
     <section className={css.hero}>
-      <Background {...image}/>
+      <Background {...background}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
           <h1 className={css.headline}>{title}</h1>

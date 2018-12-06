@@ -1,4 +1,117 @@
-const path = require("path")
+const path = require('path')
+
+const templates = {
+  page: path.resolve('./src/templates/page.js'),
+  single: {
+    process: path.resolve('./src/templates/single-process/index.js')
+  },
+  pages: {
+  }
+}
+
+exports.createPages = ({graphql,actions}) => {
+  const {
+    createPage
+  } = actions
+
+  // const createPages = new Promise((resolve,reject) => {
+  //   resolve(
+  //     graphql(
+  //       `
+  //         {
+  //           pages: allContentfulPage {
+  //             edges {
+  //               node {
+  //                 slug
+  //                 layout {
+  //                   internal {
+  //                     type
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       `
+  //     ).then(({
+  //       errors,
+  //       data
+  //     }) => {
+  //       if (errors) {
+  //         console.log(errors)
+  //         reject(errors)
+  //       }
+ 
+  //       const pages = data.pages.edges.map(entry => entry.node)
+
+  //       const getPageTemplate = entry => {
+  //         // gatsby-source-contentful single reference field bug
+  //         const layoutType = entry.layout[0].internal.type
+
+  //         if (layoutType === 'ContentfulLayoutProcess') return templates.pages.process
+  //         return templates.pages[entry.slug] || templates.page
+  //       }
+
+  //       const getPagePath = entry => {
+  //         return entry.slug === 'home' ? '/' : `/${entry.slug}`
+  //       }
+
+  //       pages.forEach(entry => {
+  //         createPage({
+  //           path: getPagePath(entry),
+  //           component: templates.single.process,
+  //           context: {
+  //             slug: entry.slug
+  //           }
+  //         })
+  //       })
+  //     })
+  //   )
+  // })
+
+  const createProcessPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            pages: allContentfulProcess {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+
+        const pages = data.pages.edges.map(entry => entry.node)
+
+        pages.forEach(entry => {
+          createPage({
+            path: `/process/${entry.slug}`,
+            component: templates.single.process,
+            context: {
+              slug: entry.slug
+            }
+          })
+        })
+      })
+    )
+  })
+
+  return Promise.all([
+    //createPages,
+    createProcessPages
+  ])
+}
 
 exports.onCreateWebpackConfig = ({
   actions
@@ -10,105 +123,8 @@ exports.onCreateWebpackConfig = ({
         'node_modules'
       ],
     },
+    stats: {
+      moduleTrace: false,
+    }
   })
-}
-
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  const workPages = graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "data/work/"}}
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(`src/templates/single-work.js`)
-      })
-    })
-  })
-
-  const journalPages = graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "data/journal/"}}
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(`src/templates/single-journal.js`)
-      })
-    })
-  })
-
-  const pages = graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "data/pages/"}}
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-              templateType
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      // const {
-      //   templateType
-      // } = node.frontmatter
-
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(`src/templates/page-basic.js`)
-      })
-    })
-  })
-
-  return Promise.all([
-    workPages,
-    journalPages
-  ])
 }

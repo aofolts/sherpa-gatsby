@@ -4,11 +4,11 @@ import css from 'less/footer/section-contact.module.less'
 class Form extends React.Component {
   render() {
     const formProps = {
-      netlify: true,
+      netlify: 'true',
       action: '/submission',
       id: 'form-contact',
       className: css.form,
-      'netlify-honeypot': 'herebotiebotie'
+      'netlify-honeypot': 'herebotiebotie' 
     }
 
     return (
@@ -16,19 +16,28 @@ class Form extends React.Component {
         <div className={css.contentLeft}>
           <h2 className={css.headline}>Say Hello!</h2>
           <div className={css.field}>
-            <label className={css.label} for='formContactFieldName'>Name</label>
+            <label className={css.label} htmlFor='formContactFieldName'>Name</label>
             <input className={css.input} type='text' id='formContactFieldName' required/>
           </div>
           <div className={css.field}>
-            <label className={css.label} for='formContactFieldEmail'>Email</label>
+            <label className={css.label} htmlFor='formContactFieldEmail'>Email</label>
             <input className={css.input} type='email' id='formContactFieldEmail' name='name' required/>
           </div>
+
+          <div className={[css.field,css.fieldCheckbox].join(' ')}>
+            <div className={css.inputCheckboxWrap}>
+              
+              <input className={[css.input,css.inputCheckbox].join(' ')} type='checkbox' id='formContactFieldHuman' name='name' required/>
+            </div>
+            <label className={[css.label,css.checkboxLabel].join(' ')} htmlFor='formContactFieldHuman'>I am not a robot.</label>
+          </div>
+
           <input type='hidden' name='herebotiebotie'/>
         </div>
         <div className={css.contentRight}>
           <div className={css.message}>
             <div className={css.field}>
-              <label className={css.label} for='formContactFieldMessage'>Your Message</label>
+              <label className={css.label} htmlFor='formContactFieldMessage'>Your Message</label>
               <textarea className={css.input} type='email' id='formContactFieldMessage' name='message' required rows={5}/>
             </div>
           </div>

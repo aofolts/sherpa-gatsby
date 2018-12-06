@@ -4,6 +4,10 @@ import css from 'less/menu-main.module.less'
 
 const menuItems = [
   {
+    title: 'Process',
+    link: '/process'
+  },
+  {
     title: 'Work',
     link: '/work'
   },

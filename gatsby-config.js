@@ -22,7 +22,8 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Sherpa Design Co.',
-    siteUrl: `https://www.sherpadesign.co`
+    siteUrl: `https://www.sherpadesign.co`,
+    location: 'Rochester, NY'
   },
   plugins: [
     'gatsby-plugin-svg-sprite',

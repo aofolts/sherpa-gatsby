@@ -1,0 +1,56 @@
+@import (reference) '../global.less';
+
+.field {
+  & + .field {
+    margin-top: .padding[small];
+  }
+}
+
+.fieldCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.label {
+  display: block;
+  font-size: .paragraph.tertiary[font-size];
+  color: .color.grey[default];
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: .border.weight[default] solid .color.grey[lighter];
+  font-size: .paragraph[font-size];
+  line-height: .paragraph[line-height];
+  padding: 0 0 .5em;
+
+  &:focus {
+    outline: none;
+    border-bottom-color: .color.grey[default];
+  }
+}
+
+.inputCheckbox {
+  border: .border.weight[default] solid .color[primary];
+  margin: 0;
+  margin-right: .5em;
+  width: .paragraph.tertiary[font-size];
+  height: .paragraph.tertiary[font-size];
+  flex-shrink: 0;
+  display: block;
+  line-height: 1em;
+
+  &:checked {
+    background: .color[primary];
+  }
+}
+
+.checkboxLabel {
+  color: .paragraph[color];
+}
+
+.textarea {
+  width: 100%;
+}
