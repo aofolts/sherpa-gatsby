@@ -23,21 +23,21 @@ const Services = () => {
         description: 'Research, interviews, timelines, and insights that give you a crystal-clear path forward.',
         icon: 'target',
         cta: 'Get Strategic',
-        link: '/digital-strategy'
+        link: '/process/digital-strategy'
       },
       {
         title: 'Landing Page',
         description: 'A lean, mean 1-pager that has a single purpose: increasing event signups, selling a book, etc.',
         icon: 'rocket',
         cta: 'Make a splash',
-        link: '/landing-pages'
+        link: '/process/landing-page'
       },
       {
         title: 'Custom Website',
         description: 'Stop renting. Let’s build a unique digital home for your business that actually engages customers.',
         icon: 'website',
         cta: 'Build a home',
-        link: '/custom-websites'
+        link: '/process/custom-website'
       }
     ]
   }

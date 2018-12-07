@@ -24,10 +24,21 @@ export const getPageUrl = page => {
 
 const Link = ({
   page,
+  to,
   url,
   className,
   children
 }) => {
+  if (to) {
+    return (
+      <GatsbyLink 
+        className={className}
+        to={to}
+      >
+        {children}
+      </GatsbyLink>
+    )
+  }
   if (page) {
     const path = getPagePath(page)
 
@@ -40,7 +51,7 @@ const Link = ({
       </GatsbyLink>
     )
   }
-  else if (url) {
+  if (url) {
     if (url[0] === '/') {
       return (
         <GatsbyLink 
@@ -63,9 +74,7 @@ const Link = ({
       )
     }
   }
-  else {
-    return <div {...{className}}>{children}</div>
-  }
+  return <div {...{className}}>{children}</div>
 }
 
 Link.propTypes = {

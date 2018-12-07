@@ -5,7 +5,7 @@ import {withLayout} from 'components/layout'
 import ProblemSection from './section-problem'
 import SolutionSection from './section-solution'
 import ServicesSection from './section-services'
-import TestimonialsSection from './section-testimonials'
+import TestimonialsSection from 'components/section-testimonials'
 import SectionAbout from './section-about'
 import {pick} from 'lodash'
 
@@ -26,7 +26,7 @@ const HomePage = ({
       <ProblemSection/>
       <SolutionSection/>
       <ServicesSection/>
-      <TestimonialsSection data={pick(layout,['testimonials'])}/>
+      <TestimonialsSection/>
       <SectionAbout data={pick(layout,['aboutImage'])}/>
     </Fragment>
   )
@@ -37,7 +37,12 @@ export const query = graphql`
     page: contentfulPage(slug: {eq: "home"}) {
       ...pageFields
       layout {
-        ...homeTestimonials
+        ... on ContentfulLayoutPageHome {
+          testimonials {
+            ...testimonial
+          }
+          ...homeSectionAbout
+        }
       }
     }
   }

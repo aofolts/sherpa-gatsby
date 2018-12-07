@@ -1,7 +1,7 @@
 const path = require('path')
 
 const templates = {
-  page: path.resolve('./src/templates/page.js'),
+  page: path.resolve('./src/templates/page/index.js'),
   single: {
     process: path.resolve('./src/templates/single-process/index.js')
   },

@@ -1,8 +1,30 @@
 import React,{Component} from 'react'
-import css from 'less/home/section-testimonials.module.less'
+import css from './section-testimonials.module.less'
 import BackgroundImage from 'components/image-background'
 import {graphql} from 'gatsby'
 import topoPattern from 'svg/topo-map.svg'
+import {StaticQuery} from 'gatsby'
+
+export default props => (
+  <StaticQuery
+    query={query}
+    render={data => <TestimonialsSection data={data} {...props}/>}
+  />
+)
+
+export const query = graphql`
+  {
+    testimonials: allContentfulTestimonial(
+      limit: 3
+    ) {
+      edges {
+        node {
+          ...testimonial
+        }
+      }
+    }
+  }
+`
 
 const Cards = ({
   data,
@@ -115,14 +137,15 @@ const Nav = ({
   )
 }
 
-class TestimonialSection extends Component {
+class TestimonialsSection extends Component {
 
   constructor(props) {
     super(props)
   
-    const {
-      data
-    } = props
+    const data = {
+      ...props.data,
+      testimonials: this.props.data.testimonials.edges.map(entry => entry.node)
+    }
 
     this.state = {
       activeTestimonialId: data.testimonials[1].id
@@ -140,19 +163,33 @@ class TestimonialSection extends Component {
       setActiveTestimonialById
     } = this
 
-    const {
-      data
-    } = this.props
+    const data = {
+      ...this.props.data,
+      testimonials: this.props.data.testimonials.edges.map(entry => entry.node)
+    }
 
     const {
       activeTestimonialId
     } = this.state
 
-    return (
-      <section id='testimonials' className={css.section}>
+    const sectionClasses = [
+      css.section,
+      this.props.className
+    ].join(' ')
+
+    const Pattern = () => {
+      if (this.props.pattern === false) return false 
+
+      return (
         <svg className={css.topoPattern}>
           <use xlinkHref={`#${topoPattern.id}`}/>
         </svg>
+      )
+    }
+
+    return (
+      <section id='testimonials' className={sectionClasses}>
+        <Pattern/>
         <div className={css.wrap}>
           <Cards data={data} activeTestimonialId={activeTestimonialId}/>
           <Nav data={data} {...{activeTestimonialId,setActiveTestimonialById}}/>
@@ -183,14 +220,3 @@ export const testimonialFragment = graphql`
     }
   }
 `
-
-export const homeTestimonialsFragment = graphql`
-  fragment homeTestimonials on ContentfulLayoutPageHome {
-    testimonials {
-      ...testimonial
-    }
-    ...homeSectionAbout
-  }
-`
-
-export default TestimonialSection
