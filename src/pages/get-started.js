@@ -2,11 +2,8 @@ import React,{Component} from 'react'
 import {graphql} from 'gatsby'
 import Layout from 'components/layout'
 import Hero from 'components/hero-secondary'
-
-import Section from 'components/section'
 import css from 'less/packages.module.less'
 import {Helmet} from 'react-helmet'
-import RichText from 'components/rich-text'
 import packageCss from 'less/package-overview.module.less'
 
 css.package = packageCss
@@ -41,13 +38,13 @@ const Intro = ({packages,activePackage,setActivePackageById}) => {
   }
 
   return (
-    <Section name='intro'>
+    <section id='intro'>
       <div className='wrapSmall'>
         <h2>Websites For Any Business</h2>
         <p>Whether you're considering your first website or planning a complex project, I can help, with packages designed to help you grow online.</p>
         <Nav/>
       </div>
-    </Section>
+    </section>
   )
 }
 
@@ -70,15 +67,15 @@ const PackagesSection = ({packages,activePackage}) => {
           <h2>{title}</h2>
           <p>Use Cases: {useCase}</p>
         </div>
-        <RichText html={html} wrapClassName={css.package.mainContent}/>
+        <div className={css.package.mainContent} dangerouslySetInnerHTML={{__html: html}}/>
       </div>
     )
   })
 
   return (
-    <Section name='packages' className={css.packagesSection}>
+    <section id='packages' className={css.packagesSection}>
       {packageElements}
-    </Section>
+    </section>
   )
 }
 

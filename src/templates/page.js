@@ -32,6 +32,9 @@ export const pageFieldsFragment = graphql`
     id
     title
     slug
+    internal {
+      type
+    }
     featuredImage {
       ...heroImage
     }

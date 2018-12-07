@@ -1,6 +1,6 @@
 import React from 'react'
 import css from 'less/home/hero.module.less'
-import {Link,graphql,StaticQuery} from 'gatsby'
+import {Link} from 'gatsby'
 import Image from 'gatsby-image'
 
 const Buttons = () => {
@@ -55,14 +55,12 @@ const Background = props => {
   )
 }
 
-const HomeHero = props => {
-  const {
-    imageSharp: heroImage 
-  } = props.data
-
+const HomeHero = ({
+  data
+}) => {
   return (
     <section className={css.hero}>
-      <Background {...heroImage}/>
+      <Background {...data.backgroundImage}/>
       <div className={css.contentContainer}>
         <div className={css.content}>
           <h1 className={css.headline}>Growing Businesses Need Hard-Working Websites™</h1>
@@ -73,23 +71,4 @@ const HomeHero = props => {
   )
 }
 
-export default props => (
-  <StaticQuery
-    query={
-      graphql`
-        {
-          imageSharp(original: {
-            src: {
-              regex: "/myimage/"
-            }
-          }) {
-            sizes(maxWidth: 1920) {
-              ...GatsbyImageSharpSizes_noBase64
-            }
-          }
-        }
-      `
-    }
-    render={data => <HomeHero data={data} {...props}/>}
-  />
-)
+export default HomeHero

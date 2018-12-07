@@ -2,20 +2,18 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from 'components/layout'
 import Hero from 'components/hero-secondary'
-
-import Section from 'components/section'
 import css from 'less/page-work.module.less'
 import BlogCard from 'components/card-blog'
 import {Helmet} from 'react-helmet'
 
 const Intro = () => {
   return (
-    <Section name='intro' style={{textAlign: 'center'}}>
+    <section id='intro' style={{textAlign: 'center'}}>
       <div className='wrapSmall'>
         <h2>Sharing Knowledge</h2>
         <p>Tune in for weekly tips on everything web—from design and development to starting a freelance career, networking locally, and growing a small business online.</p>
       </div>
-    </Section>
+    </section>
   )
 }
 
@@ -27,13 +25,13 @@ const Archive = ({posts}) => {
   })
 
   return (
-    <Section name='archive' className={css.archiveSection}>
+    <section id='archive' className={css.archiveSection}>
       <div className='wrapMain'>
         <div className='thirdsGrid'>
           {cards}
         </div>
       </div>
-    </Section>
+    </section>
   )
 }
 

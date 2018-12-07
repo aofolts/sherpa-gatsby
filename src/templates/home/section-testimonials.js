@@ -184,4 +184,13 @@ export const testimonialFragment = graphql`
   }
 `
 
+export const homeTestimonialsFragment = graphql`
+  fragment homeTestimonials on ContentfulLayoutPageHome {
+    testimonials {
+      ...testimonial
+    }
+    ...homeSectionAbout
+  }
+`
+
 export default TestimonialSection

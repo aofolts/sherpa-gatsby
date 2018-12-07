@@ -1,7 +1,7 @@
 import React from 'react'
 import {graphql,StaticQuery} from 'gatsby'
 import css from 'less/home/home.module.less'
-import BlogCard from '../card-blog'
+import BlogCard from '../../components/card-blog'
 
 const HomeJournalSection = ({posts}) => {
   const cards = posts.map(post => {

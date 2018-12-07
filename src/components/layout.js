@@ -112,9 +112,12 @@ export function withLayout(Component) {
     } = data
 
     const meta = {
-      ...page.seo,
+      title: page.seo.title,
+      description: page.seo.description.description,
       url: getPageUrl(page),
-      image: page.featuredImage.fluid.src
+      image: {
+        url: page.featuredImage.fluid.src
+      }
     }
  
     // Patch for Contentful + GraphQL single reference field 
