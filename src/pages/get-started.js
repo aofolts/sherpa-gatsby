@@ -3,7 +3,6 @@ import {graphql} from 'gatsby'
 import Layout from 'components/layout'
 import Hero from 'components/hero-secondary'
 import css from 'less/packages.module.less'
-import {Helmet} from 'react-helmet'
 import packageCss from 'less/package-overview.module.less'
 
 css.package = packageCss
@@ -112,12 +111,17 @@ class Page extends Component {
       featuredImage
     } = this.props.data
 
+    const meta = {
+      title: 'Get Stared: Website Packages For Small Businesses &amp; Nonprofits',
+      description: `Whether you're considering your first website or planning a complex project, I can help, with packages for most budgets.`,
+      url: `https://www.sherpadesign.co/get-started`,
+      image: {
+        url: featuredImage.fluid.src
+      }
+    }
+
     return (
-      <Layout>
-        <Helmet>
-          <title>Get Stared: Website Packages For Small Businesses &amp; Nonprofits</title>
-          <meta name='description' content="Whether you're considering your first website or planning a complex project, I can help, with packages for most budgets."/>
-        </Helmet>
+      <Layout meta={meta}>
         <Hero title='Get Started' image={featuredImage}/>
         <Intro 
           packages={this.packages} 

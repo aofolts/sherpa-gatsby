@@ -1,7 +1,7 @@
 @import (reference) 'global.less';
 
 .mainWrap {
-  width: .wrap.main[width];
+  width: .padding[large] * 13;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -11,7 +11,7 @@
 }
 
 .introCopy {
-  max-width: .wrap.article[width];
+  max-width: .padding[large] * 7;
 }
 
 ////////////////////////////////////////////////////////
@@ -19,11 +19,8 @@
 ////////////////////////////////////////////////////////
 
 .stages {
-  .wrap(
-    @span: 10,
-    @padding: none,
-    @margin: none
-  )
+  width: .padding[large] * 10;
+  margin: 0 auto;
 }
 
 .stageMedia {
@@ -33,16 +30,8 @@
 
 .stage {
   list-style-type: none;
-  .wrap(
-    @span: 10
-  );
 }
 
 .stageContent {
-  .wrap(
-    @span: 5,
-    @padding: none,
-    @margin: none,
-    @align: none
-  )
+  width: .padding[large] * 5;
 }

@@ -1,0 +1,33 @@
+@import (reference) '../../less/global.less';
+@import 'longform.module.less';
+
+////////////////////////////////////////////////////////
+// RICH TEXT
+////////////////////////////////////////////////////////
+
+.richText() {
+  .heading() {
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  ol {
+    .list.unordered;
+  }
+
+  ul {
+    .list.unordered;
+  }
+
+  h2,h3,h4 {
+    .richText.heading;
+  }
+}

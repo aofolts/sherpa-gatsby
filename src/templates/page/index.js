@@ -4,6 +4,7 @@ import {withLayout} from 'components/layout'
 import Hero from 'components/hero-secondary'
 import css from './index.module.less'
 import TestimonialsSection from 'components/section-testimonials'
+import RichText from 'components/rich-text'
 
 const ContentSection = ({
   data
@@ -13,7 +14,10 @@ const ContentSection = ({
   return (
     <section id='section-content' className={css.section}>
       <div className={css.wrap}>
-        <div className={css.content} dangerouslySetInnerHTML={{__html: content}}/>
+        <RichText 
+          html={content} 
+          className={css.content} 
+          isLongform={true}/>
       </div>
     </section>
   )
@@ -28,7 +32,7 @@ const Page = ({
 
   return (
     <Fragment>
-      <Hero title={page.title} background={page.featuredImage}/>
+      <Hero title={page.title} backgroundImage={page.featuredImage}/>
       <ContentSection data={{...page.layout}}/>
       <TestimonialsSection className={css.testimonialsSection} pattern={false}/>
     </Fragment>    

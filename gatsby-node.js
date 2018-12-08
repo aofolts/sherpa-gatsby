@@ -3,10 +3,12 @@ const path = require('path')
 const templates = {
   page: path.resolve('./src/templates/page/index.js'),
   single: {
+    journal: path.resolve('./src/templates/single-journal/index.js'),
     process: path.resolve('./src/templates/single-process/index.js')
   },
   pages: {
-    home: path.resolve('./src/templates/home/index.js')
+    home: path.resolve('./src/templates/home/index.js'),
+    journal: path.resolve('./src/templates/journal/index.js')
   }
 }
 
@@ -48,6 +50,7 @@ exports.createPages = ({graphql,actions}) => {
           const layoutType = entry.layout[0]['__typename']
 
           if (layoutType === 'ContentfulLayoutPageHome') return templates.pages.home
+          if (entry.slug === 'journal') return templates.pages.journal
           return templates.pages[entry.slug] || templates.page
         }
 
@@ -106,11 +109,51 @@ exports.createPages = ({graphql,actions}) => {
     )
   })
 
+  const createJournalPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            pages: allContentfulJournalEntry {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+  
+        const pages = data.pages.edges.map(entry => entry.node)
+  
+        pages.forEach(entry => {
+          createPage({
+            path: `/journal/${entry.slug}`,
+            component: templates.single.journal,
+            context: {
+              slug: entry.slug
+            }
+          })
+        })
+      })
+    )
+  })
+
   return Promise.all([
     createPages,
-    createProcessPages
+    createProcessPages,
+    createJournalPages
   ])
 }
+
 
 exports.onCreateWebpackConfig = ({
   actions

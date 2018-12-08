@@ -1,5 +1,4 @@
-@import (reference) 'global.less';
-@import '../../node_modules/yetti/global.less';
+@import 'reset.less';
 
 ////////////////////////////////////////////////////////
 // BORDER
@@ -326,13 +325,18 @@ body {
   font-weight: 300;
   font-family: 'sofia-pro',sans-serif;
   line-height: 1.4em;
+  margin-bottom: 1em;
+  color: .color.grey[darker];
 
   .bold() {
     font-weight: 400;
   }
 
+  .italic() {
+    font-style: italic;
+  }
+
   .link() {
-    font-weight: .paragraph.bold[font-weight];
     color: .color.primary[darken];
     text-decoration: underline;
 
@@ -505,30 +509,3 @@ body {
   line-height: .paragraph[line-height];
   margin-bottom: .padding[medium];
 };
-
-////////////////////////////////////////////////////////
-// RICH TEXT
-////////////////////////////////////////////////////////
-
-.richText() {
-  > :first-child {
-    margin-top: 0;
-  }
-
-  .heading() {
-    margin-top: .paragraph[margin-bottom];
-    margin-bottom: .5em;
-  }
-
-  ol {
-    .list.unordered;
-  }
-
-  ul {
-    .list.unordered;
-  }
-
-  h2,h3,h4 {
-    .richText.heading;
-  }
-}

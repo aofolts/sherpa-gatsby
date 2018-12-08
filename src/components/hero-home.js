@@ -11,7 +11,7 @@ const Buttons = () => {
     },
     {
       label: "Contact Me",
-      link: '/#contactForm'
+      link: '/#contact'
     }
   ]
 

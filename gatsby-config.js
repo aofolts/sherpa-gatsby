@@ -26,6 +26,7 @@ module.exports = {
     location: 'Rochester, NY'
   },
   plugins: [
+    `@contentful/gatsby-transformer-contentful-richtext`,
     'gatsby-plugin-svg-sprite',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-less',

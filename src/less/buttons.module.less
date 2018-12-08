@@ -9,6 +9,7 @@
   border-radius: 1000px;
   font-weight: .paragraph.bold[font-weight];
   letter-spacing: .05em;
+  border: .border.weight[default] solid;
 
   .text() {
     font-size: .paragraph.secondary[font-size];
@@ -34,6 +35,7 @@
     .button;
     background: .color[primary];
     color: white;
+    border-color: .color[primary];
   }
 
   .secondary() {
@@ -58,5 +60,6 @@
 }
 
 .secondaryLightButton {
-  
+  .button;
+  border-color: white;
 }

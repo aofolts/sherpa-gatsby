@@ -6,8 +6,9 @@ export const getPagePath = page => {
   let base = ''
   let slug = page.slug
 
-  switch (page.internal.type) {
+  switch (page['__typename']) {
     case 'ContentfulProcess': base = '/process'; break;
+    case 'ContentfulJournalEntry': base = '/journal'; break;
     default: base = '';
   }
 
