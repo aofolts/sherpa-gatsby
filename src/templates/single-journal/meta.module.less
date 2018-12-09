@@ -1,0 +1,23 @@
+@import (reference) '../../less/global.less';
+
+.meta {
+  width: 70rem;
+  max-width: 100%;
+  margin: 0 auto .padding[medium] + .padding[small];
+  display: flex;
+  justify-content: space-between;
+  font-size: .paragraph.tertiary[font-size];
+  color: .color.grey[default];
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: .border.weight[default];
+    background: .color.grey[lightest];
+    display: block;
+    margin-top: .padding[small];
+  }
+}
