@@ -2,7 +2,6 @@ import React from 'react'
 import css from './index.module.less'
 import BackgroundImage from 'components/image-background'
 import Link from 'components/link'
-import {graphql} from 'gatsby'
 
 const Card = ({
   entry
