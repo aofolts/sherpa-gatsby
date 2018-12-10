@@ -9,13 +9,11 @@ import RichText from 'components/rich-text'
 const ContentSection = ({
   data
 }) => {
-  const content = data.content.childMarkdownRemark.html
-
   return (
     <section id='section-content' className={css.section}>
       <div className={css.wrap}>
         <RichText 
-          html={content} 
+          html={data.content} 
           className={css.content} 
           isLongform={true}/>
       </div>
@@ -30,10 +28,19 @@ const Page = ({
     page
   } = data
 
+  const {
+    layout 
+  } = page
+
+  // Deprecated: switching to Contentful rich text only
+  const content = layout.content.childMarkdownRemark        
+    ? layout.content.childMarkdownRemark.html
+    : layout.content.childContentfulRichText.html
+
   return (
     <Fragment>
       <Hero title={page.title} backgroundImage={page.featuredImage}/>
-      <ContentSection data={{...page.layout}}/>
+      <ContentSection data={{content}}/>
       <TestimonialsSection className={css.testimonialsSection} pattern={false}/>
     </Fragment>    
   )
@@ -55,6 +62,8 @@ export const pageFieldsFragment = graphql`
     title
     slug
     layout {
+      ...contentfulRichTextMaster
+      # Deprecated: switching to rich text only
       ...contentfulMarkdown
     }
     internal {
@@ -69,11 +78,22 @@ export const pageFieldsFragment = graphql`
   }
 `
 
+// Deprecated: switching to rich text only
 export const contentfulMarkdownFragment = graphql`
   fragment contentfulMarkdown on ContentfulMarkdown {
     id
     content {
       childMarkdownRemark {
+        html
+      }
+    }
+  }
+`
+
+export const contentfulRichTextMasterFragment = graphql`
+  fragment contentfulRichTextMaster on ContentfulRichTextMaster {
+    content: childContentfulRichTextMasterContentRichTextNode {
+      childContentfulRichText {
         html
       }
     }

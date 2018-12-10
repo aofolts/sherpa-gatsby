@@ -26,38 +26,3 @@ const HomeWorkSection = ({title,excerpt,path,testimonial}) => {
     </section>
   )
 }
-
-export default () => (
-  <StaticQuery
-    query={
-      graphql`
-        {
-          allMarkdownRemark(
-            filter: {fileAbsolutePath: {regex: "content/work/"}}
-            sort: {
-              order:DESC
-              fields: [frontmatter___date]
-            }
-            limit: 1
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  title
-                  excerpt
-                  path
-                  ...workTestimonial
-                }
-              }
-            }
-          }
-        }
-      `
-    }
-    render={data => {
-      const node = data.allMarkdownRemark.edges[0].node
-
-      return <HomeWorkSection {...node.frontmatter}/>
-    }}
-  />
-)
