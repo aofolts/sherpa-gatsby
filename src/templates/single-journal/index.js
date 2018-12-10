@@ -28,7 +28,7 @@ const SingleJournal = ({
   return ( 
     <Layout meta={meta}>
       <Hero title={page.title} backgroundImage={page.featuredImage}/>
-      <ContentSection data={{...page,content}}/> 
+      <ContentSection data={{content}}/> 
       <TestimonialsSection className={css.testimonialsSection} pattern={false}/>
       {/* TODO: Add previous/next story section */}
     </Layout>
