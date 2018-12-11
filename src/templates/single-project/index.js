@@ -5,6 +5,7 @@ import Hero from 'components/hero-secondary'
 import css from './index.module.less'
 import BackgroundImage from 'components/image-background'
 import ContentSection from './section-content'
+import {getPageUrl} from 'components/link'
 
 export const Testimonial = ({
   entry
@@ -52,6 +53,7 @@ const SingleProject = ({data}) => {
   const metaForLayout = {
     title: page.title,
     description: page.description.description,
+    url: getPageUrl(page),
     image: {
       url: page.featuredImage.fluid.src
     }

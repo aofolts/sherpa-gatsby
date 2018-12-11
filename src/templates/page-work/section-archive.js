@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './section-archive.module.less'
-import { StaticQuery } from 'gatsby'
+import {StaticQuery,graphql} from 'gatsby'
 import Card from './card'
 
 const ArchiveSection = ({

@@ -16,7 +16,7 @@
 ////////////////////////////////////////////////////////
 
 :root {
-  --headerDockedHeight: l;
+  --headerDockedHeight: .padding[large];
 }
 
 ////////////////////////////////////////////////////////
@@ -109,7 +109,11 @@ html {
 @import (css) url("//hello.myfonts.net/count/37f9b2");
 
   
-@font-face {font-family: 'True North';src: url('../fonts/37F9B2_0_0.eot');src: url('../fonts/37F9B2_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts//37F9B2_0_0.woff2') format('woff2'),url('../fonts//37F9B2_0_0.woff') format('woff'),url('../fonts//37F9B2_0_0.ttf') format('truetype');}
+@font-face {
+  font-family: 'True North';
+  src: url('../fonts/37F9B2_0_0.eot');
+  src: url('../fonts/37F9B2_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts//37F9B2_0_0.woff2') format('woff2'),url('../fonts//37F9B2_0_0.woff') format('woff'),url('../fonts//37F9B2_0_0.ttf') format('truetype');
+}
 
 ////////////////////////////////////////////////////////
 // GRID
@@ -129,15 +133,6 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(35rem,1fr));
     .grid;
-    .grid.fallback;
-  }
-
-  .fallback() {
-    @supports not (display: grid) {
-      @media .query.tablet[above] {
-        display: flex;
-      }
-    }
   }
 }
 
@@ -284,7 +279,6 @@ h5 {
 
   .ordered() {
     .list;
-    list-style-type: ;
   }
 
   .unordered() {
