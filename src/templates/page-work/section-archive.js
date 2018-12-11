@@ -27,19 +27,17 @@ const ArchiveSection = ({
 
 export default props => (
   <StaticQuery
-    query={query}
-    render={data => <ArchiveSection data={data} {...props}/>}
-  />
-)
-
-const query = graphql`
-  {
-    projects: allContentfulProject(limit: 9) {
-      edges {
-        node {
-          ...projectCard
+    query={graphql`
+    {
+      projects: allContentfulProject(limit: 9) {
+        edges {
+          node {
+            ...projectCard
+          }
         }
       }
     }
-  }
-`
+  `}
+    render={data => <ArchiveSection data={data} {...props}/>}
+  />
+)

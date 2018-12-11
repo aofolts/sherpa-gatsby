@@ -7,25 +7,22 @@ import {StaticQuery} from 'gatsby'
 
 export default props => (
   <StaticQuery
-    query={query}
-    render={data => <TestimonialsSection data={data} {...props}/>}
-  />
-)
-
-export const query = graphql`
-  {
-    testimonials: allContentfulTestimonial(
-      limit: 3
-    ) {
-      edges {
-        node {
-          ...testimonial
+    query={graphql`
+    {
+      testimonials: allContentfulTestimonial(
+        limit: 3
+      ) {
+        edges {
+          node {
+            ...testimonial
+          }
         }
       }
     }
-  }
-`
-
+  `}
+    render={data => <TestimonialsSection data={data} {...props}/>}
+  />
+)
 const Cards = ({
   data,
   activeTestimonialId
