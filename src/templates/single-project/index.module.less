@@ -1,0 +1,66 @@
+@import (reference) '../../less/global.less';
+
+.testimonialSection {
+  background: .color.grey[lightest];
+}
+
+.testimonial {
+  text-align: center;
+}
+
+.quote {
+  font-size: .heading.tertiary[font-size];
+  font-weight: .paragraph[font-weight];
+  line-height: .paragraph[line-height];
+  margin-bottom: .padding[medium];
+}
+
+.testimonialWrap {
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+}
+
+.quoteBody {
+  font-style: italic;
+  margin-bottom: .padding[mediumSmall];
+}
+
+.testimonialMeta {
+  @media .query.phone[above] {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.testimonialContainer {
+  width: 80rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.testimonialAuthor {
+  font-weight: .heading.secondary[font-weight];
+
+  @media .query.phone[default] {
+    text-align: center;
+  }
+}
+
+.avatar {
+  width: .padding[large];
+  height: .padding[large];
+  display: inline-block;
+  border-radius: 1000px;
+  overflow: hidden;
+  border: .border.weight[default] solid white;
+
+  @media .query.phone[default] {
+    margin-bottom: .padding[extraSmall];
+  }
+}
+
+.testimonialInfo {
+  @media .query.phone[above] {
+    margin-left: .padding[small];
+    text-align: left;
+  }
+}

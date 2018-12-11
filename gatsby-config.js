@@ -19,6 +19,19 @@ if (!spaceId || !accessToken) {
   )
 }
 
+// const {BLOCKS,INLINES,MARKS} = require ('@contentful/rich-text-types')
+
+// const transformerContentfulRichText = {
+//   resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+//   options: {
+//     renderOptions: {
+//       renderNode: {
+//         paragraph: (node) => () => console.log('test')
+//       },
+//     }
+//   }
+// }
+
 module.exports = {
   siteMetadata: {
     title: 'Sherpa Design Co.',
@@ -26,6 +39,7 @@ module.exports = {
     location: 'Rochester, NY'
   },
   plugins: [
+    //transformerContentfulRichText,
     `@contentful/gatsby-transformer-contentful-richtext`,
     'gatsby-plugin-svg-sprite',
     'gatsby-plugin-react-helmet',

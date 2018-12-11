@@ -7,7 +7,7 @@ const Buttons = () => {
   const data = [
     {
       label: 'Plan Yours',
-      link: '/get-started'
+      link: '/process'
     },
     {
       label: "Contact Me",

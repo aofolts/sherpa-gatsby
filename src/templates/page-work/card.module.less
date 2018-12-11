@@ -1,0 +1,48 @@
+@import (reference) '../../less/global.less';
+
+.card {
+  background: white;
+  box-shadow: 0 0 5px 0 .color.grey[lighter];
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.media {
+  padding-bottom: 50%;
+}
+
+.details {
+  padding: .padding[small];
+}
+
+.description {
+  font-size: .paragraph.secondary[font-size];
+}
+
+.readMore {
+  font-size: .paragraph.secondary[font-size];
+  .paragraph.link;
+}
+
+.browserBar {
+  height: .padding[mediumSmall];
+  background: .color.grey[lightest];
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.browserDot {
+  width: 10px;    
+  height: 10px; 
+  background: .color.grey[light];
+  border-radius: 1000px;
+
+  & + .browserDot {
+    margin-left: 5px;
+  }
+}

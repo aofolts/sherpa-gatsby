@@ -9,6 +9,7 @@ export const getPagePath = page => {
   switch (page['__typename']) {
     case 'ContentfulProcess': base = '/process'; break;
     case 'ContentfulJournalEntry': base = '/journal'; break;
+    case 'ContentfulProject': base = '/projects'; break;
     default: base = '';
   }
 

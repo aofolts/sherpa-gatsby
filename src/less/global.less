@@ -54,9 +54,10 @@
   }
 
   .grey() {
-    darkest: #333333;
-    darker: #494949;
+    darkest: #222222;
+    darker: #262626;
     default: #BFBFBF;
+    medium: #BFBFBF;
     lighten: #cccccc;
     light: #D8D8D8;
     lighter: #E8E8E8;
@@ -117,6 +118,12 @@ html {
 .grid() {
   columnWidth: .padding[large];
   grid-gap: .padding[medium];
+
+  .halves() {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50rem,1fr));
+    .grid;
+  }
 
   .thirds() {
     display: grid;
@@ -268,7 +275,7 @@ h5 {
 
   .item() {
     margin-left: 2em;
-    margin-bottom: .25em;
+    margin-bottom: .5em;
   }
 
   li {
@@ -340,6 +347,7 @@ body {
   .link() {
     color: .color.primary[darken];
     text-decoration: underline;
+    cursor: pointer;
 
     &:hover {
       font-style: italic;

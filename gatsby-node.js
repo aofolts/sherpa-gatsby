@@ -4,11 +4,13 @@ const templates = {
   page: path.resolve('./src/templates/page/index.js'),
   single: {
     journal: path.resolve('./src/templates/single-journal/index.js'),
-    process: path.resolve('./src/templates/single-process/index.js')
+    process: path.resolve('./src/templates/single-process/index.js'),
+    project: path.resolve('./src/templates/single-project/index.js')
   },
   pages: {
-    home: path.resolve('./src/templates/home/index.js'),
-    journal: path.resolve('./src/templates/journal/index.js')
+    home: path.resolve('./src/templates/page-home/index.js'),
+    journal: path.resolve('./src/templates/page-journal/index.js'),
+    work: path.resolve('./src/templates/page-work/index.js')
   }
 }
 
@@ -147,9 +149,48 @@ exports.createPages = ({graphql,actions}) => {
     )
   })
 
+  const createProjectPages = new Promise((resolve,reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            pages: allContentfulProject {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(({
+        errors,
+        data
+      }) => {
+        if (errors) {
+          console.log(errors)
+          reject(errors)
+        }
+  
+        const pages = data.pages.edges.map(entry => entry.node)
+  
+        pages.forEach(entry => {
+          createPage({
+            path: `/projects/${entry.slug}`,
+            component: templates.single.project,
+            context: {
+              slug: entry.slug
+            }
+          })
+        })
+      })
+    )
+  })
+
   return Promise.all([
     createPages,
     createProcessPages,
+    createProjectPages,
     createJournalPages
   ])
 }
