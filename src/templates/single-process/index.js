@@ -4,7 +4,7 @@ import Layout from 'components/layout'
 import Hero from 'components/hero-secondary'
 import IntroSection from './section-intro'
 import PhasesSection from './section-phases'
-import { getPageUrl } from '../../components/link';
+import {getPageUrl} from 'utilities/router'
 
 const SingleProcess = ({
   data

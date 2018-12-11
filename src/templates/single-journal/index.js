@@ -5,7 +5,7 @@ import Hero from 'components/hero-secondary'
 import ContentSection from './section-content'
 import TestimonialsSection from 'components/section-testimonials'
 import css from './index.module.less'
-import { getPageUrl } from '../../components/link';
+import { getPageUrl } from 'utilities/router';
 
 const SingleJournal = ({
   data

@@ -4,7 +4,7 @@ import Footer from './footer'
 import {Helmet} from 'react-helmet'
 import favicon from 'images/favicon.png'
 import PropTypes from 'prop-types'
-import {getPageUrl} from './link'
+import {getPageUrl} from 'utilities/router'
 
 export const LayoutContext = React.createContext(null)
 

@@ -1,28 +1,7 @@
 import React from 'react'
 import {Link as GatsbyLink} from 'gatsby'
 import PropTypes from 'prop-types'
-
-export const getPagePath = page => {
-  let base = ''
-  let slug = page.slug
-
-  switch (page['__typename']) {
-    case 'ContentfulProcess': base = '/process'; break;
-    case 'ContentfulJournalEntry': base = '/journal'; break;
-    case 'ContentfulProject': base = '/projects'; break;
-    default: base = '';
-  }
-
-  if (slug === 'home') slug = ''
-
-  return `${base}/${slug}`
-}
-
-export const getPageUrl = page => {
-  const path = getPagePath(page)
-
-  return `https://www.sherpadesign.co${path}`
-}
+import {getPagePath} from 'utilities/router'
 
 const Link = ({
   page,

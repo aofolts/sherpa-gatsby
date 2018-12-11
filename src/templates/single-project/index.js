@@ -5,7 +5,7 @@ import Hero from 'components/hero-secondary'
 import css from './index.module.less'
 import BackgroundImage from 'components/image-background'
 import ContentSection from './section-content'
-import {getPageUrl} from 'components/link'
+import {getPageUrl} from 'utilities/router'
 
 export const Testimonial = ({
   entry
