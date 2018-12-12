@@ -13,6 +13,9 @@ exports.gatsbyTransformerContentfulRichText = {
             return text + node.value
           },'')
 
+          // Hotfix for nested marks issue
+          if (!fields || !fields.slug) return text + ': Slug undefined'
+
           const page = {
             slug: fields.slug['en-US'],
             type: target.sys.contentType.sys.id

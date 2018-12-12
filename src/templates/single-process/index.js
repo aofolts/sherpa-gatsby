@@ -24,7 +24,7 @@ const SingleProcess = ({
 
   return (
     <Layout meta={meta}>
-      <Hero title={page.title} backgroundImage={page.featuredImage}/>
+      <Hero title={page.title} subTitle='Process' backgroundImage={page.featuredImage}/>
       <IntroSection data={{...page}}/>
       <PhasesSection data={{...page}}/>
     </Layout> 
