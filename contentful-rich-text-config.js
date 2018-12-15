@@ -6,6 +6,16 @@ exports.gatsbyTransformerContentfulRichText = {
   options: {
     renderOptions: {
       renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: node => {
+          return `<img class='contentful-embedded-asset' src="${
+            node.data.target.fields.file['en-US'].url
+          }"/>`
+        },
+        [INLINES.ASSET_HYPERLINK]: node => {
+          return `<img class='custom-asset' src="${
+            node.data.target.fields.file['en-US'].url
+          }"/>`
+        },
         [INLINES.ENTRY_HYPERLINK]: node => {
           const target = node.data.target
           const fields = target.fields

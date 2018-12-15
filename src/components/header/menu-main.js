@@ -12,7 +12,7 @@ const menuItems = [
     link: '/work'
   },
   {
-    title: 'My Story',
+    title: 'About',
     link: '/about'
   },
   {

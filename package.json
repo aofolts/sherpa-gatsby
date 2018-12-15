@@ -5,7 +5,7 @@
   "author": "Andrew Folts <andrew@sherpadesign.co>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^12.0.4",
-    "@contentful/rich-text-types": "^12.0.1",
+    "@contentful/rich-text-types": "^12.1.0",
     "balance-text": "^3.2.1",
     "gatsby": "^2.0.64",
     "gatsby-image": "^2.0.22",

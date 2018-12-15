@@ -1,5 +1,4 @@
 @import (reference) '../../less/global.less';
-@import 'longform.module.less';
 
 ////////////////////////////////////////////////////////
 // RICH TEXT
@@ -36,4 +35,25 @@
   h2,h3,h4 {
     .richText.heading;
   }
-} 
+
+  .longform() {
+    img {
+      width: 90rem;
+      max-width: 100%;
+      margin: .padding[medium] auto;
+      display: block;
+    }
+
+    > p,h1,h2,h3,h4,h5,h6,ul,ol {
+      width: 70rem;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.longform {
+  .richText;
+  .richText.longform;
+}
