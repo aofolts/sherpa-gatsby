@@ -48,7 +48,11 @@ export const query = graphql`
       ...pageFields
     }
     journalEntries: allContentfulJournalEntry(
-      limit: 9
+      limit: 9,
+      sort: {
+        fields: [publishDate],
+        order: DESC
+      }
     ) {
       edges {
         node {
