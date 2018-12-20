@@ -14,7 +14,8 @@ const Card = ({
           <BackgroundImage {...entry.featuredImage} className={css.background}/>
         </div>
         <div className={css.details}>
-          <h5>{entry.title}</h5>
+          <div className={css.category}>{entry.category}</div>
+          <h3 className={css.title}>{entry.title}</h3>
           <div className={css.publishDate}>
             {entry.fullPublishDate}
           </div>

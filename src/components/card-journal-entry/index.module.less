@@ -1,7 +1,11 @@
 @import (reference) '../../less/global.less';
 
 .card {
-  text-align: center;
+  text-align: left;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .media {
@@ -15,4 +19,19 @@
 .publishDate {
   font-size: .paragraph.tertiary[font-size];
   color: .color.grey[default];
+}
+
+// Todo: move to global.less?
+.category {
+  font-size: 1.4rem;
+  font-weight: .paragraph.bold[font-weight];
+  line-height: 1em;
+  letter-spacing: .kerning[wide];
+  padding: .5em;
+  color: white;
+  text-transform: uppercase;
+  background: .color[primary];
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
 }

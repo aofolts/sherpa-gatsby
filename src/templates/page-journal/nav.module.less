@@ -1,0 +1,35 @@
+@import (reference) '../../less/global.less';
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menuItem {
+  display: inline-block;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: .paragraph.tertiary[font-size];
+  color: .color.grey[medium];
+  cursor: pointer;
+  font-weight: .paragraph.bold[font-weight];
+}
+
+.activeMenuItem {
+  color: .paragraph[color];
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .border.weight[default];
+    background: .color[primary];
+  }
+}

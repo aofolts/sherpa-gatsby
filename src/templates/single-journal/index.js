@@ -58,6 +58,8 @@ export const journalInfoFragment = graphql`
     month: publishDate(formatString: "MMMM")
     year: publishDate(formatString: "Y")
     fullPublishDate: publishDate(formatString: "MMMM D, Y")
+    audience
+    category
     tags
     content {
       childContentfulRichText {

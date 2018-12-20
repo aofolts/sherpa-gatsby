@@ -1,28 +1,10 @@
-import React,{Fragment} from 'react'
+import React,{Fragment,useState} from 'react'
 import {graphql} from 'gatsby'
 import {withLayout} from 'components/layout'
 import Hero from 'components/hero-secondary'
 import css from './index.module.less'
-import Card from 'components/card-journal-entry'
-import TestimonialsSection from 'components/section-testimonials'
-
-const ArchiveSection = ({
-  data
-}) => {
-  const cards = data.journalEntries.map(entry => {
-    return <Card key={entry.id} entry={entry}/>
-  })
-
-  return (
-    <section id='section-archive' className={css.section}>
-      <div className={css.wrap}>
-        <div className={css.grid}>
-          {cards}
-        </div>
-      </div>
-    </section>
-  )
-}
+import Nav from './nav'
+import ArchiveSection from './section-archive'
 
 const JournalPage = ({
   data
@@ -31,13 +13,19 @@ const JournalPage = ({
     page
   } = data
 
+  const [activeAudience,setActiveAudience] = useState('Everyone')
+  const context = {
+    activeAudience,
+    setActiveAudience 
+  }
+
   const journalEntries = data.journalEntries.edges.map(entry => entry.node)
 
   return (
     <Fragment>
       <Hero title={page.title} backgroundImage={page.featuredImage}/>
-      <ArchiveSection data={{journalEntries}}/>
-      <TestimonialsSection pattern={false} className={css.testimonialsSection}/>
+      <Nav context={context}/>
+      <ArchiveSection data={{journalEntries}} context={context}/>
     </Fragment>
   )
 }
