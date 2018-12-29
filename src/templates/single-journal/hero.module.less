@@ -1,0 +1,57 @@
+@import (reference) '../../less/global.less';
+
+.section {
+  background: .color.primary[darken];
+}
+
+.textContent {
+  margin: .padding[large] * 2 auto .padding[mediumLarge];
+  width: 100rem - .padding[large];
+  max-width: 100%;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0 var(--paddingHorizontal);
+  }
+}
+
+.title {
+  color: white;
+  grid-column: 2/12;
+}
+
+.summary {
+  color: white;
+  font-size: .paragraph[font-size];
+}
+
+.summaryPrepend {
+  color: .color.primary[light];
+  font-weight: .paragraph.bold[font-weight];
+}
+
+.featuredMediaSection {
+  background: white;
+  padding: 0 var(--paddingHorizontal);
+
+  &:before {
+    content: '';
+    background: .color.primary[darken];
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.featuredMedia {
+  width: 120rem;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.featuredMediaBackground {
+  padding-bottom: 50%;
+}

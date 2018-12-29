@@ -22,6 +22,24 @@
     font-size: .heading.tertiary[font-size];
     font-style: italic;
     color: .color.grey[medium];
+    margin-left: 0;
+    padding-left: 1em;
+
+    &:after {
+      content: '';
+      left: 0;
+      height: 100%;
+      width: .border.weight[default];
+      background: .color.primary[default];
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  blockquote p {
+    font-size: .heading.tertiary[font-size];
+    font-style: italic;
+    color: .color.grey[medium];
   }
 
   ol {
@@ -41,13 +59,18 @@
       width: 90rem;
       max-width: 100%;
       margin: .padding[medium] auto;
+      margin-right: auto;
+      margin-left: 0;
       display: block;
     }
 
-    > p,h1,h2,h3,h4,h5,h6,ul,ol {
+    p {
+      .paragraph.secondary;
+    }
+
+    > p,h1,h2,h3,h4,h5,h6,ul,ol,blockquote {
       width: 70rem;
       max-width: 100%;
-      margin-left: auto;
       margin-right: auto;
     }
   }

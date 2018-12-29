@@ -1,11 +1,77 @@
 @import (reference) '../../less/global.less';
 
-.wrap {
-  padding: var(--paddingVertical) var(--paddingHorizontal);
+@maxWidth: 1200px;
+
+.section {
+  margin: 0 var(--paddingHorizontal);
+}
+
+.grid {
+  padding: var(--paddingVertical) 0;
+  display: grid;
+  width: 120rem;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: .padding[large] 100rem 1fr;
+  grid-gap: .padding[medium];
+
+  @media screen and (max-width: @maxWidth) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .content {
-  margin: 0 auto;
-  width: 70rem;
+  grid-column-start: 2;
+  grid-column-end: 3;
   max-width: 100%;
+
+  @media screen and (max-width: @maxWidth) {
+    width: 100rem;
+    margin-left: auto;
+  }
+}
+
+.socialSharing {
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  @media screen and (max-width: @maxWidth) {
+    margin: .padding[medium] auto 0;
+  }
+}
+
+.socialButton {
+  outline: none;
+  cursor: pointer;
+
+  @media screen and (max-width: @maxWidth) {
+    display: inline-block;
+
+    & + .socialButton {
+      margin-left: .padding[extraSmall];
+    }
+  }
+
+  @media screen and (min-width: @maxWidth + 1) {
+    & + .socialButton {
+      margin-top: 5px;
+    }
+  }
+
+  &:hover {
+    rect {
+      fill: .color.primary[darken];
+    }
+  }
+}
+
+.socialIcon {
+  width: .padding[medium];
+  height: .padding[medium];
+  border-radius: 1000px;
+
+  rect {
+    fill: .color.primary[default];
+  }
 }

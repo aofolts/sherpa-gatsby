@@ -1,11 +1,11 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from 'components/layout'
-import Hero from 'components/hero-secondary'
 import ContentSection from './section-content'
 import TestimonialsSection from 'components/section-testimonials'
 import css from './index.module.less'
-import { getPageUrl } from 'utilities/router';
+import { getPageUrl } from 'utilities/router'
+import Hero from './hero'
 
 const SingleJournal = ({
   data
@@ -24,11 +24,17 @@ const SingleJournal = ({
   }
 
   const content = page.content.childContentfulRichText.html
+
+  const heroData = {
+    title: page.title,
+    summary: page.summary.summary,
+    featuredImage: page.featuredImage
+  }
   
   return ( 
     <Layout meta={meta}>
-      <Hero title={page.title} backgroundImage={page.featuredImage}/>
-      <ContentSection data={{content}}/> 
+      <Hero data={heroData}/>
+      <ContentSection data={{...data,content}}/> 
       <TestimonialsSection className={css.testimonialsSection} pattern={false}/>
       {/* TODO: Add previous/next story section */}
     </Layout>
@@ -61,6 +67,9 @@ export const journalInfoFragment = graphql`
     audience
     category
     tags
+    summary {
+      summary
+    }
     content {
       childContentfulRichText {
         html
