@@ -73,7 +73,7 @@ class Layout extends Component {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta property="og:title" content={meta.title}></meta>
             <meta property="og:description" content={meta.description}/>
-            <meta property="og:image" content={meta.image}/>
+            <meta property="og:image" content={meta.image.url}/>
             <meta property="og:url" content={meta.url}/>
             <meta charSet="utf-8" />
             <link rel='shortcut icon' type='image/png' href={favicon}/>
