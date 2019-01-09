@@ -1,5 +1,16 @@
 @import (reference) '../../less/global.less';
 
-.wrap {
+.section {
   padding: var(--paddingVertical) var(--paddingHorizontal);
+}
+
+.wrap {
+  @media screen and (min-width: 1001px) {
+    display: grid;
+    grid-template-columns: 1fr 100rem 1fr;
+  }
+}
+
+.content {
+  grid-column: ~'2 / 3';
 }
